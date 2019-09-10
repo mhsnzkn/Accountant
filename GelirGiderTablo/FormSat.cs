@@ -30,13 +30,13 @@ namespace GelirGiderTablo
             }
             else
             {
-                if (repo.GetCari_Kod(txt_firm.Text).Id != 0)
+                if (repo.GetCari_Kod(txt_firm.Text).CariKod != null)
                 {
                     if (rdo_nakit.Checked || rdo_vadeli.Checked)
                     {
                         var insertmodel = new GelirModel();
 
-                        insertmodel.Firma = txt_firm.Text;
+                        insertmodel.CariKod = txt_firm.Text;
                         insertmodel.Tarih = new DateTime(Convert.ToInt16(txt_year.Text), Convert.ToInt16(txt_month.Text), Convert.ToInt16(txt_gun.Text));
                         insertmodel.Aciklama = txt_desc.Text;
                         insertmodel.Borc = Methods.GetDecimal(txt_total);
@@ -87,7 +87,7 @@ namespace GelirGiderTablo
                                     var insertmodel = new GelirModel();
 
                                     insertmodel.OdemeSekli = i + ". Taksit (" + taksit + ")";
-                                    insertmodel.Firma = txt_firm.Text;
+                                    insertmodel.CariKod = txt_firm.Text;
                                     insertmodel.Tarih = new DateTime(Convert.ToInt16(txt_year.Text), Convert.ToInt16(txt_month.Text), Convert.ToInt16(txt_gun.Text));
                                     insertmodel.Aciklama = txt_desc.Text;
                                     insertmodel.Borc = taksittutar;

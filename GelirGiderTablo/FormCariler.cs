@@ -36,7 +36,7 @@ namespace GelirGiderTablo
                 CariKod=txt_carikod.Text
             };
             var cariExist = repo.GetCari_Kod(txt_carikod.Text);
-            if (cariExist.Id == 0)
+            if (cariExist.CariKod == null)
             {
                 if (repo.CariAdd(cari))
                 {

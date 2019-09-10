@@ -11,7 +11,7 @@ namespace GelirGiderTablo
     {
         public int Id { get; set; }
         [Required]
-        public string Firma { get; set; }
+        public string CariKod { get; set; }
         [Required]
         public decimal Borc { get; set; }
         [Required]

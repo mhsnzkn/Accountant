@@ -21,8 +21,8 @@ namespace GelirGiderTablo.Data
                 try
                 {
                     conn.Open();
-                    var cmd = new SQLiteCommand("INSERT INTO Cahar (Firma,Aciklama,Borc,Alacak,Tarih,VadeTarihi,ParaCinsi,Tip,BirimFiyat,Adet,OdemeSekli,Crt_tst) values (@Firma,@Aciklama,@Borc,@Alacak,@Tarih,@VadeTarihi,@ParaCinsi,@Tip,@BirimFiyat,@Adet,@OdemeSekli,@Crt_tst)", conn);
-                    cmd.Parameters.AddWithValue("@Firma", model.Firma);
+                    var cmd = new SQLiteCommand("INSERT INTO Cahar (CariKod,Aciklama,Borc,Alacak,Tarih,VadeTarihi,ParaCinsi,Tip,BirimFiyat,Adet,OdemeSekli,Crt_tst) values (@CariKod,@Aciklama,@Borc,@Alacak,@Tarih,@VadeTarihi,@ParaCinsi,@Tip,@BirimFiyat,@Adet,@OdemeSekli,@Crt_tst)", conn);
+                    cmd.Parameters.AddWithValue("@Firma", model.CariKod);
                     cmd.Parameters.AddWithValue("@Aciklama", model.Aciklama);
                     cmd.Parameters.AddWithValue("@Borc", model.Borc);
                     cmd.Parameters.AddWithValue("@Alacak", model.Alacak);
@@ -121,10 +121,10 @@ namespace GelirGiderTablo.Data
                     else
                     {
                         cmd.CommandText = "SELECT * FROM Cariler WHERE Ad LIKE @src or CariKod LIKE @src";
-                        cmd.Parameters.AddWithValue("@src","%"+str+"%");
+                        cmd.Parameters.AddWithValue("@src", "%" + str + "%");
                     }
-                    
-                    
+
+
 
                     var dr = cmd.ExecuteReader();
                     while (dr.Read())
@@ -192,8 +192,55 @@ namespace GelirGiderTablo.Data
 
         public static List<GelirModel> GetCahar_Carikod(string carikod)
         {
+            var carihareketler = new List<GelirModel>();
+
+            using (var conn = new SQLiteConnection(Constr))
+            {
+                try
+                {
+                    conn.Open();
+                    var cmd = new SQLiteCommand(conn);
+                    if (string.IsNullOrEmpty(carikod))
+                    {
+                        cmd.CommandText = "SELECT * FROM Cahar";
+                    }
+                    else
+                    {
+                        cmd.CommandText = "SELECT * FROM Cahar WHERE CariKod LIKE @src";
+                        cmd.Parameters.AddWithValue("@src", carikod);
+                    }
+
+
+
+                    var dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        var cahar = new GelirModel();
+                        cahar.Id = dr.GetInt32(0);
+                        cahar.CariKod = dr.GetString(1);
+                        cahar.Tarih = dr.GetDateTime(2);
+                        cahar.VadeTarihi = dr.GetDateTime(3);
+                        cahar.Borc = dr.GetDecimal(4);
+                        cahar.Alacak = dr.GetDecimal(5);
+                        cahar.Aciklama = dr.GetString(6);
+                        cahar.ParaCinsi = dr.GetString(7);
+                        cahar.Tip = dr.GetString(8);
+                        cahar.BirimFiyat = dr.GetDecimal(9);
+                        cahar.Adet = dr.GetDecimal(10);
+                        cahar.OdemeSekli = dr.GetString(11);
+                        carihareketler.Add(cahar);
+                    }
+                    dr.Close();
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+
+                return carihareketler;
+            }
 
         }
-
     }
 }

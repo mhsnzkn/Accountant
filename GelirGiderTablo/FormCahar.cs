@@ -13,7 +13,9 @@ namespace GelirGiderTablo
 
         private void Btn_ara_Click(object sender, EventArgs e)
         {
-            var cahar=repo.
+            var cahar = repo.GetCahar_Carikod(txt_firm.Text);
+
+            dgv_cahar.DataSource = cahar;
         }
 
         private void Button3_Click(object sender, EventArgs e)
