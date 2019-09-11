@@ -51,6 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_update = new System.Windows.Forms.Button();
             this.grp_update = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.txt_carikod_up = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_update_ok = new System.Windows.Forms.Button();
@@ -66,7 +67,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txt_ad_up = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grp_ekle.SuspendLayout();
@@ -87,14 +87,14 @@
             this.txt_src.Location = new System.Drawing.Point(37, 65);
             this.txt_src.Name = "txt_src";
             this.txt_src.Size = new System.Drawing.Size(156, 26);
-            this.txt_src.TabIndex = 1;
+            this.txt_src.TabIndex = 0;
             // 
             // btn_src
             // 
             this.btn_src.Location = new System.Drawing.Point(210, 65);
             this.btn_src.Name = "btn_src";
             this.btn_src.Size = new System.Drawing.Size(114, 26);
-            this.btn_src.TabIndex = 2;
+            this.btn_src.TabIndex = 1;
             this.btn_src.Text = "Ara";
             this.btn_src.UseVisualStyleBackColor = true;
             this.btn_src.Click += new System.EventHandler(this.Btn_src_Click);
@@ -112,7 +112,7 @@
             this.button1.Location = new System.Drawing.Point(926, 65);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 26);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Cari Ekle";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -147,7 +147,7 @@
             this.txt_carikod.Location = new System.Drawing.Point(104, 57);
             this.txt_carikod.Name = "txt_carikod";
             this.txt_carikod.Size = new System.Drawing.Size(149, 26);
-            this.txt_carikod.TabIndex = 14;
+            this.txt_carikod.TabIndex = 0;
             // 
             // label8
             // 
@@ -173,7 +173,7 @@
             this.txt_adres.Location = new System.Drawing.Point(6, 278);
             this.txt_adres.Name = "txt_adres";
             this.txt_adres.Size = new System.Drawing.Size(247, 101);
-            this.txt_adres.TabIndex = 11;
+            this.txt_adres.TabIndex = 6;
             this.txt_adres.Text = "";
             // 
             // label7
@@ -190,7 +190,7 @@
             this.txt_email.Location = new System.Drawing.Point(104, 217);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(149, 26);
-            this.txt_email.TabIndex = 9;
+            this.txt_email.TabIndex = 5;
             // 
             // label6
             // 
@@ -206,7 +206,7 @@
             this.txt_ilce.Location = new System.Drawing.Point(104, 185);
             this.txt_ilce.Name = "txt_ilce";
             this.txt_ilce.Size = new System.Drawing.Size(149, 26);
-            this.txt_ilce.TabIndex = 7;
+            this.txt_ilce.TabIndex = 4;
             // 
             // label5
             // 
@@ -222,7 +222,7 @@
             this.txt_il.Location = new System.Drawing.Point(104, 153);
             this.txt_il.Name = "txt_il";
             this.txt_il.Size = new System.Drawing.Size(149, 26);
-            this.txt_il.TabIndex = 5;
+            this.txt_il.TabIndex = 3;
             // 
             // label4
             // 
@@ -238,7 +238,7 @@
             this.txt_tel.Location = new System.Drawing.Point(104, 121);
             this.txt_tel.Name = "txt_tel";
             this.txt_tel.Size = new System.Drawing.Size(149, 26);
-            this.txt_tel.TabIndex = 3;
+            this.txt_tel.TabIndex = 2;
             // 
             // label3
             // 
@@ -270,7 +270,7 @@
             this.btn_update.Location = new System.Drawing.Point(800, 65);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(114, 26);
-            this.btn_update.TabIndex = 6;
+            this.btn_update.TabIndex = 2;
             this.btn_update.Text = "Cari Düzenle";
             this.btn_update.UseVisualStyleBackColor = true;
             this.btn_update.Click += new System.EventHandler(this.Btn_update_Click);
@@ -301,12 +301,22 @@
             this.grp_update.Text = "Cari Düzenle";
             this.grp_update.Visible = false;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(26, 83);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(227, 38);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Bilgileri Getir";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
             // txt_carikod_up
             // 
             this.txt_carikod_up.Location = new System.Drawing.Point(68, 51);
             this.txt_carikod_up.Name = "txt_carikod_up";
             this.txt_carikod_up.Size = new System.Drawing.Size(149, 26);
-            this.txt_carikod_up.TabIndex = 14;
+            this.txt_carikod_up.TabIndex = 0;
             // 
             // label9
             // 
@@ -334,7 +344,7 @@
             this.txt_adres_up.Location = new System.Drawing.Point(6, 358);
             this.txt_adres_up.Name = "txt_adres_up";
             this.txt_adres_up.Size = new System.Drawing.Size(247, 101);
-            this.txt_adres_up.TabIndex = 11;
+            this.txt_adres_up.TabIndex = 6;
             this.txt_adres_up.Text = "";
             // 
             // label10
@@ -351,7 +361,7 @@
             this.txt_email_up.Location = new System.Drawing.Point(104, 297);
             this.txt_email_up.Name = "txt_email_up";
             this.txt_email_up.Size = new System.Drawing.Size(149, 26);
-            this.txt_email_up.TabIndex = 9;
+            this.txt_email_up.TabIndex = 5;
             // 
             // label11
             // 
@@ -367,7 +377,7 @@
             this.txt_ilce_up.Location = new System.Drawing.Point(104, 265);
             this.txt_ilce_up.Name = "txt_ilce_up";
             this.txt_ilce_up.Size = new System.Drawing.Size(149, 26);
-            this.txt_ilce_up.TabIndex = 7;
+            this.txt_ilce_up.TabIndex = 4;
             // 
             // label12
             // 
@@ -383,7 +393,7 @@
             this.txt_il_up.Location = new System.Drawing.Point(104, 233);
             this.txt_il_up.Name = "txt_il_up";
             this.txt_il_up.Size = new System.Drawing.Size(149, 26);
-            this.txt_il_up.TabIndex = 5;
+            this.txt_il_up.TabIndex = 3;
             // 
             // label13
             // 
@@ -399,7 +409,7 @@
             this.txt_tel_up.Location = new System.Drawing.Point(104, 201);
             this.txt_tel_up.Name = "txt_tel_up";
             this.txt_tel_up.Size = new System.Drawing.Size(149, 26);
-            this.txt_tel_up.TabIndex = 3;
+            this.txt_tel_up.TabIndex = 2;
             // 
             // label14
             // 
@@ -425,16 +435,6 @@
             this.label15.Size = new System.Drawing.Size(32, 20);
             this.label15.TabIndex = 0;
             this.label15.Text = "Adı";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(26, 83);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(227, 38);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Bilgileri Getir";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button3
             // 

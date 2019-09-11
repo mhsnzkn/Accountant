@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GelirGiderTablo.Dtos;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SQLite;
@@ -293,6 +294,45 @@ namespace GelirGiderTablo.Data
 
             }
             return carihareketler;
+        }
+
+        public static List<CariBorcAlacak> GetCaharBorcAlacak(DateTime? enddate)
+        {
+            var cariborclist = new List<CariBorcAlacak>();
+            try
+            {
+                var date = enddate ?? DateTime.Now;
+                using (var conn = new SQLiteConnection(Constr))
+                {
+                    var cmd = new SQLiteCommand(conn);
+
+                    cmd.CommandText = "SELECT CariKod,SUM(Borc) as Borc,SUM(Alacak) as Alacak,ParaCinsi,MAX(VadeTarihi) as VadeTarihi FROM Cahar WHERE VadeTarihi<=@vadetarihi GROUP BY CariKod,ParaCinsi";
+                    cmd.Parameters.AddWithValue("@vadetarihi", date);
+
+                    conn.Open();
+                    var dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        var cahar = new CariBorcAlacak();
+                        cahar.CariKod = dr.GetString(dr.GetOrdinal("CariKod"));
+                        cahar.VadeTarihi = dr.GetDateTime(dr.GetOrdinal("VadeTarihi"));
+                        cahar.Borc = dr.GetDecimal(dr.GetOrdinal("Borc"));
+                        cahar.Alacak = dr.GetDecimal(dr.GetOrdinal("Alacak"));
+                        cahar.ParaCinsi = dr.GetString(dr.GetOrdinal("ParaCinsi"));
+                        cariborclist.Add(cahar);
+                    }
+                    dr.Close();
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+
+            }
+            return cariborclist;
         }
     }
 }

@@ -87,7 +87,7 @@
             this.cbx_para.Location = new System.Drawing.Point(350, 234);
             this.cbx_para.Name = "cbx_para";
             this.cbx_para.Size = new System.Drawing.Size(75, 28);
-            this.cbx_para.TabIndex = 73;
+            this.cbx_para.TabIndex = 9;
             // 
             // txt_vademon
             // 
@@ -95,7 +95,7 @@
             this.txt_vademon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_vademon.Name = "txt_vademon";
             this.txt_vademon.Size = new System.Drawing.Size(26, 26);
-            this.txt_vademon.TabIndex = 71;
+            this.txt_vademon.TabIndex = 2;
             this.txt_vademon.Visible = false;
             // 
             // txt_vadeyear
@@ -104,7 +104,7 @@
             this.txt_vadeyear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_vadeyear.Name = "txt_vadeyear";
             this.txt_vadeyear.Size = new System.Drawing.Size(47, 26);
-            this.txt_vadeyear.TabIndex = 70;
+            this.txt_vadeyear.TabIndex = 3;
             this.txt_vadeyear.Visible = false;
             // 
             // lbl_ay1
@@ -135,7 +135,7 @@
             this.txt_vadeday.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_vadeday.Name = "txt_vadeday";
             this.txt_vadeday.Size = new System.Drawing.Size(26, 26);
-            this.txt_vadeday.TabIndex = 67;
+            this.txt_vadeday.TabIndex = 1;
             this.txt_vadeday.Visible = false;
             // 
             // lbl_vadetarihi
@@ -155,7 +155,7 @@
             this.txt_pay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_pay.Name = "txt_pay";
             this.txt_pay.Size = new System.Drawing.Size(148, 26);
-            this.txt_pay.TabIndex = 65;
+            this.txt_pay.TabIndex = 7;
             this.txt_pay.Visible = false;
             this.txt_pay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_total_KeyPress);
             // 
@@ -187,7 +187,7 @@
             this.txt_month.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_month.Name = "txt_month";
             this.txt_month.Size = new System.Drawing.Size(26, 26);
-            this.txt_month.TabIndex = 62;
+            this.txt_month.TabIndex = 11;
             // 
             // txt_year
             // 
@@ -195,7 +195,7 @@
             this.txt_year.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_year.Name = "txt_year";
             this.txt_year.Size = new System.Drawing.Size(47, 26);
-            this.txt_year.TabIndex = 61;
+            this.txt_year.TabIndex = 12;
             // 
             // label7
             // 
@@ -223,7 +223,7 @@
             this.txt_desc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_desc.Name = "txt_desc";
             this.txt_desc.Size = new System.Drawing.Size(534, 146);
-            this.txt_desc.TabIndex = 58;
+            this.txt_desc.TabIndex = 8;
             this.txt_desc.Text = "";
             // 
             // label5
@@ -242,7 +242,7 @@
             this.txt_gun.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_gun.Name = "txt_gun";
             this.txt_gun.Size = new System.Drawing.Size(26, 26);
-            this.txt_gun.TabIndex = 56;
+            this.txt_gun.TabIndex = 10;
             // 
             // label4
             // 
@@ -260,7 +260,7 @@
             this.txt_total.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_total.Name = "txt_total";
             this.txt_total.Size = new System.Drawing.Size(148, 26);
-            this.txt_total.TabIndex = 54;
+            this.txt_total.TabIndex = 6;
             this.txt_total.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_total_KeyPress);
             // 
             // label3
@@ -279,7 +279,7 @@
             this.txt_firm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_firm.Name = "txt_firm";
             this.txt_firm.Size = new System.Drawing.Size(148, 26);
-            this.txt_firm.TabIndex = 50;
+            this.txt_firm.TabIndex = 0;
             // 
             // button1
             // 
@@ -318,7 +318,7 @@
             this.txt_unitprice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_unitprice.Name = "txt_unitprice";
             this.txt_unitprice.Size = new System.Drawing.Size(148, 26);
-            this.txt_unitprice.TabIndex = 75;
+            this.txt_unitprice.TabIndex = 4;
             this.txt_unitprice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_total_KeyPress);
             // 
             // label8
@@ -337,7 +337,7 @@
             this.txt_qtt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_qtt.Name = "txt_qtt";
             this.txt_qtt.Size = new System.Drawing.Size(148, 26);
-            this.txt_qtt.TabIndex = 77;
+            this.txt_qtt.TabIndex = 5;
             this.txt_qtt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_total_KeyPress);
             // 
             // groupBox2
@@ -461,7 +461,7 @@
             this.grp_cari.Controls.Add(this.label2);
             this.grp_cari.Controls.Add(this.btn_carisearch);
             this.grp_cari.Controls.Add(this.txt_carisearch);
-            this.grp_cari.Location = new System.Drawing.Point(446, 68);
+            this.grp_cari.Location = new System.Drawing.Point(431, 68);
             this.grp_cari.Name = "grp_cari";
             this.grp_cari.Size = new System.Drawing.Size(715, 360);
             this.grp_cari.TabIndex = 81;

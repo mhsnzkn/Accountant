@@ -77,7 +77,7 @@
             this.txt_carikod.Location = new System.Drawing.Point(500, 43);
             this.txt_carikod.Name = "txt_carikod";
             this.txt_carikod.Size = new System.Drawing.Size(131, 26);
-            this.txt_carikod.TabIndex = 0;
+            this.txt_carikod.TabIndex = 4;
             // 
             // lbl_carikod
             // 
@@ -93,7 +93,7 @@
             this.btn_ara.Location = new System.Drawing.Point(1048, 43);
             this.btn_ara.Name = "btn_ara";
             this.btn_ara.Size = new System.Drawing.Size(123, 60);
-            this.btn_ara.TabIndex = 2;
+            this.btn_ara.TabIndex = 8;
             this.btn_ara.Text = "Getir";
             this.btn_ara.UseVisualStyleBackColor = true;
             this.btn_ara.Click += new System.EventHandler(this.Btn_ara_Click);
@@ -155,7 +155,7 @@
             this.btn_carifind.Location = new System.Drawing.Point(500, 79);
             this.btn_carifind.Name = "btn_carifind";
             this.btn_carifind.Size = new System.Drawing.Size(75, 26);
-            this.btn_carifind.TabIndex = 82;
+            this.btn_carifind.TabIndex = 5;
             this.btn_carifind.Text = "Bul";
             this.btn_carifind.UseVisualStyleBackColor = true;
             this.btn_carifind.Click += new System.EventHandler(this.Button3_Click);
@@ -370,7 +370,7 @@
             this.dtp_from.Location = new System.Drawing.Point(737, 43);
             this.dtp_from.Name = "dtp_from";
             this.dtp_from.Size = new System.Drawing.Size(200, 26);
-            this.dtp_from.TabIndex = 112;
+            this.dtp_from.TabIndex = 6;
             this.dtp_from.Visible = false;
             // 
             // dtp_to
@@ -378,7 +378,7 @@
             this.dtp_to.Location = new System.Drawing.Point(737, 75);
             this.dtp_to.Name = "dtp_to";
             this.dtp_to.Size = new System.Drawing.Size(200, 26);
-            this.dtp_to.TabIndex = 113;
+            this.dtp_to.TabIndex = 7;
             this.dtp_to.Visible = false;
             // 
             // button1
@@ -408,7 +408,7 @@
             this.chck_vadeli.Location = new System.Drawing.Point(50, 20);
             this.chck_vadeli.Name = "chck_vadeli";
             this.chck_vadeli.Size = new System.Drawing.Size(135, 24);
-            this.chck_vadeli.TabIndex = 117;
+            this.chck_vadeli.TabIndex = 0;
             this.chck_vadeli.Text = "Vadeli Hesapla";
             this.chck_vadeli.UseVisualStyleBackColor = true;
             // 
@@ -418,7 +418,7 @@
             this.chck_satis.Location = new System.Drawing.Point(220, 19);
             this.chck_satis.Name = "chck_satis";
             this.chck_satis.Size = new System.Drawing.Size(81, 24);
-            this.chck_satis.TabIndex = 118;
+            this.chck_satis.TabIndex = 1;
             this.chck_satis.Text = "Satışlar";
             this.chck_satis.UseVisualStyleBackColor = true;
             // 
@@ -428,7 +428,7 @@
             this.chck_odeme.Location = new System.Drawing.Point(220, 47);
             this.chck_odeme.Name = "chck_odeme";
             this.chck_odeme.Size = new System.Drawing.Size(97, 24);
-            this.chck_odeme.TabIndex = 119;
+            this.chck_odeme.TabIndex = 2;
             this.chck_odeme.Text = "Ödemeler";
             this.chck_odeme.UseVisualStyleBackColor = true;
             // 
@@ -438,7 +438,7 @@
             this.chck_diger.Location = new System.Drawing.Point(220, 75);
             this.chck_diger.Name = "chck_diger";
             this.chck_diger.Size = new System.Drawing.Size(66, 24);
-            this.chck_diger.TabIndex = 120;
+            this.chck_diger.TabIndex = 3;
             this.chck_diger.Text = "Diğer";
             this.chck_diger.UseVisualStyleBackColor = true;
             // 
