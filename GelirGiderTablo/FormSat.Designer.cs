@@ -56,7 +56,6 @@
             this.rdo_taksit = new System.Windows.Forms.RadioButton();
             this.rdo_vadeli = new System.Windows.Forms.RadioButton();
             this.rdo_nakit = new System.Windows.Forms.RadioButton();
-            this.cbx_para = new System.Windows.Forms.ComboBox();
             this.txt_qtt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_unitprice = new System.Windows.Forms.TextBox();
@@ -67,6 +66,7 @@
             this.btn_carisearch = new System.Windows.Forms.Button();
             this.txt_carisearch = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.cbx_para = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.grp_cari.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cariler)).BeginInit();
@@ -357,19 +357,6 @@
             this.rdo_nakit.UseVisualStyleBackColor = true;
             this.rdo_nakit.CheckedChanged += new System.EventHandler(this.Rdo_nakit_CheckedChanged);
             // 
-            // cbx_para
-            // 
-            this.cbx_para.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_para.FormattingEnabled = true;
-            this.cbx_para.Items.AddRange(new object[] {
-            "TL",
-            "Dolar",
-            "Euro"});
-            this.cbx_para.Location = new System.Drawing.Point(327, 236);
-            this.cbx_para.Name = "cbx_para";
-            this.cbx_para.Size = new System.Drawing.Size(45, 28);
-            this.cbx_para.TabIndex = 43;
-            // 
             // txt_qtt
             // 
             this.txt_qtt.Location = new System.Drawing.Point(162, 193);
@@ -472,18 +459,31 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
+            // cbx_para
+            // 
+            this.cbx_para.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_para.FormattingEnabled = true;
+            this.cbx_para.Items.AddRange(new object[] {
+            "TL",
+            "DOLAR",
+            "EURO"});
+            this.cbx_para.Location = new System.Drawing.Point(330, 234);
+            this.cbx_para.Name = "cbx_para";
+            this.cbx_para.Size = new System.Drawing.Size(75, 28);
+            this.cbx_para.TabIndex = 84;
+            // 
             // FormSat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.cbx_para);
             this.Controls.Add(this.grp_cari);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.txt_qtt);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txt_unitprice);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.cbx_para);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txt_vademon);
             this.Controls.Add(this.txt_vadeyear);
@@ -548,7 +548,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdo_vadeli;
         private System.Windows.Forms.RadioButton rdo_nakit;
-        private System.Windows.Forms.ComboBox cbx_para;
         private System.Windows.Forms.TextBox txt_qtt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_unitprice;
@@ -562,5 +561,6 @@
         private System.Windows.Forms.Button btn_carisearch;
         private System.Windows.Forms.TextBox txt_carisearch;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cbx_para;
     }
 }

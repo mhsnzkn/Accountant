@@ -91,7 +91,7 @@
     <Compile Include="FormOdeme.Designer.cs">
       <DependentUpon>FormOdeme.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GelirModel.cs" />
+    <Compile Include="Models\Cahar.cs" />
     <Compile Include="Methods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

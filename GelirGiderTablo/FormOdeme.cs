@@ -63,10 +63,10 @@ namespace GelirGiderTablo
             {
                 if (repo.GetCari_Kod(txt_firm.Text).CariKod != null)
                 {
-                    var tip = rdo_odeme.Checked ? "odeme" : "diger";
+                    var tip = rdo_odeme.Checked ? "ODEME" : "DIGER";
                     if (rdo_nakit.Checked || rdo_vadeli.Checked)
                     {
-                        var insertmodel = new GelirModel();
+                        var insertmodel = new Cahar();
 
                         insertmodel.CariKod = txt_firm.Text;
                         insertmodel.Tarih = new DateTime(Convert.ToInt16(txt_year.Text), Convert.ToInt16(txt_month.Text), Convert.ToInt16(txt_gun.Text));
@@ -80,13 +80,13 @@ namespace GelirGiderTablo
                         {
                             insertmodel.VadeTarihi = new DateTime(Convert.ToInt16(txt_vadeyear.Text), Convert.ToInt16(txt_vademon.Text), Convert.ToInt16(txt_vadeday.Text));
                             insertmodel.Borc = Methods.GetDecimal(txt_pay);
-                            insertmodel.OdemeSekli = "Vadeli";
+                            insertmodel.OdemeSekli = "VADELI";
                         }
                         else if (rdo_nakit.Checked)
                         {
                             insertmodel.VadeTarihi = DateTime.Now;
                             insertmodel.Borc = Methods.GetDecimal(txt_total);
-                            insertmodel.OdemeSekli = "Nakit";
+                            insertmodel.OdemeSekli = "NAKIT";
                         }
 
                         if (repo.GelirAdd(insertmodel))
@@ -116,9 +116,9 @@ namespace GelirGiderTablo
                                 bool result = true;
                                 for (int i = 1; i <= taksit; i++)
                                 {
-                                    var insertmodel = new GelirModel();
+                                    var insertmodel = new Cahar();
 
-                                    insertmodel.OdemeSekli = i + ". Taksit (" + taksit + ")";
+                                    insertmodel.OdemeSekli = i + ". TAKSİT (" + taksit + ")";
                                     insertmodel.CariKod = txt_firm.Text;
                                     insertmodel.Tarih = new DateTime(Convert.ToInt16(txt_year.Text), Convert.ToInt16(txt_month.Text), Convert.ToInt16(txt_gun.Text));
                                     insertmodel.Aciklama = txt_desc.Text;

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace GelirGiderTablo
 {
-    public class GelirModel
+    public class Cahar
     {
-        public int Id { get; set; }
         [Required]
         public string CariKod { get; set; }
         [Required]

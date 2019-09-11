@@ -82,11 +82,11 @@
             this.cbx_para.FormattingEnabled = true;
             this.cbx_para.Items.AddRange(new object[] {
             "TL",
-            "Dolar",
-            "Euro"});
+            "DOLAR",
+            "EURO"});
             this.cbx_para.Location = new System.Drawing.Point(350, 234);
             this.cbx_para.Name = "cbx_para";
-            this.cbx_para.Size = new System.Drawing.Size(45, 28);
+            this.cbx_para.Size = new System.Drawing.Size(75, 28);
             this.cbx_para.TabIndex = 73;
             // 
             // txt_vademon
