@@ -93,6 +93,7 @@
             // 
             // dgv_borclucariler
             // 
+            this.dgv_borclucariler.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgv_borclucariler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_borclucariler.Location = new System.Drawing.Point(12, 70);
             this.dgv_borclucariler.Name = "dgv_borclucariler";
@@ -122,6 +123,7 @@
             // 
             // dgv_alacaklicariler
             // 
+            this.dgv_alacaklicariler.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgv_alacaklicariler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_alacaklicariler.Location = new System.Drawing.Point(12, 381);
             this.dgv_alacaklicariler.Name = "dgv_alacaklicariler";
@@ -141,6 +143,7 @@
             // 
             // dgv_yalacak
             // 
+            this.dgv_yalacak.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgv_yalacak.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_yalacak.Location = new System.Drawing.Point(659, 70);
             this.dgv_yalacak.Name = "dgv_yalacak";
@@ -160,6 +163,7 @@
             // 
             // dgv_yborclar
             // 
+            this.dgv_yborclar.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgv_yborclar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_yborclar.Location = new System.Drawing.Point(659, 381);
             this.dgv_yborclar.Name = "dgv_yborclar";

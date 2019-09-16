@@ -9,9 +9,6 @@ namespace GelirGiderTablo
         public FormSat()
         {
             InitializeComponent();
-            txt_gun.Text = DateTime.Today.Day.ToString("00");
-            txt_month.Text = DateTime.Today.Month.ToString("00");
-            txt_year.Text = DateTime.Today.Year.ToString();
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -37,7 +34,7 @@ namespace GelirGiderTablo
                         var insertmodel = new Cahar();
 
                         insertmodel.CariKod = txt_firm.Text;
-                        insertmodel.Tarih = new DateTime(Convert.ToInt16(txt_year.Text), Convert.ToInt16(txt_month.Text), Convert.ToInt16(txt_gun.Text));
+                        insertmodel.Tarih = dtp_date.Value;
                         insertmodel.Aciklama = txt_desc.Text;
                         insertmodel.Borc = Methods.GetDecimal(txt_total);
                         insertmodel.Tip = "SATIS";
@@ -46,7 +43,7 @@ namespace GelirGiderTablo
                         insertmodel.Adet = Methods.GetDecimal(txt_qtt);
                         if (rdo_vadeli.Checked)
                         {
-                            insertmodel.VadeTarihi = new DateTime(Convert.ToInt16(txt_vadeyear.Text), Convert.ToInt16(txt_vademon.Text), Convert.ToInt16(txt_vadeday.Text));
+                            insertmodel.VadeTarihi = dtp_vade.Value;
                             insertmodel.Alacak = Methods.GetDecimal(txt_pay);
                             insertmodel.OdemeSekli = "VADELI";
                         }
@@ -64,9 +61,6 @@ namespace GelirGiderTablo
                             txt_firm.Clear();
                             txt_pay.Clear();
                             txt_total.Clear();
-                            txt_vadeday.Clear();
-                            txt_vademon.Clear();
-                            txt_vadeyear.Clear();
                             txt_unitprice.Clear();
                             txt_qtt.Clear();
                         }
@@ -88,7 +82,7 @@ namespace GelirGiderTablo
 
                                     insertmodel.OdemeSekli = i + ". TAKSIT (" + taksit + ")";
                                     insertmodel.CariKod = txt_firm.Text;
-                                    insertmodel.Tarih = new DateTime(Convert.ToInt16(txt_year.Text), Convert.ToInt16(txt_month.Text), Convert.ToInt16(txt_gun.Text));
+                                    insertmodel.Tarih = dtp_date.Value;
                                     insertmodel.Aciklama = txt_desc.Text;
                                     insertmodel.Borc = taksittutar;
                                     insertmodel.Tip = "SATIS";
@@ -111,9 +105,7 @@ namespace GelirGiderTablo
                                     txt_firm.Clear();
                                     txt_pay.Clear();
                                     txt_total.Clear();
-                                    txt_vadeday.Clear();
-                                    txt_vademon.Clear();
-                                    txt_vadeyear.Clear();
+                                    dtp_vade.Value = DateTime.Now;
                                     txt_unitprice.Clear();
                                     txt_qtt.Clear();
                                     txt_taksit.Clear();
@@ -156,11 +148,7 @@ namespace GelirGiderTablo
             {
                 //Vade tarihi
                 lbl_vadetarihi.Visible = false;
-                txt_vadeday.Visible = false;
-                txt_vademon.Visible = false;
-                txt_vadeyear.Visible = false;
-                lbl_ay1.Visible = false;
-                lbl_ay2.Visible = false;
+                dtp_vade.Visible = false;
                 //alınan tutar
                 lbl_pay.Visible = false;
                 txt_pay.Visible = false;
@@ -172,11 +160,7 @@ namespace GelirGiderTablo
             {
                 //Vade tarihi
                 lbl_vadetarihi.Visible = true;
-                txt_vadeday.Visible = true;
-                txt_vademon.Visible = true;
-                txt_vadeyear.Visible = true;
-                lbl_ay1.Visible = true;
-                lbl_ay2.Visible = true;
+                dtp_vade.Visible = true;
                 //alınan tutar
                 lbl_pay.Visible = true;
                 txt_pay.Visible = true;
@@ -188,11 +172,7 @@ namespace GelirGiderTablo
             {
                 //Vade tarihi
                 lbl_vadetarihi.Visible = false;
-                txt_vadeday.Visible = false;
-                txt_vademon.Visible = false;
-                txt_vadeyear.Visible = false;
-                lbl_ay1.Visible = false;
-                lbl_ay2.Visible = false;
+                dtp_vade.Visible = false;
                 //alınan tutar
                 lbl_pay.Visible = true;
                 txt_pay.Visible = true;

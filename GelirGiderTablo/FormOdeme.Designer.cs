@@ -29,22 +29,12 @@
         private void InitializeComponent()
         {
             this.cbx_para = new System.Windows.Forms.ComboBox();
-            this.txt_vademon = new System.Windows.Forms.TextBox();
-            this.txt_vadeyear = new System.Windows.Forms.TextBox();
-            this.lbl_ay1 = new System.Windows.Forms.Label();
-            this.lbl_ay2 = new System.Windows.Forms.Label();
-            this.txt_vadeday = new System.Windows.Forms.TextBox();
             this.lbl_vadetarihi = new System.Windows.Forms.Label();
             this.txt_pay = new System.Windows.Forms.TextBox();
             this.lbl_pay = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.txt_month = new System.Windows.Forms.TextBox();
-            this.txt_year = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txt_desc = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_gun = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_total = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,6 +60,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_carisearch = new System.Windows.Forms.Button();
             this.txt_carisearch = new System.Windows.Forms.TextBox();
+            this.dtp_vade = new System.Windows.Forms.DateTimePicker();
+            this.dtp_date = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             this.grp_pay.SuspendLayout();
             this.grp_cari.SuspendLayout();
@@ -88,55 +80,6 @@
             this.cbx_para.Name = "cbx_para";
             this.cbx_para.Size = new System.Drawing.Size(75, 28);
             this.cbx_para.TabIndex = 9;
-            // 
-            // txt_vademon
-            // 
-            this.txt_vademon.Location = new System.Drawing.Point(230, 107);
-            this.txt_vademon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_vademon.Name = "txt_vademon";
-            this.txt_vademon.Size = new System.Drawing.Size(26, 26);
-            this.txt_vademon.TabIndex = 2;
-            this.txt_vademon.Visible = false;
-            // 
-            // txt_vadeyear
-            // 
-            this.txt_vadeyear.Location = new System.Drawing.Point(281, 107);
-            this.txt_vadeyear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_vadeyear.Name = "txt_vadeyear";
-            this.txt_vadeyear.Size = new System.Drawing.Size(47, 26);
-            this.txt_vadeyear.TabIndex = 3;
-            this.txt_vadeyear.Visible = false;
-            // 
-            // lbl_ay1
-            // 
-            this.lbl_ay1.AutoSize = true;
-            this.lbl_ay1.Location = new System.Drawing.Point(214, 110);
-            this.lbl_ay1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_ay1.Name = "lbl_ay1";
-            this.lbl_ay1.Size = new System.Drawing.Size(13, 20);
-            this.lbl_ay1.TabIndex = 69;
-            this.lbl_ay1.Text = "/";
-            this.lbl_ay1.Visible = false;
-            // 
-            // lbl_ay2
-            // 
-            this.lbl_ay2.AutoSize = true;
-            this.lbl_ay2.Location = new System.Drawing.Point(260, 110);
-            this.lbl_ay2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_ay2.Name = "lbl_ay2";
-            this.lbl_ay2.Size = new System.Drawing.Size(13, 20);
-            this.lbl_ay2.TabIndex = 68;
-            this.lbl_ay2.Text = "/";
-            this.lbl_ay2.Visible = false;
-            // 
-            // txt_vadeday
-            // 
-            this.txt_vadeday.Location = new System.Drawing.Point(185, 107);
-            this.txt_vadeday.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_vadeday.Name = "txt_vadeday";
-            this.txt_vadeday.Size = new System.Drawing.Size(26, 26);
-            this.txt_vadeday.TabIndex = 1;
-            this.txt_vadeday.Visible = false;
             // 
             // lbl_vadetarihi
             // 
@@ -181,42 +124,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // txt_month
-            // 
-            this.txt_month.Location = new System.Drawing.Point(635, 68);
-            this.txt_month.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_month.Name = "txt_month";
-            this.txt_month.Size = new System.Drawing.Size(26, 26);
-            this.txt_month.TabIndex = 11;
-            // 
-            // txt_year
-            // 
-            this.txt_year.Location = new System.Drawing.Point(685, 68);
-            this.txt_year.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_year.Name = "txt_year";
-            this.txt_year.Size = new System.Drawing.Size(47, 26);
-            this.txt_year.TabIndex = 12;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(619, 71);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 20);
-            this.label7.TabIndex = 60;
-            this.label7.Text = "/";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(665, 71);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 20);
-            this.label6.TabIndex = 59;
-            this.label6.Text = "/";
-            // 
             // txt_desc
             // 
             this.txt_desc.Location = new System.Drawing.Point(70, 424);
@@ -235,14 +142,6 @@
             this.label5.Size = new System.Drawing.Size(73, 20);
             this.label5.TabIndex = 57;
             this.label5.Text = "Açıklama";
-            // 
-            // txt_gun
-            // 
-            this.txt_gun.Location = new System.Drawing.Point(590, 68);
-            this.txt_gun.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_gun.Name = "txt_gun";
-            this.txt_gun.Size = new System.Drawing.Size(26, 26);
-            this.txt_gun.TabIndex = 10;
             // 
             // label4
             // 
@@ -461,7 +360,7 @@
             this.grp_cari.Controls.Add(this.label2);
             this.grp_cari.Controls.Add(this.btn_carisearch);
             this.grp_cari.Controls.Add(this.txt_carisearch);
-            this.grp_cari.Location = new System.Drawing.Point(431, 68);
+            this.grp_cari.Location = new System.Drawing.Point(431, 58);
             this.grp_cari.Name = "grp_cari";
             this.grp_cari.Size = new System.Drawing.Size(715, 360);
             this.grp_cari.TabIndex = 81;
@@ -507,12 +406,29 @@
             this.txt_carisearch.Size = new System.Drawing.Size(100, 26);
             this.txt_carisearch.TabIndex = 0;
             // 
+            // dtp_vade
+            // 
+            this.dtp_vade.Location = new System.Drawing.Point(185, 107);
+            this.dtp_vade.Name = "dtp_vade";
+            this.dtp_vade.Size = new System.Drawing.Size(200, 26);
+            this.dtp_vade.TabIndex = 82;
+            this.dtp_vade.Visible = false;
+            // 
+            // dtp_date
+            // 
+            this.dtp_date.Location = new System.Drawing.Point(541, 67);
+            this.dtp_date.Name = "dtp_date";
+            this.dtp_date.Size = new System.Drawing.Size(255, 26);
+            this.dtp_date.TabIndex = 83;
+            // 
             // FormOdeme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.grp_cari);
+            this.Controls.Add(this.dtp_date);
+            this.Controls.Add(this.dtp_vade);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.grp_pay);
             this.Controls.Add(this.groupBox2);
@@ -521,22 +437,12 @@
             this.Controls.Add(this.txt_unitprice);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cbx_para);
-            this.Controls.Add(this.txt_vademon);
-            this.Controls.Add(this.txt_vadeyear);
-            this.Controls.Add(this.lbl_ay1);
-            this.Controls.Add(this.lbl_ay2);
-            this.Controls.Add(this.txt_vadeday);
             this.Controls.Add(this.lbl_vadetarihi);
             this.Controls.Add(this.txt_pay);
             this.Controls.Add(this.lbl_pay);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.txt_month);
-            this.Controls.Add(this.txt_year);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_desc);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txt_gun);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_total);
             this.Controls.Add(this.label3);
@@ -561,22 +467,12 @@
 
         #endregion
         private System.Windows.Forms.ComboBox cbx_para;
-        private System.Windows.Forms.TextBox txt_vademon;
-        private System.Windows.Forms.TextBox txt_vadeyear;
-        private System.Windows.Forms.Label lbl_ay1;
-        private System.Windows.Forms.Label lbl_ay2;
-        private System.Windows.Forms.TextBox txt_vadeday;
         private System.Windows.Forms.Label lbl_vadetarihi;
         private System.Windows.Forms.TextBox txt_pay;
         private System.Windows.Forms.Label lbl_pay;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txt_month;
-        private System.Windows.Forms.TextBox txt_year;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox txt_desc;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_gun;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_total;
         private System.Windows.Forms.Label label3;
@@ -602,5 +498,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_carisearch;
         private System.Windows.Forms.TextBox txt_carisearch;
+        private System.Windows.Forms.DateTimePicker dtp_vade;
+        private System.Windows.Forms.DateTimePicker dtp_date;
     }
 }

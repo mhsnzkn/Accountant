@@ -22,7 +22,7 @@ namespace GelirGiderTablo.Data
                 using (var conn = new SQLiteConnection(Constr))
                 {
 
-                    
+
                     var cmd = new SQLiteCommand("INSERT INTO Cahar (CariKod,Aciklama,Borc,Alacak,Tarih,VadeTarihi,ParaCinsi,Tip,BirimFiyat,Adet,OdemeSekli,Crt_tst) values (@CariKod,@Aciklama,@Borc,@Alacak,@Tarih,@VadeTarihi,@ParaCinsi,@Tip,@BirimFiyat,@Adet,@OdemeSekli,@Crt_tst)", conn);
                     cmd.Parameters.AddWithValue("@CariKod", model.CariKod);
                     cmd.Parameters.AddWithValue("@Aciklama", model.Aciklama);
@@ -58,7 +58,7 @@ namespace GelirGiderTablo.Data
                 using (var conn = new SQLiteConnection(Constr))
                 {
 
-                    
+
                     var cmd = new SQLiteCommand("INSERT INTO Cariler (CariKod,Ad,Telefon,Adres,Ilce,Il,Email,Crt_tst) values (@CariKod,@Ad,@Telefon,@Adres,@Ilce,@Il,@Email,@Crt_tst)", conn);
                     cmd.Parameters.AddWithValue("@CariKod", model.CariKod);
                     cmd.Parameters.AddWithValue("@Ad", model.Ad);
@@ -90,7 +90,7 @@ namespace GelirGiderTablo.Data
                 using (var conn = new SQLiteConnection(Constr))
                 {
 
-                    
+
                     var cmd = new SQLiteCommand("UPDATE Cariler SET Ad=@Ad,Telefon=@Telefon,Adres=@Adres,Ilce=Ilce,Il=@Il,Email=@Email,Upt_tst=@Upt_tst WHERE CariKod=@CariKod", conn);
                     cmd.Parameters.AddWithValue("@CariKod", model.CariKod);
                     cmd.Parameters.AddWithValue("@Ad", model.Ad);
@@ -122,7 +122,7 @@ namespace GelirGiderTablo.Data
 
                 using (var conn = new SQLiteConnection(Constr))
                 {
-                    
+
                     var cmd = new SQLiteCommand(conn);
                     if (string.IsNullOrEmpty(str))
                     {
@@ -170,7 +170,7 @@ namespace GelirGiderTablo.Data
                 using (var conn = new SQLiteConnection(Constr))
                 {
 
-                    
+
                     var cmd = new SQLiteCommand(conn);
 
                     cmd.CommandText = "SELECT * FROM Cariler WHERE CariKod LIKE @src";
@@ -210,7 +210,7 @@ namespace GelirGiderTablo.Data
                 using (var conn = new SQLiteConnection(Constr))
                 {
 
-                    
+
                     var cmd = new SQLiteCommand(conn);
                     if (string.IsNullOrEmpty(carikod))
                     {
@@ -248,7 +248,7 @@ namespace GelirGiderTablo.Data
             catch (Exception ex)
             {
                 return null;
-                
+
             }
             return carihareketler;
         }
@@ -305,13 +305,8 @@ namespace GelirGiderTablo.Data
                 {
                     var cmd = new SQLiteCommand(conn);
 
-                        cmd.CommandText = "SELECT CariKod,SUM(Borc) as Borc,SUM(Alacak) as Alacak,ParaCinsi FROM Cahar WHERE VadeTarihi<=@vadetarihi GROUP BY CariKod,ParaCinsi";
-                        cmd.Parameters.AddWithValue("@vadetarihi", DateTime.Now);
-                    
-                        //cmd.CommandText = "SELECT CariKod,SUM(Borc) as Borc,SUM(Alacak) as Alacak,ParaCinsi FROM Cahar WHERE VadeTarihi>=@vadetarihi AND VadeTarihi<=@soondate GROUP BY CariKod,ParaCinsi";
-                        //cmd.Parameters.AddWithValue("@vadetarihi", DateTime.Now);
-                        //cmd.Parameters.AddWithValue("@soondate", enddate);
-
+                    cmd.CommandText = "SELECT CariKod,SUM(Borc) as Borc,SUM(Alacak) as Alacak,ParaCinsi FROM Cahar WHERE VadeTarihi<=@vadetarihi GROUP BY CariKod,ParaCinsi";
+                    cmd.Parameters.AddWithValue("@vadetarihi", DateTime.Now);
 
                     conn.Open();
                     var dr = cmd.ExecuteReader();

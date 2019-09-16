@@ -163,6 +163,7 @@
             // 
             // dgv_cahar
             // 
+            this.dgv_cahar.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgv_cahar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_cahar.Location = new System.Drawing.Point(12, 109);
             this.dgv_cahar.Name = "dgv_cahar";

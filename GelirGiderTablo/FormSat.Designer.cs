@@ -30,13 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSat));
             this.button2 = new System.Windows.Forms.Button();
-            this.txt_month = new System.Windows.Forms.TextBox();
-            this.txt_year = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txt_desc = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_gun = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_total = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,11 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_pay = new System.Windows.Forms.TextBox();
             this.lbl_pay = new System.Windows.Forms.Label();
-            this.txt_vademon = new System.Windows.Forms.TextBox();
-            this.txt_vadeyear = new System.Windows.Forms.TextBox();
-            this.lbl_ay1 = new System.Windows.Forms.Label();
-            this.lbl_ay2 = new System.Windows.Forms.Label();
-            this.txt_vadeday = new System.Windows.Forms.TextBox();
             this.lbl_vadetarihi = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_taksit = new System.Windows.Forms.Label();
@@ -68,6 +58,8 @@
             this.txt_carisearch = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.cbx_para = new System.Windows.Forms.ComboBox();
+            this.dtp_vade = new System.Windows.Forms.DateTimePicker();
+            this.dtp_date = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.grp_cari.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cariler)).BeginInit();
@@ -83,42 +75,6 @@
             this.button2.Text = "Geri Dön";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // txt_month
-            // 
-            this.txt_month.Location = new System.Drawing.Point(620, 73);
-            this.txt_month.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_month.Name = "txt_month";
-            this.txt_month.Size = new System.Drawing.Size(26, 26);
-            this.txt_month.TabIndex = 10;
-            // 
-            // txt_year
-            // 
-            this.txt_year.Location = new System.Drawing.Point(670, 73);
-            this.txt_year.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_year.Name = "txt_year";
-            this.txt_year.Size = new System.Drawing.Size(47, 26);
-            this.txt_year.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(604, 76);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 20);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "/";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(650, 76);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 20);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "/";
             // 
             // txt_desc
             // 
@@ -139,18 +95,10 @@
             this.label5.TabIndex = 26;
             this.label5.Text = "Açıklama";
             // 
-            // txt_gun
-            // 
-            this.txt_gun.Location = new System.Drawing.Point(575, 73);
-            this.txt_gun.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_gun.Name = "txt_gun";
-            this.txt_gun.Size = new System.Drawing.Size(26, 26);
-            this.txt_gun.TabIndex = 9;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(459, 76);
+            this.label4.Location = new System.Drawing.Point(480, 74);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 20);
@@ -226,55 +174,6 @@
             this.lbl_pay.Text = "Alınan Tutar";
             this.lbl_pay.Visible = false;
             // 
-            // txt_vademon
-            // 
-            this.txt_vademon.Location = new System.Drawing.Point(207, 109);
-            this.txt_vademon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_vademon.Name = "txt_vademon";
-            this.txt_vademon.Size = new System.Drawing.Size(26, 26);
-            this.txt_vademon.TabIndex = 2;
-            this.txt_vademon.Visible = false;
-            // 
-            // txt_vadeyear
-            // 
-            this.txt_vadeyear.Location = new System.Drawing.Point(258, 109);
-            this.txt_vadeyear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_vadeyear.Name = "txt_vadeyear";
-            this.txt_vadeyear.Size = new System.Drawing.Size(47, 26);
-            this.txt_vadeyear.TabIndex = 3;
-            this.txt_vadeyear.Visible = false;
-            // 
-            // lbl_ay1
-            // 
-            this.lbl_ay1.AutoSize = true;
-            this.lbl_ay1.Location = new System.Drawing.Point(191, 112);
-            this.lbl_ay1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_ay1.Name = "lbl_ay1";
-            this.lbl_ay1.Size = new System.Drawing.Size(13, 20);
-            this.lbl_ay1.TabIndex = 39;
-            this.lbl_ay1.Text = "/";
-            this.lbl_ay1.Visible = false;
-            // 
-            // lbl_ay2
-            // 
-            this.lbl_ay2.AutoSize = true;
-            this.lbl_ay2.Location = new System.Drawing.Point(237, 112);
-            this.lbl_ay2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_ay2.Name = "lbl_ay2";
-            this.lbl_ay2.Size = new System.Drawing.Size(13, 20);
-            this.lbl_ay2.TabIndex = 38;
-            this.lbl_ay2.Text = "/";
-            this.lbl_ay2.Visible = false;
-            // 
-            // txt_vadeday
-            // 
-            this.txt_vadeday.Location = new System.Drawing.Point(162, 109);
-            this.txt_vadeday.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_vadeday.Name = "txt_vadeday";
-            this.txt_vadeday.Size = new System.Drawing.Size(26, 26);
-            this.txt_vadeday.TabIndex = 1;
-            this.txt_vadeday.Visible = false;
-            // 
             // lbl_vadetarihi
             // 
             this.lbl_vadetarihi.AutoSize = true;
@@ -293,7 +192,7 @@
             this.groupBox1.Controls.Add(this.rdo_taksit);
             this.groupBox1.Controls.Add(this.rdo_vadeli);
             this.groupBox1.Controls.Add(this.rdo_nakit);
-            this.groupBox1.Location = new System.Drawing.Point(463, 142);
+            this.groupBox1.Location = new System.Drawing.Point(484, 142);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 152);
             this.groupBox1.TabIndex = 42;
@@ -404,7 +303,7 @@
             this.grp_cari.Controls.Add(this.label2);
             this.grp_cari.Controls.Add(this.btn_carisearch);
             this.grp_cari.Controls.Add(this.txt_carisearch);
-            this.grp_cari.Location = new System.Drawing.Point(413, 70);
+            this.grp_cari.Location = new System.Drawing.Point(411, 69);
             this.grp_cari.Name = "grp_cari";
             this.grp_cari.Size = new System.Drawing.Size(715, 360);
             this.grp_cari.TabIndex = 83;
@@ -473,35 +372,42 @@
             this.cbx_para.Size = new System.Drawing.Size(75, 28);
             this.cbx_para.TabIndex = 84;
             // 
+            // dtp_vade
+            // 
+            this.dtp_vade.Location = new System.Drawing.Point(161, 110);
+            this.dtp_vade.Name = "dtp_vade";
+            this.dtp_vade.Size = new System.Drawing.Size(200, 26);
+            this.dtp_vade.TabIndex = 85;
+            this.dtp_vade.Visible = false;
+            // 
+            // dtp_date
+            // 
+            this.dtp_date.Location = new System.Drawing.Point(547, 71);
+            this.dtp_date.Name = "dtp_date";
+            this.dtp_date.Size = new System.Drawing.Size(248, 26);
+            this.dtp_date.TabIndex = 86;
+            // 
             // FormSat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
-            this.Controls.Add(this.cbx_para);
             this.Controls.Add(this.grp_cari);
+            this.Controls.Add(this.dtp_date);
+            this.Controls.Add(this.dtp_vade);
+            this.Controls.Add(this.cbx_para);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.txt_qtt);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txt_unitprice);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txt_vademon);
-            this.Controls.Add(this.txt_vadeyear);
-            this.Controls.Add(this.lbl_ay1);
-            this.Controls.Add(this.lbl_ay2);
-            this.Controls.Add(this.txt_vadeday);
             this.Controls.Add(this.lbl_vadetarihi);
             this.Controls.Add(this.txt_pay);
             this.Controls.Add(this.lbl_pay);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.txt_month);
-            this.Controls.Add(this.txt_year);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_desc);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txt_gun);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_total);
             this.Controls.Add(this.label3);
@@ -526,13 +432,8 @@
         #endregion
 
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txt_month;
-        private System.Windows.Forms.TextBox txt_year;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox txt_desc;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_gun;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_total;
         private System.Windows.Forms.Label label3;
@@ -541,11 +442,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_pay;
         private System.Windows.Forms.Label lbl_pay;
-        private System.Windows.Forms.TextBox txt_vademon;
-        private System.Windows.Forms.TextBox txt_vadeyear;
-        private System.Windows.Forms.Label lbl_ay1;
-        private System.Windows.Forms.Label lbl_ay2;
-        private System.Windows.Forms.TextBox txt_vadeday;
         private System.Windows.Forms.Label lbl_vadetarihi;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdo_vadeli;
@@ -564,5 +460,7 @@
         private System.Windows.Forms.TextBox txt_carisearch;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox cbx_para;
+        private System.Windows.Forms.DateTimePicker dtp_vade;
+        private System.Windows.Forms.DateTimePicker dtp_date;
     }
 }
