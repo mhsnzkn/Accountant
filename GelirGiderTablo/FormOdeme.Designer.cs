@@ -346,9 +346,9 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.Location = new System.Drawing.Point(350, 68);
+            this.button3.Location = new System.Drawing.Point(340, 68);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 26);
+            this.button3.Size = new System.Drawing.Size(85, 26);
             this.button3.TabIndex = 80;
             this.button3.Text = "Bul";
             this.button3.UseVisualStyleBackColor = true;
@@ -410,7 +410,7 @@
             // 
             this.dtp_vade.Location = new System.Drawing.Point(185, 107);
             this.dtp_vade.Name = "dtp_vade";
-            this.dtp_vade.Size = new System.Drawing.Size(200, 26);
+            this.dtp_vade.Size = new System.Drawing.Size(240, 26);
             this.dtp_vade.TabIndex = 82;
             this.dtp_vade.Visible = false;
             // 
