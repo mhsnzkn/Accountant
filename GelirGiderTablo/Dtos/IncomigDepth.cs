@@ -11,5 +11,6 @@ namespace GelirGiderTablo.Dtos
         public string CariKod { get; set; }
         public decimal Tutar { get; set; }
         public DateTime VadeTarihi { get; set; }
+        public string OdemeSekli { get; set; }
     }
 }

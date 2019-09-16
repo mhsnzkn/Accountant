@@ -13,6 +13,5 @@ namespace GelirGiderTablo.Dtos
         public decimal Alacak { get; set; }
         public decimal Bakiye => Borc - Alacak;
         public string ParaCinsi { get; set; }
-        public DateTime VadeTarihi { get; set; }
     }
 }

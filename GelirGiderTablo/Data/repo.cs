@@ -296,18 +296,22 @@ namespace GelirGiderTablo.Data
             return carihareketler;
         }
 
-        public static List<CariBorcAlacak> GetCaharBorcAlacak(DateTime? enddate)
+        public static List<CariBorcAlacak> GetCaharVadesiGecmisBorcAlacak()
         {
             var cariborclist = new List<CariBorcAlacak>();
             try
             {
-                var date = enddate ?? DateTime.Now;
                 using (var conn = new SQLiteConnection(Constr))
                 {
                     var cmd = new SQLiteCommand(conn);
 
-                    cmd.CommandText = "SELECT CariKod,SUM(Borc) as Borc,SUM(Alacak) as Alacak,ParaCinsi,MAX(VadeTarihi) as VadeTarihi FROM Cahar WHERE VadeTarihi<=@vadetarihi GROUP BY CariKod,ParaCinsi";
-                    cmd.Parameters.AddWithValue("@vadetarihi", date);
+                        cmd.CommandText = "SELECT CariKod,SUM(Borc) as Borc,SUM(Alacak) as Alacak,ParaCinsi FROM Cahar WHERE VadeTarihi<=@vadetarihi GROUP BY CariKod,ParaCinsi";
+                        cmd.Parameters.AddWithValue("@vadetarihi", DateTime.Now);
+                    
+                        //cmd.CommandText = "SELECT CariKod,SUM(Borc) as Borc,SUM(Alacak) as Alacak,ParaCinsi FROM Cahar WHERE VadeTarihi>=@vadetarihi AND VadeTarihi<=@soondate GROUP BY CariKod,ParaCinsi";
+                        //cmd.Parameters.AddWithValue("@vadetarihi", DateTime.Now);
+                        //cmd.Parameters.AddWithValue("@soondate", enddate);
+
 
                     conn.Open();
                     var dr = cmd.ExecuteReader();
@@ -315,10 +319,50 @@ namespace GelirGiderTablo.Data
                     {
                         var cahar = new CariBorcAlacak();
                         cahar.CariKod = dr.GetString(dr.GetOrdinal("CariKod"));
-                        cahar.VadeTarihi = dr.GetDateTime(dr.GetOrdinal("VadeTarihi"));
                         cahar.Borc = dr.GetDecimal(dr.GetOrdinal("Borc"));
                         cahar.Alacak = dr.GetDecimal(dr.GetOrdinal("Alacak"));
                         cahar.ParaCinsi = dr.GetString(dr.GetOrdinal("ParaCinsi"));
+                        cariborclist.Add(cahar);
+                    }
+                    dr.Close();
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+
+            }
+            return cariborclist;
+        }
+
+        public static List<Cahar> GetCaharGelecekBorcAlacak(DateTime? enddate)
+        {
+            var cariborclist = new List<Cahar>();
+            try
+            {
+                using (var conn = new SQLiteConnection(Constr))
+                {
+                    var cmd = new SQLiteCommand(conn);
+
+                    cmd.CommandText = "SELECT CariKod,Borc,Alacak,ParaCinsi,VadeTarihi,OdemeSekli FROM Cahar WHERE VadeTarihi>=@vadetarihi AND VadeTarihi<=@soondate";
+                    cmd.Parameters.AddWithValue("@vadetarihi", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@soondate", enddate);
+
+
+                    conn.Open();
+                    var dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        var cahar = new Cahar();
+                        cahar.CariKod = dr.GetString(dr.GetOrdinal("CariKod"));
+                        cahar.Borc = dr.GetDecimal(dr.GetOrdinal("Borc"));
+                        cahar.Alacak = dr.GetDecimal(dr.GetOrdinal("Alacak"));
+                        cahar.ParaCinsi = dr.GetString(dr.GetOrdinal("ParaCinsi"));
+                        cahar.VadeTarihi = dr.GetDateTime(dr.GetOrdinal("VadeTarihi"));
+                        cahar.OdemeSekli = dr.GetString(dr.GetOrdinal("OdemeSekli"));
                         cariborclist.Add(cahar);
                     }
                     dr.Close();

@@ -45,35 +45,37 @@ namespace GelirGiderTablo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var cahars = repo.GetCaharBorcAlacak(null);
+            var cahars = repo.GetCaharVadesiGecmisBorcAlacak();
 
             dgv_borclucariler.DataSource = cahars.Where(a => a.Bakiye > 0).OrderByDescending(s=>s.Bakiye).ToList();
 
             dgv_alacaklicariler.DataSource = cahars.Where(a => a.Bakiye < 0).OrderBy(s => s.Bakiye).ToList();
 
             var today = DateTime.Now;
-            var soon = today.AddDays(10);
+            var soon = today.AddDays(30);
 
-            var sooncahars = repo.GetCaharBorcAlacak(soon);
+            var sooncahars = repo.GetCaharGelecekBorcAlacak(soon);
             var yalacak = from c in sooncahars
-                          where c.Bakiye>0
+                          where c.Borc>0
                           select new IncomigDepth
                           {
                               CariKod = c.CariKod,
                               Tutar = c.Borc,
-                              VadeTarihi = c.VadeTarihi
+                              VadeTarihi=c.VadeTarihi,
+                              OdemeSekli=c.OdemeSekli
                           };
 
             dgv_yalacak.DataSource = yalacak.ToList();
 
             var yborclar = from c in sooncahars
-                          where c.Bakiye < 0
-                          select new IncomigDepth
+                           where c.Alacak > 0
+                           select new IncomigDepth
                           {
                               CariKod = c.CariKod,
                               Tutar = c.Alacak,
-                              VadeTarihi = c.VadeTarihi
-                          };
+                              VadeTarihi = c.VadeTarihi,
+                               OdemeSekli = c.OdemeSekli
+                           };
 
             dgv_yborclar.DataSource = yborclar.ToList();
 
