@@ -89,7 +89,7 @@ namespace GelirGiderTablo
                             insertmodel.OdemeSekli = "NAKIT";
                         }
 
-                        if (repo.GelirAdd(insertmodel))
+                        if (repo.CaharAdd(insertmodel))
                         {
                             MessageBox.Show("Başarıyla Eklendi");
                             txt_desc.Clear();
@@ -133,7 +133,7 @@ namespace GelirGiderTablo
                                     insertmodel.VadeTarihi = curdate;
                                     curdate = curdate.AddMonths(1);
 
-                                    result = repo.GelirAdd(insertmodel);
+                                    result = repo.CaharAdd(insertmodel);
 
                                 }
                                 if (result)

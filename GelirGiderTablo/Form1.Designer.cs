@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tahsilatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,6 +86,7 @@
             // cariİşlemleriToolStripMenuItem
             // 
             this.cariİşlemleriToolStripMenuItem.Name = "cariİşlemleriToolStripMenuItem";
+            this.cariİşlemleriToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cariİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.cariİşlemleriToolStripMenuItem.Text = "Cari İşlemleri";
             this.cariİşlemleriToolStripMenuItem.Click += new System.EventHandler(this.Button1_Click);
@@ -180,6 +182,7 @@
             this.Controls.Add(this.dgv_borclucariler);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";

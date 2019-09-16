@@ -14,7 +14,7 @@ namespace GelirGiderTablo.Data
     {
         private static string Constr = ConfigurationManager.ConnectionStrings["GelirGider"].ConnectionString;
 
-        public static bool GelirAdd(Cahar model)
+        public static bool CaharAdd(Cahar model)
         {
             var result = false;
             try

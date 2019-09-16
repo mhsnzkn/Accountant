@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCahar));
             this.txt_carikod = new System.Windows.Forms.TextBox();
             this.lbl_carikod = new System.Windows.Forms.Label();
             this.btn_ara = new System.Windows.Forms.Button();
@@ -483,6 +484,7 @@
             this.Controls.Add(this.txt_carikod);
             this.Controls.Add(this.dgv_cahar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormCahar";
             this.Text = "Cari Hareketler";
