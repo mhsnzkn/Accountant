@@ -100,6 +100,12 @@
   <ItemGroup>
     <Compile Include="Dtos\CariBorcAlacak.cs" />
     <Compile Include="Dtos\IncomigDepth.cs" />
+    <Compile Include="FormUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdate.Designer.cs">
+      <DependentUpon>FormUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Cari.cs" />
     <Compile Include="Data\repo.cs" />
     <Compile Include="FormMain.cs">
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCahar.resx">
       <DependentUpon>FormCahar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdate.resx">
+      <DependentUpon>FormUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

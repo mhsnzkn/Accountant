@@ -19,12 +19,6 @@ namespace GelirGiderTablo
             InitializeComponent();
         }
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            var formVsat = new FormSat();
-            formVsat.Show();
-        }
-
         private void Button3_Click(object sender, EventArgs e)
         {
             var formRapor = new FormCahar();
@@ -79,6 +73,24 @@ namespace GelirGiderTablo
 
             dgv_yborclar.DataSource = yborclar.ToList();
 
+        }
+
+        private void SatışGirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formVsat = new FormSat();
+            formVsat.Show();
+        }
+
+        private void DüzenleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new FormUpdate("SATIS");
+            form.Show();
+        }
+
+        private void DüzeltToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new FormUpdate("ODEME");
+            form.Show();
         }
     }
 }

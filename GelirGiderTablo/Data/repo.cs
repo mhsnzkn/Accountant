@@ -14,7 +14,7 @@ namespace GelirGiderTablo.Data
     {
         private static string Constr = ConfigurationManager.ConnectionStrings["GelirGider"].ConnectionString;
 
-        public static bool CaharAdd(Cahar model)
+        public static bool AddCahar(Cahar model)
         {
             var result = false;
             try
@@ -50,7 +50,7 @@ namespace GelirGiderTablo.Data
             return result;
         }
 
-        public static bool CariAdd(Cari model)
+        public static bool AddCari(Cari model)
         {
             var result = false;
             try
@@ -82,7 +82,7 @@ namespace GelirGiderTablo.Data
             return result;
         }
 
-        public static bool CariUpdate(Cari model)
+        public static bool UpdateCari(Cari model)
         {
             var result = false;
             try
@@ -269,6 +269,53 @@ namespace GelirGiderTablo.Data
                     while (dr.Read())
                     {
                         var cahar = new Cahar();
+                        cahar.Id = dr.GetInt32(dr.GetOrdinal("Id"));
+                        cahar.CariKod = dr.GetString(dr.GetOrdinal("CariKod"));
+                        cahar.Tarih = dr.GetDateTime(dr.GetOrdinal("Tarih"));
+                        cahar.VadeTarihi = dr.GetDateTime(dr.GetOrdinal("VadeTarihi"));
+                        cahar.Borc = dr.GetDecimal(dr.GetOrdinal("Borc"));
+                        cahar.Alacak = dr.GetDecimal(dr.GetOrdinal("Alacak"));
+                        cahar.Aciklama = dr.GetString(dr.GetOrdinal("Aciklama"));
+                        cahar.ParaCinsi = dr.GetString(dr.GetOrdinal("ParaCinsi"));
+                        cahar.Tip = dr.GetString(dr.GetOrdinal("Tip"));
+                        cahar.BirimFiyat = dr.GetDecimal(dr.GetOrdinal("BirimFiyat"));
+                        cahar.Adet = dr.GetDecimal(dr.GetOrdinal("Adet"));
+                        cahar.OdemeSekli = dr.GetString(dr.GetOrdinal("OdemeSekli"));
+                        carihareketler.Add(cahar);
+                    }
+                    dr.Close();
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+
+            }
+            return carihareketler;
+        }
+
+        public static List<Cahar> GetCaharbyTip(string tip)
+        {
+            var carihareketler = new List<Cahar>();
+            try
+            {
+                using (var conn = new SQLiteConnection(Constr))
+                {
+                    var cmd = new SQLiteCommand(conn);
+                    if(tip=="SATIS")
+                        cmd.CommandText = "SELECT * FROM Cahar WHERE Tip='SATIS'";
+                    else
+                        cmd.CommandText = "SELECT * FROM Cahar WHERE Tip!='SATIS'";
+
+                    conn.Open();
+                    var dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        var cahar = new Cahar();
+                        cahar.Id = dr.GetInt32(dr.GetOrdinal("Id"));
                         cahar.CariKod = dr.GetString(dr.GetOrdinal("CariKod"));
                         cahar.Tarih = dr.GetDateTime(dr.GetOrdinal("Tarih"));
                         cahar.VadeTarihi = dr.GetDateTime(dr.GetOrdinal("VadeTarihi"));
@@ -372,6 +419,48 @@ namespace GelirGiderTablo.Data
 
             }
             return cariborclist;
+        }
+
+        public static bool UpdateCahar(Cahar model)
+        {
+            bool result = false;
+
+            try
+            {
+                using (var conn = new SQLiteConnection(Constr))
+                {
+                    var cmd = new SQLiteCommand(conn);
+
+                    cmd.CommandText = "UPDATE Cahar SET CariKod=@CariKod, Borc=@Borc, Alacak=@Alacak, Tarih=@Tarih, VadeTarihi=@VadeTarihi, Aciklama=@Aciklama, Tip=@Tip, ParaCinsi=@ParaCinsi, BirimFiyat=@BirimFiyat, Adet=@Adet, OdemeSekli=@OdemeSekli WHERE Id=@id";
+                    cmd.Parameters.AddWithValue("@id", model.Id);
+                    cmd.Parameters.AddWithValue("@CariKod", model.CariKod);
+                    cmd.Parameters.AddWithValue("@Borc", model.Borc);
+                    cmd.Parameters.AddWithValue("@Alacak", model.Alacak);
+                    cmd.Parameters.AddWithValue("@Tarih", model.Tarih);
+                    cmd.Parameters.AddWithValue("@VadeTarihi", model.VadeTarihi);
+                    cmd.Parameters.AddWithValue("@Aciklama", model.Aciklama);
+                    cmd.Parameters.AddWithValue("@Tip", model.Tip);
+                    cmd.Parameters.AddWithValue("@ParaCinsi", model.ParaCinsi);
+                    cmd.Parameters.AddWithValue("@BirimFiyat", model.BirimFiyat);
+                    cmd.Parameters.AddWithValue("@Adet", model.Adet);
+                    cmd.Parameters.AddWithValue("@OdemeSekli", model.OdemeSekli);
+
+
+                    conn.Open();
+                    var res = cmd.ExecuteNonQuery();
+                    result = res > 0 ? true : false;
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+
+            }
+
+
+            return result;
         }
     }
 }

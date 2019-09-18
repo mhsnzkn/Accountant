@@ -9,6 +9,7 @@ namespace GelirGiderTablo
 {
     public class Cahar
     {
+        public int Id { get; set; }
         [Required]
         public string CariKod { get; set; }
         [Required]

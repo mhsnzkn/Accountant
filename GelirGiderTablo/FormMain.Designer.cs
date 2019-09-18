@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.satışGirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tahsilatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ödemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cariİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +44,8 @@
             this.dgv_yalacak = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.dgv_yborclar = new System.Windows.Forms.DataGridView();
+            this.ödemeGirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.düzeltToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_borclucariler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_alacaklicariler)).BeginInit();
@@ -51,6 +55,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Gray;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.tahsilatToolStripMenuItem,
@@ -64,20 +69,43 @@
             // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.satışGirToolStripMenuItem,
+            this.düzenleToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
-            this.toolStripMenuItem1.Text = "Satış Gir";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.Button2_Click);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
+            this.toolStripMenuItem1.Text = "Satış";
+            // 
+            // satışGirToolStripMenuItem
+            // 
+            this.satışGirToolStripMenuItem.Name = "satışGirToolStripMenuItem";
+            this.satışGirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.satışGirToolStripMenuItem.Text = "Satış Gir";
+            this.satışGirToolStripMenuItem.Click += new System.EventHandler(this.SatışGirToolStripMenuItem_Click);
+            // 
+            // düzenleToolStripMenuItem
+            // 
+            this.düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
+            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.düzenleToolStripMenuItem.Text = "Düzelt";
+            this.düzenleToolStripMenuItem.Click += new System.EventHandler(this.DüzenleToolStripMenuItem_Click);
             // 
             // tahsilatToolStripMenuItem
             // 
+            this.tahsilatToolStripMenuItem.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tahsilatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ödemeGirToolStripMenuItem,
+            this.düzeltToolStripMenuItem});
+            this.tahsilatToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.tahsilatToolStripMenuItem.Name = "tahsilatToolStripMenuItem";
             this.tahsilatToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.tahsilatToolStripMenuItem.Text = "Ödeme Gir";
-            this.tahsilatToolStripMenuItem.Click += new System.EventHandler(this.Button4_Click);
             // 
             // ödemeToolStripMenuItem
             // 
+            this.ödemeToolStripMenuItem.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ödemeToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.ödemeToolStripMenuItem.Name = "ödemeToolStripMenuItem";
             this.ödemeToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.ödemeToolStripMenuItem.Text = "Cari Hareketler";
@@ -85,6 +113,8 @@
             // 
             // cariİşlemleriToolStripMenuItem
             // 
+            this.cariİşlemleriToolStripMenuItem.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cariİşlemleriToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.cariİşlemleriToolStripMenuItem.Name = "cariİşlemleriToolStripMenuItem";
             this.cariİşlemleriToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cariİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
@@ -171,7 +201,21 @@
             this.dgv_yborclar.Size = new System.Drawing.Size(529, 225);
             this.dgv_yborclar.TabIndex = 11;
             // 
-            // Form1
+            // ödemeGirToolStripMenuItem
+            // 
+            this.ödemeGirToolStripMenuItem.Name = "ödemeGirToolStripMenuItem";
+            this.ödemeGirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ödemeGirToolStripMenuItem.Text = "Ödeme Gir";
+            this.ödemeGirToolStripMenuItem.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // düzeltToolStripMenuItem
+            // 
+            this.düzeltToolStripMenuItem.Name = "düzeltToolStripMenuItem";
+            this.düzeltToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.düzeltToolStripMenuItem.Text = "Düzelt";
+            this.düzeltToolStripMenuItem.Click += new System.EventHandler(this.DüzeltToolStripMenuItem_Click);
+            // 
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,7 +233,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.Text = "Gelir-Gider";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -217,6 +261,10 @@
         private System.Windows.Forms.DataGridView dgv_yalacak;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgv_yborclar;
+        private System.Windows.Forms.ToolStripMenuItem satışGirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem düzenleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ödemeGirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem düzeltToolStripMenuItem;
     }
 }
 

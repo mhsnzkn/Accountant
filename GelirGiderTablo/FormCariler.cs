@@ -38,7 +38,7 @@ namespace GelirGiderTablo
             var cariExist = repo.GetCari_Kod(txt_carikod.Text);
             if (cariExist.CariKod == null)
             {
-                if (repo.CariAdd(cari))
+                if (repo.AddCari(cari))
                 {
                     MessageBox.Show("Cari Eklendi!");
                     grp_ekle.Visible = false;
@@ -122,7 +122,7 @@ namespace GelirGiderTablo
                     Ilce = txt_ilce_up.Text,
                     Telefon = txt_tel_up.Text
                 };
-                if (repo.CariUpdate(newcari))
+                if (repo.UpdateCari(newcari))
                 {
                     MessageBox.Show("Cari Güncellendi");
                     txt_adres_up.Clear();
