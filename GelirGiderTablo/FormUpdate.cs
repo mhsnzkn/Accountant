@@ -33,21 +33,33 @@ namespace GelirGiderTablo
 
         private void Dgv_cahar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgv_cahar.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            try
             {
-                dgv_cahar.CurrentRow.Selected = true;
-                txt_carikod.Text = dgv_cahar.Rows[e.RowIndex].Cells["CariKod"].FormattedValue.ToString();
-                dtp_tarih.Value = Convert.ToDateTime(dgv_cahar.Rows[e.RowIndex].Cells["Tarih"].FormattedValue);
-                dtp_vadetarihi.Value = Convert.ToDateTime(dgv_cahar.Rows[e.RowIndex].Cells["VadeTarihi"].FormattedValue);
-                txt_borc.Text = dgv_cahar.Rows[e.RowIndex].Cells["Borc"].FormattedValue.ToString();
-                txt_alacak.Text = dgv_cahar.Rows[e.RowIndex].Cells["Alacak"].FormattedValue.ToString();
-                cbx_paracinsi.Text= dgv_cahar.Rows[e.RowIndex].Cells["ParaCinsi"].FormattedValue.ToString();
-                txt_odemesekli.Text = dgv_cahar.Rows[e.RowIndex].Cells["OdemeSekli"].FormattedValue.ToString();
-                txt_birimfiyat.Text = dgv_cahar.Rows[e.RowIndex].Cells["BirimFiyat"].FormattedValue.ToString();
-                txt_adet.Text = dgv_cahar.Rows[e.RowIndex].Cells["Adet"].FormattedValue.ToString();
-                txt_aciklama.Text = dgv_cahar.Rows[e.RowIndex].Cells["Aciklama"].FormattedValue.ToString();
-                lbl_id.Text= dgv_cahar.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString();
-                lbl_tip.Text= dgv_cahar.Rows[e.RowIndex].Cells["Tip"].FormattedValue.ToString();
+                if (dgv_cahar.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    grp_upt.Visible = true;
+                    dgv_cahar.CurrentRow.Selected = true;
+                    txt_carikod.Text = dgv_cahar.Rows[e.RowIndex].Cells["CariKod"].FormattedValue.ToString();
+                    dtp_tarih.Value = Convert.ToDateTime(dgv_cahar.Rows[e.RowIndex].Cells["Tarih"].FormattedValue);
+                    dtp_vadetarihi.Value = Convert.ToDateTime(dgv_cahar.Rows[e.RowIndex].Cells["VadeTarihi"].FormattedValue);
+                    txt_borc.Text = dgv_cahar.Rows[e.RowIndex].Cells["Borc"].FormattedValue.ToString();
+                    txt_alacak.Text = dgv_cahar.Rows[e.RowIndex].Cells["Alacak"].FormattedValue.ToString();
+                    cbx_paracinsi.Text = dgv_cahar.Rows[e.RowIndex].Cells["ParaCinsi"].FormattedValue.ToString();
+                    txt_odemesekli.Text = dgv_cahar.Rows[e.RowIndex].Cells["OdemeSekli"].FormattedValue.ToString();
+                    txt_birimfiyat.Text = dgv_cahar.Rows[e.RowIndex].Cells["BirimFiyat"].FormattedValue.ToString();
+                    txt_adet.Text = dgv_cahar.Rows[e.RowIndex].Cells["Adet"].FormattedValue.ToString();
+                    txt_aciklama.Text = dgv_cahar.Rows[e.RowIndex].Cells["Aciklama"].FormattedValue.ToString();
+                    lbl_id.Text = dgv_cahar.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString();
+                    lbl_tip.Text = dgv_cahar.Rows[e.RowIndex].Cells["Tip"].FormattedValue.ToString();
+                }
+                else
+                {
+                    grp_upt.Visible = false;
+                }
+            }
+            catch (Exception)
+            {
+                grp_upt.Visible = false;
             }
         }
 

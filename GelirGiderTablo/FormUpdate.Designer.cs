@@ -52,11 +52,11 @@
             this.dtp_vadetarihi = new System.Windows.Forms.DateTimePicker();
             this.cbx_paracinsi = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grp_upt = new System.Windows.Forms.GroupBox();
             this.lbl_tip = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cahar)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.grp_upt.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_cahar
@@ -266,37 +266,38 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
-            // groupBox1
+            // grp_upt
             // 
-            this.groupBox1.Controls.Add(this.lbl_tip);
-            this.groupBox1.Controls.Add(this.lbl_id);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cbx_paracinsi);
-            this.groupBox1.Controls.Add(this.txt_carikod);
-            this.groupBox1.Controls.Add(this.dtp_vadetarihi);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dtp_tarih);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txt_aciklama);
-            this.groupBox1.Controls.Add(this.txt_borc);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txt_alacak);
-            this.groupBox1.Controls.Add(this.txt_adet);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.txt_odemesekli);
-            this.groupBox1.Controls.Add(this.txt_birimfiyat);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Location = new System.Drawing.Point(16, 374);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(971, 306);
-            this.groupBox1.TabIndex = 50;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Düzenle";
+            this.grp_upt.Controls.Add(this.lbl_tip);
+            this.grp_upt.Controls.Add(this.lbl_id);
+            this.grp_upt.Controls.Add(this.label8);
+            this.grp_upt.Controls.Add(this.button1);
+            this.grp_upt.Controls.Add(this.label1);
+            this.grp_upt.Controls.Add(this.cbx_paracinsi);
+            this.grp_upt.Controls.Add(this.txt_carikod);
+            this.grp_upt.Controls.Add(this.dtp_vadetarihi);
+            this.grp_upt.Controls.Add(this.label2);
+            this.grp_upt.Controls.Add(this.dtp_tarih);
+            this.grp_upt.Controls.Add(this.label4);
+            this.grp_upt.Controls.Add(this.txt_aciklama);
+            this.grp_upt.Controls.Add(this.txt_borc);
+            this.grp_upt.Controls.Add(this.label13);
+            this.grp_upt.Controls.Add(this.label7);
+            this.grp_upt.Controls.Add(this.label10);
+            this.grp_upt.Controls.Add(this.txt_alacak);
+            this.grp_upt.Controls.Add(this.txt_adet);
+            this.grp_upt.Controls.Add(this.label6);
+            this.grp_upt.Controls.Add(this.label11);
+            this.grp_upt.Controls.Add(this.txt_odemesekli);
+            this.grp_upt.Controls.Add(this.txt_birimfiyat);
+            this.grp_upt.Controls.Add(this.label12);
+            this.grp_upt.Location = new System.Drawing.Point(12, 374);
+            this.grp_upt.Name = "grp_upt";
+            this.grp_upt.Size = new System.Drawing.Size(971, 306);
+            this.grp_upt.TabIndex = 50;
+            this.grp_upt.TabStop = false;
+            this.grp_upt.Text = "Düzenle";
+            this.grp_upt.Visible = false;
             // 
             // lbl_tip
             // 
@@ -321,7 +322,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grp_upt);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.dgv_cahar);
@@ -330,8 +331,8 @@
             this.Name = "FormUpdate";
             this.Text = "Düzenle";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cahar)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grp_upt.ResumeLayout(false);
+            this.grp_upt.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -362,7 +363,7 @@
         private System.Windows.Forms.DateTimePicker dtp_vadetarihi;
         private System.Windows.Forms.ComboBox cbx_paracinsi;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grp_upt;
         private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.Label lbl_tip;
     }
