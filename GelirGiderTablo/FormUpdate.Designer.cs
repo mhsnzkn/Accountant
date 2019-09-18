@@ -53,8 +53,8 @@
             this.cbx_paracinsi = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbl_id = new System.Windows.Forms.Label();
             this.lbl_tip = new System.Windows.Forms.Label();
+            this.lbl_id = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cahar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -298,14 +298,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Düzenle";
             // 
-            // lbl_id
-            // 
-            this.lbl_id.AutoSize = true;
-            this.lbl_id.Location = new System.Drawing.Point(101, 242);
-            this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(0, 20);
-            this.lbl_id.TabIndex = 50;
-            // 
             // lbl_tip
             // 
             this.lbl_tip.AutoSize = true;
@@ -313,6 +305,16 @@
             this.lbl_tip.Name = "lbl_tip";
             this.lbl_tip.Size = new System.Drawing.Size(0, 20);
             this.lbl_tip.TabIndex = 51;
+            this.lbl_tip.Visible = false;
+            // 
+            // lbl_id
+            // 
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Location = new System.Drawing.Point(101, 242);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(0, 20);
+            this.lbl_id.TabIndex = 50;
+            this.lbl_id.Visible = false;
             // 
             // FormUpdate
             // 
