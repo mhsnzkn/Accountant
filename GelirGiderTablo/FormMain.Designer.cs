@@ -34,6 +34,8 @@
             this.satışGirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tahsilatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ödemeGirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.düzeltToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ödemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cariİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_borclucariler = new System.Windows.Forms.DataGridView();
@@ -44,8 +46,8 @@
             this.dgv_yalacak = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.dgv_yborclar = new System.Windows.Forms.DataGridView();
-            this.ödemeGirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.düzeltToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_borclucariler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_alacaklicariler)).BeginInit();
@@ -80,14 +82,14 @@
             // satışGirToolStripMenuItem
             // 
             this.satışGirToolStripMenuItem.Name = "satışGirToolStripMenuItem";
-            this.satışGirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.satışGirToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.satışGirToolStripMenuItem.Text = "Satış Gir";
             this.satışGirToolStripMenuItem.Click += new System.EventHandler(this.SatışGirToolStripMenuItem_Click);
             // 
             // düzenleToolStripMenuItem
             // 
             this.düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
-            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.düzenleToolStripMenuItem.Text = "Düzelt";
             this.düzenleToolStripMenuItem.Click += new System.EventHandler(this.DüzenleToolStripMenuItem_Click);
             // 
@@ -101,6 +103,20 @@
             this.tahsilatToolStripMenuItem.Name = "tahsilatToolStripMenuItem";
             this.tahsilatToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.tahsilatToolStripMenuItem.Text = "Ödeme Gir";
+            // 
+            // ödemeGirToolStripMenuItem
+            // 
+            this.ödemeGirToolStripMenuItem.Name = "ödemeGirToolStripMenuItem";
+            this.ödemeGirToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.ödemeGirToolStripMenuItem.Text = "Ödeme Gir";
+            this.ödemeGirToolStripMenuItem.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // düzeltToolStripMenuItem
+            // 
+            this.düzeltToolStripMenuItem.Name = "düzeltToolStripMenuItem";
+            this.düzeltToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.düzeltToolStripMenuItem.Text = "Düzelt";
+            this.düzeltToolStripMenuItem.Click += new System.EventHandler(this.DüzeltToolStripMenuItem_Click);
             // 
             // ödemeToolStripMenuItem
             // 
@@ -201,25 +217,33 @@
             this.dgv_yborclar.Size = new System.Drawing.Size(529, 225);
             this.dgv_yborclar.TabIndex = 11;
             // 
-            // ödemeGirToolStripMenuItem
+            // label5
             // 
-            this.ödemeGirToolStripMenuItem.Name = "ödemeGirToolStripMenuItem";
-            this.ödemeGirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ödemeGirToolStripMenuItem.Text = "Ödeme Gir";
-            this.ödemeGirToolStripMenuItem.Click += new System.EventHandler(this.Button4_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(1012, 648);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 17);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Developed by";
             // 
-            // düzeltToolStripMenuItem
+            // label6
             // 
-            this.düzeltToolStripMenuItem.Name = "düzeltToolStripMenuItem";
-            this.düzeltToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.düzeltToolStripMenuItem.Text = "Düzelt";
-            this.düzeltToolStripMenuItem.Click += new System.EventHandler(this.DüzeltToolStripMenuItem_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(1013, 671);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(184, 17);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "muhsinozkan12@gmail.com";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgv_yborclar);
             this.Controls.Add(this.label3);
@@ -265,6 +289,8 @@
         private System.Windows.Forms.ToolStripMenuItem düzenleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ödemeGirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem düzeltToolStripMenuItem;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 
