@@ -60,6 +60,7 @@
             this.cbx_para = new System.Windows.Forms.ComboBox();
             this.dtp_vade = new System.Windows.Forms.DateTimePicker();
             this.dtp_date = new System.Windows.Forms.DateTimePicker();
+            this.lbl_taksittarihi = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grp_cari.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cariler)).BeginInit();
@@ -387,11 +388,23 @@
             this.dtp_date.Size = new System.Drawing.Size(248, 26);
             this.dtp_date.TabIndex = 86;
             // 
+            // lbl_taksittarihi
+            // 
+            this.lbl_taksittarihi.AutoSize = true;
+            this.lbl_taksittarihi.Location = new System.Drawing.Point(45, 113);
+            this.lbl_taksittarihi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_taksittarihi.Name = "lbl_taksittarihi";
+            this.lbl_taksittarihi.Size = new System.Drawing.Size(113, 20);
+            this.lbl_taksittarihi.TabIndex = 87;
+            this.lbl_taksittarihi.Text = "İlk Taksit Tarihi";
+            this.lbl_taksittarihi.Visible = false;
+            // 
             // FormSat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.lbl_taksittarihi);
             this.Controls.Add(this.grp_cari);
             this.Controls.Add(this.dtp_date);
             this.Controls.Add(this.dtp_vade);
@@ -462,5 +475,6 @@
         private System.Windows.Forms.ComboBox cbx_para;
         private System.Windows.Forms.DateTimePicker dtp_vade;
         private System.Windows.Forms.DateTimePicker dtp_date;
+        private System.Windows.Forms.Label lbl_taksittarihi;
     }
 }

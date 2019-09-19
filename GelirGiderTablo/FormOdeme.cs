@@ -107,7 +107,7 @@ namespace GelirGiderTablo
                             if (taksit > 0)
                             {
                                 var taksittutar = Methods.GetDecimal(txt_total) / taksit;
-                                var curdate = DateTime.Now;
+                                var curdate = dtp_vade.Value;
                                 bool result = true;
                                 for (int i = 1; i <= taksit; i++)
                                 {
@@ -195,6 +195,7 @@ namespace GelirGiderTablo
                 //taksit
                 lbl_taksit.Visible = false;
                 txt_taksit.Visible = false;
+                lbl_taksittarihi.Visible = false;
             }
             else if (rdo_vadeli.Checked)
             {
@@ -207,6 +208,7 @@ namespace GelirGiderTablo
                 //taksit
                 lbl_taksit.Visible = false;
                 txt_taksit.Visible = false;
+                lbl_taksittarihi.Visible = false;
             }
             else if (rdo_taksit.Checked)
             {
@@ -219,6 +221,7 @@ namespace GelirGiderTablo
                 //taksit
                 lbl_taksit.Visible = true;
                 txt_taksit.Visible = true;
+                lbl_taksittarihi.Visible = true;
             }
         }
 

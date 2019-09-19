@@ -101,20 +101,20 @@
             this.düzeltToolStripMenuItem});
             this.tahsilatToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.tahsilatToolStripMenuItem.Name = "tahsilatToolStripMenuItem";
-            this.tahsilatToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.tahsilatToolStripMenuItem.Text = "Ödeme Gir";
+            this.tahsilatToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.tahsilatToolStripMenuItem.Text = "Ödeme";
             // 
             // ödemeGirToolStripMenuItem
             // 
             this.ödemeGirToolStripMenuItem.Name = "ödemeGirToolStripMenuItem";
-            this.ödemeGirToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.ödemeGirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ödemeGirToolStripMenuItem.Text = "Ödeme Gir";
             this.ödemeGirToolStripMenuItem.Click += new System.EventHandler(this.Button4_Click);
             // 
             // düzeltToolStripMenuItem
             // 
             this.düzeltToolStripMenuItem.Name = "düzeltToolStripMenuItem";
-            this.düzeltToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.düzeltToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.düzeltToolStripMenuItem.Text = "Düzelt";
             this.düzeltToolStripMenuItem.Click += new System.EventHandler(this.DüzeltToolStripMenuItem_Click);
             // 
