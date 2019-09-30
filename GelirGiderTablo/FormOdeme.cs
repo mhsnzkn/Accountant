@@ -6,9 +6,33 @@ namespace GelirGiderTablo
 {
     public partial class FormOdeme : Form
     {
-        public FormOdeme()
+        public FormOdeme(string odemeturu)
         {
             InitializeComponent();
+            if (odemeturu=="odemeyap")
+            {
+                //Vade tarihi
+                lbl_vadetarihi.Visible = false;
+                dtp_vade.Visible = false;
+                //alınan tutar
+                lbl_pay.Visible = false;
+                txt_pay.Visible = false;
+                //taksit
+                lbl_taksit.Visible = false;
+                txt_taksit.Visible = false;
+                lbl_taksittarihi.Visible = false;
+                //BirimFiyat/Adet
+                lbl_qtt.Visible = false;
+                lbl_unitprice.Visible = false;
+                txt_unitprice.Visible = false;
+                txt_qtt.Visible = false;
+                //Satış türü
+                rdo_nakit.Visible = false;
+                rdo_taksit.Visible = false;
+                rdo_vadeli.Visible = false;
+                rdo_odemeyap.Visible = true;
+                rdo_odemeyap.Checked = true;
+            }
         }
 
 

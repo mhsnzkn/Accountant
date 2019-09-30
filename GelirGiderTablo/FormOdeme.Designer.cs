@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOdeme));
             this.cbx_para = new System.Windows.Forms.ComboBox();
             this.lbl_vadetarihi = new System.Windows.Forms.Label();
             this.txt_pay = new System.Windows.Forms.TextBox();
@@ -41,9 +42,9 @@
             this.txt_firm = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_unitprice = new System.Windows.Forms.Label();
             this.txt_unitprice = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_qtt = new System.Windows.Forms.Label();
             this.txt_qtt = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdo_diger = new System.Windows.Forms.RadioButton();
@@ -63,6 +64,7 @@
             this.dtp_vade = new System.Windows.Forms.DateTimePicker();
             this.dtp_date = new System.Windows.Forms.DateTimePicker();
             this.lbl_taksittarihi = new System.Windows.Forms.Label();
+            this.rdo_odemeyap = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
             this.grp_pay.SuspendLayout();
             this.grp_cari.SuspendLayout();
@@ -202,15 +204,15 @@
             this.label1.TabIndex = 48;
             this.label1.Text = "Cari Kodu";
             // 
-            // label9
+            // lbl_unitprice
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(71, 153);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 20);
-            this.label9.TabIndex = 74;
-            this.label9.Text = "Birim fiyat";
+            this.lbl_unitprice.AutoSize = true;
+            this.lbl_unitprice.Location = new System.Drawing.Point(71, 153);
+            this.lbl_unitprice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_unitprice.Name = "lbl_unitprice";
+            this.lbl_unitprice.Size = new System.Drawing.Size(77, 20);
+            this.lbl_unitprice.TabIndex = 74;
+            this.lbl_unitprice.Text = "Birim fiyat";
             // 
             // txt_unitprice
             // 
@@ -221,15 +223,15 @@
             this.txt_unitprice.TabIndex = 4;
             this.txt_unitprice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_total_KeyPress);
             // 
-            // label8
+            // lbl_qtt
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(71, 195);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 20);
-            this.label8.TabIndex = 76;
-            this.label8.Text = "Adet";
+            this.lbl_qtt.AutoSize = true;
+            this.lbl_qtt.Location = new System.Drawing.Point(71, 195);
+            this.lbl_qtt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_qtt.Name = "lbl_qtt";
+            this.lbl_qtt.Size = new System.Drawing.Size(43, 20);
+            this.lbl_qtt.TabIndex = 76;
+            this.lbl_qtt.Text = "Adet";
             // 
             // txt_qtt
             // 
@@ -275,6 +277,7 @@
             // 
             // grp_pay
             // 
+            this.grp_pay.Controls.Add(this.rdo_odemeyap);
             this.grp_pay.Controls.Add(this.lbl_taksit);
             this.grp_pay.Controls.Add(this.txt_taksit);
             this.grp_pay.Controls.Add(this.rdo_taksit);
@@ -361,7 +364,7 @@
             this.grp_cari.Controls.Add(this.label2);
             this.grp_cari.Controls.Add(this.btn_carisearch);
             this.grp_cari.Controls.Add(this.txt_carisearch);
-            this.grp_cari.Location = new System.Drawing.Point(431, 58);
+            this.grp_cari.Location = new System.Drawing.Point(431, 68);
             this.grp_cari.Name = "grp_cari";
             this.grp_cari.Size = new System.Drawing.Size(715, 360);
             this.grp_cari.TabIndex = 81;
@@ -433,6 +436,17 @@
             this.lbl_taksittarihi.Text = "İlk Taksit Tarihi";
             this.lbl_taksittarihi.Visible = false;
             // 
+            // rdo_odemeyap
+            // 
+            this.rdo_odemeyap.AutoSize = true;
+            this.rdo_odemeyap.Location = new System.Drawing.Point(35, 32);
+            this.rdo_odemeyap.Name = "rdo_odemeyap";
+            this.rdo_odemeyap.Size = new System.Drawing.Size(112, 24);
+            this.rdo_odemeyap.TabIndex = 83;
+            this.rdo_odemeyap.TabStop = true;
+            this.rdo_odemeyap.Text = "Ödeme Yap";
+            this.rdo_odemeyap.UseVisualStyleBackColor = true;
+            // 
             // FormOdeme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -446,9 +460,9 @@
             this.Controls.Add(this.grp_pay);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txt_qtt);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lbl_qtt);
             this.Controls.Add(this.txt_unitprice);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lbl_unitprice);
             this.Controls.Add(this.cbx_para);
             this.Controls.Add(this.lbl_vadetarihi);
             this.Controls.Add(this.txt_pay);
@@ -463,8 +477,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormOdeme";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ödeme";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -492,9 +508,9 @@
         private System.Windows.Forms.TextBox txt_firm;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbl_unitprice;
         private System.Windows.Forms.TextBox txt_unitprice;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_qtt;
         private System.Windows.Forms.TextBox txt_qtt;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rdo_diger;
@@ -514,5 +530,6 @@
         private System.Windows.Forms.DateTimePicker dtp_vade;
         private System.Windows.Forms.DateTimePicker dtp_date;
         private System.Windows.Forms.Label lbl_taksittarihi;
+        private System.Windows.Forms.RadioButton rdo_odemeyap;
     }
 }

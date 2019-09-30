@@ -57,21 +57,37 @@ namespace GelirGiderTablo
 
             
 
-            //satis
-            var satis_tl = cahar.Where(s => s.ParaCinsi == "TL").Sum(a => a.Borc);
-            var satis_do = cahar.Where(s => s.ParaCinsi == "DOLAR").Sum(a => a.Borc);
-            var satis_eu = cahar.Where(s => s.ParaCinsi == "EURO").Sum(a => a.Borc);
+            //Satis
+            var satis_tl = cahar.Where(s => s.ParaCinsi == "TL" && s.Tip=="SATIS").Sum(a => a.Alacak);
+            var satis_do = cahar.Where(s => s.ParaCinsi == "DOLAR" && s.Tip == "SATIS").Sum(a => a.Alacak);
+            var satis_eu = cahar.Where(s => s.ParaCinsi == "EURO" && s.Tip == "SATIS").Sum(a => a.Alacak);
             lbl_toplamsat_tl.Text = satis_tl.ToString("N");
             lbl_toplamsat_do.Text = satis_do.ToString("N");
             lbl_toplamsat_eu.Text = satis_eu.ToString("N");
 
+            //Alacak
+            var alacak_tl = cahar.Where(s => s.ParaCinsi == "TL" && s.Tip == "SATIS").Sum(a => a.Borc)-satis_tl;
+            var alacak_do = cahar.Where(s => s.ParaCinsi == "DOLAR" && s.Tip == "SATIS").Sum(a => a.Borc)-satis_do;
+            var alacak_eu = cahar.Where(s => s.ParaCinsi == "EURO" && s.Tip == "SATIS").Sum(a => a.Borc)-satis_eu;
+            lbl_topalacak_tl.Text = alacak_tl.ToString("N");
+            lbl_topalacak_do.Text = alacak_do.ToString("N");
+            lbl_topalacak_eu.Text = alacak_eu.ToString("N");
+
             //Ödeme
-            var odeme_tl = cahar.Where(s => s.ParaCinsi == "TL").Sum(a => a.Alacak);
-            var odeme_do = cahar.Where(s => s.ParaCinsi == "DOLAR").Sum(a => a.Alacak);
-            var odeme_eu = cahar.Where(s => s.ParaCinsi == "EURO").Sum(a => a.Alacak);
+            var odeme_tl = cahar.Where(s => s.ParaCinsi == "TL" && s.Tip != "SATIS").Sum(a => a.Borc);
+            var odeme_do = cahar.Where(s => s.ParaCinsi == "DOLAR" && s.Tip != "SATIS").Sum(a => a.Borc);
+            var odeme_eu = cahar.Where(s => s.ParaCinsi == "EURO" && s.Tip != "SATIS").Sum(a => a.Borc);
             lbl_toplamode_tl.Text = odeme_tl.ToString("N");
             lbl_toplamode_do.Text = odeme_do.ToString("N");
             lbl_toplamode_eu.Text = odeme_eu.ToString("N");
+
+            //Borç
+            var borc_tl = cahar.Where(s => s.ParaCinsi == "TL" && s.Tip != "SATIS").Sum(a => a.Alacak)-odeme_tl;
+            var borc_do = cahar.Where(s => s.ParaCinsi == "DOLAR" && s.Tip != "SATIS").Sum(a => a.Alacak)-odeme_do;
+            var borc_eu = cahar.Where(s => s.ParaCinsi == "EURO" && s.Tip != "SATIS").Sum(a => a.Alacak)-odeme_eu;
+            lbl_topborc_tl.Text = borc_tl.ToString("N");
+            lbl_topborc_do.Text = borc_do.ToString("N");
+            lbl_topborc_eu.Text = borc_eu.ToString("N");
 
             //Genel toplam
             lbl_genel_tl.Text = (satis_tl - odeme_tl).ToString("N");

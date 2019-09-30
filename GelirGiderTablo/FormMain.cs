@@ -22,7 +22,7 @@ namespace GelirGiderTablo
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            var formOdeme = new FormOdeme();
+            var formOdeme = new FormOdeme(null);
             formOdeme.Show();
         }
 
@@ -34,45 +34,12 @@ namespace GelirGiderTablo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var cahars = repo.GetCaharVadesiGecmisBorcAlacak();
-
-            dgv_borclucariler.DataSource = cahars.Where(a => a.Bakiye > 0).OrderByDescending(s=>s.Bakiye).ToList();
-
-            dgv_alacaklicariler.DataSource = cahars.Where(a => a.Bakiye < 0).OrderBy(s => s.Bakiye).ToList();
-
-            var today = DateTime.Now;
-            var soon = today.AddDays(30);
-
-            var sooncahars = repo.GetCaharGelecekBorcAlacak(soon);
-            var yalacak = from c in sooncahars
-                          where c.Borc>0
-                          select new IncomigDepth
-                          {
-                              CariKod = c.CariKod,
-                              Tutar = c.Borc,
-                              VadeTarihi=c.VadeTarihi,
-                              OdemeSekli=c.OdemeSekli
-                          };
-
-            dgv_yalacak.DataSource = yalacak.ToList();
-
-            var yborclar = from c in sooncahars
-                           where c.Alacak > 0
-                           select new IncomigDepth
-                          {
-                              CariKod = c.CariKod,
-                              Tutar = c.Alacak,
-                              VadeTarihi = c.VadeTarihi,
-                               OdemeSekli = c.OdemeSekli
-                           };
-
-            dgv_yborclar.DataSource = yborclar.ToList();
-
+            RefreshPage();
         }
 
         private void SatışGirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formVsat = new FormSat();
+            var formVsat = new FormSat(null);
             formVsat.Show();
         }
 
@@ -87,5 +54,60 @@ namespace GelirGiderTablo
             var form = new FormUpdate("ODEME");
             form.Show();
         }
+
+        private void ÖdemeAlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formVsat = new FormSat("odemeal");
+            formVsat.Show();
+        }
+
+        private void Btn_refresh_Click(object sender, EventArgs e)
+        {
+            RefreshPage();
+        }
+
+        private void ÖdemeYapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formOdeme = new FormOdeme("odemeyap");
+            formOdeme.Show();
+        }
+
+        private void RefreshPage()
+        {
+            var cahars = repo.GetCaharVadesiGecmisBorcAlacak();
+
+            dgv_borclucariler.DataSource = cahars.Where(a => a.Bakiye > 0).OrderByDescending(s => s.Bakiye).ToList();
+
+            dgv_alacaklicariler.DataSource = cahars.Where(a => a.Bakiye < 0).OrderBy(s => s.Bakiye).ToList();
+
+            var today = DateTime.Now;
+            var soon = today.AddDays(30);
+
+            var sooncahars = repo.GetCaharGelecekBorcAlacak(soon);
+            var yalacak = from c in sooncahars
+                          where c.Borc > 0 && c.Tip != "SATIS"
+                          select new IncomigDepth
+                          {
+                              CariKod = c.CariKod,
+                              Tutar = c.Borc - c.Alacak,
+                              VadeTarihi = c.VadeTarihi,
+                              OdemeSekli = c.OdemeSekli
+                          };
+
+            dgv_yalacak.DataSource = yalacak.ToList();
+
+            var yborclar = from c in sooncahars
+                           where c.Alacak > 0 && c.Tip == "SATIS"
+                           select new IncomigDepth
+                           {
+                               CariKod = c.CariKod,
+                               Tutar = c.Alacak - c.Borc,
+                               VadeTarihi = c.VadeTarihi,
+                               OdemeSekli = c.OdemeSekli
+                           };
+
+            dgv_yborclar.DataSource = yborclar.ToList();
+        }
+
     }
 }

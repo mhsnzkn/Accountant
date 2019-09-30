@@ -6,9 +6,33 @@ namespace GelirGiderTablo
 {
     public partial class FormSat : Form
     {
-        public FormSat()
+        public FormSat(string odemeturu)
         {
             InitializeComponent();
+            if (odemeturu == "odemeal")
+            {
+                //Vade tarihi
+                lbl_vadetarihi.Visible = false;
+                dtp_vade.Visible = false;
+                //alınan tutar
+                lbl_pay.Visible = false;
+                txt_pay.Visible = false;
+                //taksit
+                lbl_taksit.Visible = false;
+                txt_taksit.Visible = false;
+                lbl_taksittarihi.Visible = false;
+                //BirimFiyat/Adet
+                lbl_qtt.Visible = false;
+                lbl_unitprice.Visible = false;
+                txt_unitprice.Visible = false;
+                txt_qtt.Visible = false;
+                //Satış türü
+                rdo_nakit.Visible = false;
+                rdo_taksit.Visible = false;
+                rdo_vadeli.Visible = false;
+                rdo_odemeal.Visible = true;
+                rdo_odemeal.Checked = true;
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -126,6 +150,30 @@ namespace GelirGiderTablo
                             MessageBox.Show("Taksit sayısını giriniz.");
                         }
 
+                    }else if (rdo_odemeal.Checked)
+                    {
+                        var insertmodel = new Cahar();
+
+                        insertmodel.CariKod = txt_firm.Text;
+                        insertmodel.Tarih = dtp_date.Value;
+                        insertmodel.Aciklama = txt_desc.Text;
+                        insertmodel.Borc = 0;
+                        insertmodel.Tip = "SATIS";
+                        insertmodel.ParaCinsi = cbx_para.Text;
+                        //insertmodel.BirimFiyat = Methods.GetDecimal(txt_unitprice);
+                        //insertmodel.Adet = Methods.GetDecimal(txt_qtt);
+                        insertmodel.VadeTarihi = DateTime.Now;
+                        insertmodel.Alacak = Methods.GetDecimal(txt_total);
+                        insertmodel.OdemeSekli = "NAKIT";
+
+                        if (repo.AddCahar(insertmodel))
+                        {
+                            MessageBox.Show("Başarıyla Eklendi");
+                            txt_desc.Clear();
+                            txt_firm.Clear();
+                            txt_total.Clear();
+                        }
+                        else MessageBox.Show("Ekleme Başarısız! Girdiğiniz bilgileri kontrol ediniz.");
                     }
                     else
                     {

@@ -61,6 +61,7 @@
             // 
             // dgv_cahar
             // 
+            this.dgv_cahar.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgv_cahar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_cahar.Location = new System.Drawing.Point(12, 103);
             this.dgv_cahar.Name = "dgv_cahar";
@@ -329,6 +330,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormUpdate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Düzenle";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cahar)).EndInit();
             this.grp_upt.ResumeLayout(false);

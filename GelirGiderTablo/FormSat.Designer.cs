@@ -48,9 +48,9 @@
             this.rdo_vadeli = new System.Windows.Forms.RadioButton();
             this.rdo_nakit = new System.Windows.Forms.RadioButton();
             this.txt_qtt = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_qtt = new System.Windows.Forms.Label();
             this.txt_unitprice = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_unitprice = new System.Windows.Forms.Label();
             this.grp_cari = new System.Windows.Forms.GroupBox();
             this.dgv_cariler = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,6 +61,7 @@
             this.dtp_vade = new System.Windows.Forms.DateTimePicker();
             this.dtp_date = new System.Windows.Forms.DateTimePicker();
             this.lbl_taksittarihi = new System.Windows.Forms.Label();
+            this.rdo_odemeal = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.grp_cari.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cariler)).BeginInit();
@@ -188,6 +189,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rdo_odemeal);
             this.groupBox1.Controls.Add(this.lbl_taksit);
             this.groupBox1.Controls.Add(this.txt_taksit);
             this.groupBox1.Controls.Add(this.rdo_taksit);
@@ -268,15 +270,15 @@
             this.txt_qtt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_total_KeyPress);
             this.txt_qtt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_unitprice_KeyUp);
             // 
-            // label8
+            // lbl_qtt
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(48, 197);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 20);
-            this.label8.TabIndex = 46;
-            this.label8.Text = "Adet";
+            this.lbl_qtt.AutoSize = true;
+            this.lbl_qtt.Location = new System.Drawing.Point(48, 197);
+            this.lbl_qtt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_qtt.Name = "lbl_qtt";
+            this.lbl_qtt.Size = new System.Drawing.Size(43, 20);
+            this.lbl_qtt.TabIndex = 46;
+            this.lbl_qtt.Text = "Adet";
             // 
             // txt_unitprice
             // 
@@ -288,15 +290,15 @@
             this.txt_unitprice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_total_KeyPress);
             this.txt_unitprice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_unitprice_KeyUp);
             // 
-            // label9
+            // lbl_unitprice
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(48, 155);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 20);
-            this.label9.TabIndex = 44;
-            this.label9.Text = "Birim fiyat";
+            this.lbl_unitprice.AutoSize = true;
+            this.lbl_unitprice.Location = new System.Drawing.Point(48, 155);
+            this.lbl_unitprice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_unitprice.Name = "lbl_unitprice";
+            this.lbl_unitprice.Size = new System.Drawing.Size(77, 20);
+            this.lbl_unitprice.TabIndex = 44;
+            this.lbl_unitprice.Text = "Birim fiyat";
             // 
             // grp_cari
             // 
@@ -399,6 +401,18 @@
             this.lbl_taksittarihi.Text = "İlk Taksit Tarihi";
             this.lbl_taksittarihi.Visible = false;
             // 
+            // rdo_odemeal
+            // 
+            this.rdo_odemeal.AutoSize = true;
+            this.rdo_odemeal.Location = new System.Drawing.Point(35, 32);
+            this.rdo_odemeal.Name = "rdo_odemeal";
+            this.rdo_odemeal.Size = new System.Drawing.Size(97, 24);
+            this.rdo_odemeal.TabIndex = 83;
+            this.rdo_odemeal.TabStop = true;
+            this.rdo_odemeal.Text = "Odeme Al";
+            this.rdo_odemeal.UseVisualStyleBackColor = true;
+            this.rdo_odemeal.Visible = false;
+            // 
             // FormSat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -411,9 +425,9 @@
             this.Controls.Add(this.cbx_para);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.txt_qtt);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lbl_qtt);
             this.Controls.Add(this.txt_unitprice);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lbl_unitprice);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbl_vadetarihi);
             this.Controls.Add(this.txt_pay);
@@ -431,6 +445,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormSat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Satış Gir";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -460,9 +475,9 @@
         private System.Windows.Forms.RadioButton rdo_vadeli;
         private System.Windows.Forms.RadioButton rdo_nakit;
         private System.Windows.Forms.TextBox txt_qtt;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_qtt;
         private System.Windows.Forms.TextBox txt_unitprice;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbl_unitprice;
         private System.Windows.Forms.Label lbl_taksit;
         private System.Windows.Forms.TextBox txt_taksit;
         private System.Windows.Forms.RadioButton rdo_taksit;
@@ -476,5 +491,6 @@
         private System.Windows.Forms.DateTimePicker dtp_vade;
         private System.Windows.Forms.DateTimePicker dtp_date;
         private System.Windows.Forms.Label lbl_taksittarihi;
+        private System.Windows.Forms.RadioButton rdo_odemeal;
     }
 }
