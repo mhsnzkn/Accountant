@@ -385,7 +385,7 @@ namespace GelirGiderTablo.Data
                 {
                     var cmd = new SQLiteCommand(conn);
 
-                    cmd.CommandText = "SELECT CariKod,Borc,Alacak,ParaCinsi,VadeTarihi,OdemeSekli FROM Cahar WHERE VadeTarihi>=@vadetarihi AND VadeTarihi<=@soondate";
+                    cmd.CommandText = "SELECT CariKod,Borc,Alacak,ParaCinsi,VadeTarihi,OdemeSekli,Tip FROM Cahar WHERE VadeTarihi>=@vadetarihi AND VadeTarihi<=@soondate";
                     cmd.Parameters.AddWithValue("@vadetarihi", DateTime.Now);
                     cmd.Parameters.AddWithValue("@soondate", enddate);
 
@@ -401,6 +401,7 @@ namespace GelirGiderTablo.Data
                         cahar.ParaCinsi = dr.GetString(dr.GetOrdinal("ParaCinsi"));
                         cahar.VadeTarihi = dr.GetDateTime(dr.GetOrdinal("VadeTarihi"));
                         cahar.OdemeSekli = dr.GetString(dr.GetOrdinal("OdemeSekli"));
+                        cahar.Tip = dr.GetString(dr.GetOrdinal("Tip"));
                         cariborclist.Add(cahar);
                     }
                     dr.Close();

@@ -362,12 +362,13 @@
             // 
             // button3
             // 
+            this.button3.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.Location = new System.Drawing.Point(340, 68);
+            this.button3.Location = new System.Drawing.Point(350, 58);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 26);
+            this.button3.Size = new System.Drawing.Size(43, 43);
             this.button3.TabIndex = 80;
-            this.button3.Text = "Bul";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 

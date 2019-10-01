@@ -85,7 +85,7 @@ namespace GelirGiderTablo
 
             var sooncahars = repo.GetCaharGelecekBorcAlacak(soon);
             var yalacak = from c in sooncahars
-                          where c.Borc > 0 && c.Tip != "SATIS"
+                          where c.Borc > 0 && c.Tip == "SATIS"
                           select new IncomigDepth
                           {
                               CariKod = c.CariKod,
@@ -97,7 +97,7 @@ namespace GelirGiderTablo
             dgv_yalacak.DataSource = yalacak.ToList();
 
             var yborclar = from c in sooncahars
-                           where c.Alacak > 0 && c.Tip == "SATIS"
+                           where c.Alacak > 0 && c.Tip != "SATIS"
                            select new IncomigDepth
                            {
                                CariKod = c.CariKod,

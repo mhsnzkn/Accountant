@@ -385,7 +385,7 @@
             this.button3.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.Location = new System.Drawing.Point(342, 60);
+            this.button3.Location = new System.Drawing.Point(330, 61);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(43, 43);
             this.button3.TabIndex = 82;
