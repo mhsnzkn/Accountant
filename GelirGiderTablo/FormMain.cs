@@ -60,7 +60,7 @@ namespace GelirGiderTablo
             else
             {
                 menuStrip.Enabled = false;
-                lbl_license.Text = "Programda hata oluştu Lütfen yetkililerle iletişime geçiniz.";
+                lbl_license.Text = "Programda hata oluştu Lütfen aşağıdaki numara ile iletişime geçiniz.";
                 lbl_license.Visible = true;
             }
             
