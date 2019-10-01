@@ -29,19 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSat));
-            this.button2 = new System.Windows.Forms.Button();
             this.txt_desc = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_total = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_firm = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_pay = new System.Windows.Forms.TextBox();
             this.lbl_pay = new System.Windows.Forms.Label();
             this.lbl_vadetarihi = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdo_odemeal = new System.Windows.Forms.RadioButton();
             this.lbl_taksit = new System.Windows.Forms.Label();
             this.txt_taksit = new System.Windows.Forms.TextBox();
             this.rdo_taksit = new System.Windows.Forms.RadioButton();
@@ -56,27 +55,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_carisearch = new System.Windows.Forms.Button();
             this.txt_carisearch = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.cbx_para = new System.Windows.Forms.ComboBox();
             this.dtp_vade = new System.Windows.Forms.DateTimePicker();
             this.dtp_date = new System.Windows.Forms.DateTimePicker();
             this.lbl_taksittarihi = new System.Windows.Forms.Label();
-            this.rdo_odemeal = new System.Windows.Forms.RadioButton();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grp_cari.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cariler)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(905, 485);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(147, 72);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "Geri Dön";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // txt_desc
             // 
@@ -134,17 +123,6 @@
             this.txt_firm.Size = new System.Drawing.Size(148, 26);
             this.txt_firm.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(713, 485);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 72);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Ekle";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -201,6 +179,18 @@
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Satış Türü";
+            // 
+            // rdo_odemeal
+            // 
+            this.rdo_odemeal.AutoSize = true;
+            this.rdo_odemeal.Location = new System.Drawing.Point(35, 32);
+            this.rdo_odemeal.Name = "rdo_odemeal";
+            this.rdo_odemeal.Size = new System.Drawing.Size(97, 24);
+            this.rdo_odemeal.TabIndex = 83;
+            this.rdo_odemeal.TabStop = true;
+            this.rdo_odemeal.Text = "Odeme Al";
+            this.rdo_odemeal.UseVisualStyleBackColor = true;
+            this.rdo_odemeal.Visible = false;
             // 
             // lbl_taksit
             // 
@@ -306,7 +296,7 @@
             this.grp_cari.Controls.Add(this.label2);
             this.grp_cari.Controls.Add(this.btn_carisearch);
             this.grp_cari.Controls.Add(this.txt_carisearch);
-            this.grp_cari.Location = new System.Drawing.Point(411, 69);
+            this.grp_cari.Location = new System.Drawing.Point(403, 66);
             this.grp_cari.Name = "grp_cari";
             this.grp_cari.Size = new System.Drawing.Size(715, 360);
             this.grp_cari.TabIndex = 83;
@@ -351,17 +341,6 @@
             this.txt_carisearch.Size = new System.Drawing.Size(100, 26);
             this.txt_carisearch.TabIndex = 0;
             // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.Location = new System.Drawing.Point(317, 69);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 30);
-            this.button3.TabIndex = 82;
-            this.button3.Text = "Bul";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
             // cbx_para
             // 
             this.cbx_para.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -401,17 +380,41 @@
             this.lbl_taksittarihi.Text = "İlk Taksit Tarihi";
             this.lbl_taksittarihi.Visible = false;
             // 
-            // rdo_odemeal
+            // button3
             // 
-            this.rdo_odemeal.AutoSize = true;
-            this.rdo_odemeal.Location = new System.Drawing.Point(35, 32);
-            this.rdo_odemeal.Name = "rdo_odemeal";
-            this.rdo_odemeal.Size = new System.Drawing.Size(97, 24);
-            this.rdo_odemeal.TabIndex = 83;
-            this.rdo_odemeal.TabStop = true;
-            this.rdo_odemeal.Text = "Odeme Al";
-            this.rdo_odemeal.UseVisualStyleBackColor = true;
-            this.rdo_odemeal.Visible = false;
+            this.button3.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button3.Location = new System.Drawing.Point(342, 60);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(43, 43);
+            this.button3.TabIndex = 82;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::GelirGiderTablo.Properties.Resources.house;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Location = new System.Drawing.Point(1004, 499);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(62, 62);
+            this.button2.TabIndex = 32;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::GelirGiderTablo.Properties.Resources.plus;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(904, 499);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(62, 62);
+            this.button1.TabIndex = 18;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // FormSat
             // 

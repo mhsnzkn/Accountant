@@ -32,9 +32,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.satışGirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ödemeAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tahsilatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ödemeGirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ödemeYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.düzeltToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ödemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cariİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,9 +52,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.ödemeAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_refresh = new System.Windows.Forms.Button();
-            this.ödemeYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_borclucariler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_alacaklicariler)).BeginInit();
@@ -89,14 +89,21 @@
             // satışGirToolStripMenuItem
             // 
             this.satışGirToolStripMenuItem.Name = "satışGirToolStripMenuItem";
-            this.satışGirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.satışGirToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.satışGirToolStripMenuItem.Text = "Satış Gir";
             this.satışGirToolStripMenuItem.Click += new System.EventHandler(this.SatışGirToolStripMenuItem_Click);
+            // 
+            // ödemeAlToolStripMenuItem
+            // 
+            this.ödemeAlToolStripMenuItem.Name = "ödemeAlToolStripMenuItem";
+            this.ödemeAlToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.ödemeAlToolStripMenuItem.Text = "Ödeme Al";
+            this.ödemeAlToolStripMenuItem.Click += new System.EventHandler(this.ÖdemeAlToolStripMenuItem_Click);
             // 
             // düzenleToolStripMenuItem
             // 
             this.düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
-            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.düzenleToolStripMenuItem.Text = "Düzelt";
             this.düzenleToolStripMenuItem.Click += new System.EventHandler(this.DüzenleToolStripMenuItem_Click);
             // 
@@ -115,14 +122,21 @@
             // ödemeGirToolStripMenuItem
             // 
             this.ödemeGirToolStripMenuItem.Name = "ödemeGirToolStripMenuItem";
-            this.ödemeGirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ödemeGirToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.ödemeGirToolStripMenuItem.Text = "Gider Ekle";
             this.ödemeGirToolStripMenuItem.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // ödemeYapToolStripMenuItem
+            // 
+            this.ödemeYapToolStripMenuItem.Name = "ödemeYapToolStripMenuItem";
+            this.ödemeYapToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.ödemeYapToolStripMenuItem.Text = "Ödeme Yap";
+            this.ödemeYapToolStripMenuItem.Click += new System.EventHandler(this.ÖdemeYapToolStripMenuItem_Click);
             // 
             // düzeltToolStripMenuItem
             // 
             this.düzeltToolStripMenuItem.Name = "düzeltToolStripMenuItem";
-            this.düzeltToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.düzeltToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.düzeltToolStripMenuItem.Text = "Düzelt";
             this.düzeltToolStripMenuItem.Click += new System.EventHandler(this.DüzeltToolStripMenuItem_Click);
             // 
@@ -149,7 +163,7 @@
             // 
             this.dgv_borclucariler.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgv_borclucariler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_borclucariler.Location = new System.Drawing.Point(12, 70);
+            this.dgv_borclucariler.Location = new System.Drawing.Point(12, 74);
             this.dgv_borclucariler.Name = "dgv_borclucariler";
             this.dgv_borclucariler.RowHeadersVisible = false;
             this.dgv_borclucariler.Size = new System.Drawing.Size(608, 225);
@@ -159,7 +173,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(250, 35);
+            this.label1.Location = new System.Drawing.Point(250, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 20);
             this.label1.TabIndex = 6;
@@ -189,7 +203,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(851, 35);
+            this.label3.Location = new System.Drawing.Point(851, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 20);
             this.label3.TabIndex = 10;
@@ -199,7 +213,7 @@
             // 
             this.dgv_yalacak.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgv_yalacak.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_yalacak.Location = new System.Drawing.Point(659, 70);
+            this.dgv_yalacak.Location = new System.Drawing.Point(659, 74);
             this.dgv_yalacak.Name = "dgv_yalacak";
             this.dgv_yalacak.RowHeadersVisible = false;
             this.dgv_yalacak.Size = new System.Drawing.Size(529, 225);
@@ -269,29 +283,16 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "0546 884 25 01";
             // 
-            // ödemeAlToolStripMenuItem
-            // 
-            this.ödemeAlToolStripMenuItem.Name = "ödemeAlToolStripMenuItem";
-            this.ödemeAlToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ödemeAlToolStripMenuItem.Text = "Ödeme Al";
-            this.ödemeAlToolStripMenuItem.Click += new System.EventHandler(this.ÖdemeAlToolStripMenuItem_Click);
-            // 
             // btn_refresh
             // 
-            this.btn_refresh.Location = new System.Drawing.Point(29, 35);
+            this.btn_refresh.BackgroundImage = global::GelirGiderTablo.Properties.Resources.refresh;
+            this.btn_refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_refresh.Location = new System.Drawing.Point(12, 32);
             this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(75, 23);
+            this.btn_refresh.Size = new System.Drawing.Size(42, 36);
             this.btn_refresh.TabIndex = 16;
-            this.btn_refresh.Text = "Yenile";
             this.btn_refresh.UseVisualStyleBackColor = true;
             this.btn_refresh.Click += new System.EventHandler(this.Btn_refresh_Click);
-            // 
-            // ödemeYapToolStripMenuItem
-            // 
-            this.ödemeYapToolStripMenuItem.Name = "ödemeYapToolStripMenuItem";
-            this.ödemeYapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ödemeYapToolStripMenuItem.Text = "Ödeme Yap";
-            this.ödemeYapToolStripMenuItem.Click += new System.EventHandler(this.ÖdemeYapToolStripMenuItem_Click);
             // 
             // FormMain
             // 

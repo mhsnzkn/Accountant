@@ -50,6 +50,7 @@
             this.rdo_diger = new System.Windows.Forms.RadioButton();
             this.rdo_odeme = new System.Windows.Forms.RadioButton();
             this.grp_pay = new System.Windows.Forms.GroupBox();
+            this.rdo_odemeyap = new System.Windows.Forms.RadioButton();
             this.lbl_taksit = new System.Windows.Forms.Label();
             this.txt_taksit = new System.Windows.Forms.TextBox();
             this.rdo_taksit = new System.Windows.Forms.RadioButton();
@@ -64,7 +65,6 @@
             this.dtp_vade = new System.Windows.Forms.DateTimePicker();
             this.dtp_date = new System.Windows.Forms.DateTimePicker();
             this.lbl_taksittarihi = new System.Windows.Forms.Label();
-            this.rdo_odemeyap = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
             this.grp_pay.SuspendLayout();
             this.grp_cari.SuspendLayout();
@@ -118,12 +118,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(928, 494);
+            this.button2.BackgroundImage = global::GelirGiderTablo.Properties.Resources.house;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(1042, 508);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(147, 72);
+            this.button2.Size = new System.Drawing.Size(62, 62);
             this.button2.TabIndex = 63;
-            this.button2.Text = "Geri Dön";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
@@ -185,12 +186,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(736, 494);
+            this.button1.BackgroundImage = global::GelirGiderTablo.Properties.Resources.plus;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(946, 508);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 72);
+            this.button1.Size = new System.Drawing.Size(62, 62);
             this.button1.TabIndex = 49;
-            this.button1.Text = "Ekle";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -289,6 +291,17 @@
             this.grp_pay.TabIndex = 79;
             this.grp_pay.TabStop = false;
             this.grp_pay.Text = "Ödeme Türü";
+            // 
+            // rdo_odemeyap
+            // 
+            this.rdo_odemeyap.AutoSize = true;
+            this.rdo_odemeyap.Location = new System.Drawing.Point(35, 32);
+            this.rdo_odemeyap.Name = "rdo_odemeyap";
+            this.rdo_odemeyap.Size = new System.Drawing.Size(112, 24);
+            this.rdo_odemeyap.TabIndex = 83;
+            this.rdo_odemeyap.TabStop = true;
+            this.rdo_odemeyap.Text = "Ödeme Yap";
+            this.rdo_odemeyap.UseVisualStyleBackColor = true;
             // 
             // lbl_taksit
             // 
@@ -435,17 +448,6 @@
             this.lbl_taksittarihi.TabIndex = 84;
             this.lbl_taksittarihi.Text = "İlk Taksit Tarihi";
             this.lbl_taksittarihi.Visible = false;
-            // 
-            // rdo_odemeyap
-            // 
-            this.rdo_odemeyap.AutoSize = true;
-            this.rdo_odemeyap.Location = new System.Drawing.Point(35, 32);
-            this.rdo_odemeyap.Name = "rdo_odemeyap";
-            this.rdo_odemeyap.Size = new System.Drawing.Size(112, 24);
-            this.rdo_odemeyap.TabIndex = 83;
-            this.rdo_odemeyap.TabStop = true;
-            this.rdo_odemeyap.Text = "Ödeme Yap";
-            this.rdo_odemeyap.UseVisualStyleBackColor = true;
             // 
             // FormOdeme
             // 

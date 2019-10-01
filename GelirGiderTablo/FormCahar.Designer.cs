@@ -93,7 +93,7 @@
             // 
             // txt_carikod
             // 
-            this.txt_carikod.Location = new System.Drawing.Point(500, 43);
+            this.txt_carikod.Location = new System.Drawing.Point(479, 45);
             this.txt_carikod.Name = "txt_carikod";
             this.txt_carikod.Size = new System.Drawing.Size(131, 26);
             this.txt_carikod.TabIndex = 4;
@@ -101,7 +101,7 @@
             // lbl_carikod
             // 
             this.lbl_carikod.AutoSize = true;
-            this.lbl_carikod.Location = new System.Drawing.Point(500, 14);
+            this.lbl_carikod.Location = new System.Drawing.Point(504, 14);
             this.lbl_carikod.Name = "lbl_carikod";
             this.lbl_carikod.Size = new System.Drawing.Size(82, 20);
             this.lbl_carikod.TabIndex = 1;
@@ -123,7 +123,7 @@
             this.grp_cari.Controls.Add(this.label2);
             this.grp_cari.Controls.Add(this.btn_carisearch);
             this.grp_cari.Controls.Add(this.txt_carisearch);
-            this.grp_cari.Location = new System.Drawing.Point(345, 110);
+            this.grp_cari.Location = new System.Drawing.Point(372, 86);
             this.grp_cari.Name = "grp_cari";
             this.grp_cari.Size = new System.Drawing.Size(715, 349);
             this.grp_cari.TabIndex = 83;
@@ -170,12 +170,13 @@
             // 
             // btn_carifind
             // 
+            this.btn_carifind.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find;
+            this.btn_carifind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_carifind.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_carifind.Location = new System.Drawing.Point(500, 79);
+            this.btn_carifind.Location = new System.Drawing.Point(616, 37);
             this.btn_carifind.Name = "btn_carifind";
-            this.btn_carifind.Size = new System.Drawing.Size(75, 26);
+            this.btn_carifind.Size = new System.Drawing.Size(43, 43);
             this.btn_carifind.TabIndex = 5;
-            this.btn_carifind.Text = "Bul";
             this.btn_carifind.UseVisualStyleBackColor = true;
             this.btn_carifind.Click += new System.EventHandler(this.Button3_Click);
             // 
@@ -403,11 +404,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1048, 595);
+            this.button1.BackgroundImage = global::GelirGiderTablo.Properties.Resources.house;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(1109, 614);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 60);
+            this.button1.Size = new System.Drawing.Size(62, 62);
             this.button1.TabIndex = 114;
-            this.button1.Text = "Geri Dön";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -634,6 +636,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.grp_cari);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label20);
@@ -658,7 +661,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dtp_to);
             this.Controls.Add(this.dtp_from);
-            this.Controls.Add(this.grp_cari);
             this.Controls.Add(this.btn_carifind);
             this.Controls.Add(this.btn_ara);
             this.Controls.Add(this.lbl_carikod);
