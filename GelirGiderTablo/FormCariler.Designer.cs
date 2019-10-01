@@ -37,6 +37,7 @@
             this.grp_ekle = new System.Windows.Forms.GroupBox();
             this.txt_carikod = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.txt_adres = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
@@ -54,6 +55,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.txt_carikod_up = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btn_update_ok = new System.Windows.Forms.Button();
             this.txt_adres_up = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_email_up = new System.Windows.Forms.TextBox();
@@ -67,8 +69,6 @@
             this.txt_ad_up = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.btn_update_ok = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grp_ekle.SuspendLayout();
             this.grp_update.SuspendLayout();
@@ -92,11 +92,13 @@
             // 
             // btn_src
             // 
+            this.btn_src.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find;
+            this.btn_src.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_src.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_src.Location = new System.Drawing.Point(210, 65);
             this.btn_src.Name = "btn_src";
             this.btn_src.Size = new System.Drawing.Size(114, 26);
             this.btn_src.TabIndex = 1;
-            this.btn_src.Text = "Ara";
             this.btn_src.UseVisualStyleBackColor = true;
             this.btn_src.Click += new System.EventHandler(this.Btn_src_Click);
             // 
@@ -159,6 +161,17 @@
             this.label8.Size = new System.Drawing.Size(46, 20);
             this.label8.TabIndex = 13;
             this.label8.Text = "Kodu";
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::GelirGiderTablo.Properties.Resources.plus;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Location = new System.Drawing.Point(6, 385);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(247, 54);
+            this.button2.TabIndex = 12;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // txt_adres
             // 
@@ -320,6 +333,18 @@
             this.label9.TabIndex = 13;
             this.label9.Text = "Carinin Kodunu yazınız";
             // 
+            // btn_update_ok
+            // 
+            this.btn_update_ok.BackgroundImage = global::GelirGiderTablo.Properties.Resources.check;
+            this.btn_update_ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_update_ok.Enabled = false;
+            this.btn_update_ok.Location = new System.Drawing.Point(6, 465);
+            this.btn_update_ok.Name = "btn_update_ok";
+            this.btn_update_ok.Size = new System.Drawing.Size(247, 54);
+            this.btn_update_ok.TabIndex = 12;
+            this.btn_update_ok.UseVisualStyleBackColor = true;
+            this.btn_update_ok.Click += new System.EventHandler(this.Button3_Click);
+            // 
             // txt_adres_up
             // 
             this.txt_adres_up.Location = new System.Drawing.Point(6, 358);
@@ -421,35 +446,12 @@
             // 
             this.button3.BackgroundImage = global::GelirGiderTablo.Properties.Resources.house;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(1126, 562);
+            this.button3.Location = new System.Drawing.Point(1088, 562);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(62, 62);
+            this.button3.Size = new System.Drawing.Size(100, 62);
             this.button3.TabIndex = 8;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click_1);
-            // 
-            // btn_update_ok
-            // 
-            this.btn_update_ok.BackgroundImage = global::GelirGiderTablo.Properties.Resources.check;
-            this.btn_update_ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_update_ok.Enabled = false;
-            this.btn_update_ok.Location = new System.Drawing.Point(6, 465);
-            this.btn_update_ok.Name = "btn_update_ok";
-            this.btn_update_ok.Size = new System.Drawing.Size(247, 54);
-            this.btn_update_ok.TabIndex = 12;
-            this.btn_update_ok.UseVisualStyleBackColor = true;
-            this.btn_update_ok.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::GelirGiderTablo.Properties.Resources.plus;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(6, 385);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(247, 54);
-            this.button2.TabIndex = 12;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // FormCariler
             // 

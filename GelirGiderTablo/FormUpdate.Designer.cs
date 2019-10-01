@@ -51,10 +51,10 @@
             this.dtp_tarih = new System.Windows.Forms.DateTimePicker();
             this.dtp_vadetarihi = new System.Windows.Forms.DateTimePicker();
             this.cbx_paracinsi = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.grp_upt = new System.Windows.Forms.GroupBox();
             this.lbl_tip = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cahar)).BeginInit();
             this.grp_upt.SuspendLayout();
             this.SuspendLayout();
@@ -72,11 +72,12 @@
             // 
             // btn_search
             // 
+            this.btn_search.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find;
+            this.btn_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_search.Location = new System.Drawing.Point(1028, 33);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(120, 64);
             this.btn_search.TabIndex = 1;
-            this.btn_search.Text = "Ara";
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -91,11 +92,12 @@
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(1068, 616);
+            this.btn_back.BackgroundImage = global::GelirGiderTablo.Properties.Resources.house;
+            this.btn_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_back.Location = new System.Drawing.Point(1088, 616);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(120, 64);
+            this.btn_back.Size = new System.Drawing.Size(100, 62);
             this.btn_back.TabIndex = 3;
-            this.btn_back.Text = "Geri Dön";
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.Btn_back_Click);
             // 
@@ -257,16 +259,6 @@
             this.cbx_paracinsi.Size = new System.Drawing.Size(151, 28);
             this.cbx_paracinsi.TabIndex = 48;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(845, 227);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 64);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "Kaydet";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
-            // 
             // grp_upt
             // 
             this.grp_upt.Controls.Add(this.lbl_tip);
@@ -317,6 +309,17 @@
             this.lbl_id.Size = new System.Drawing.Size(0, 20);
             this.lbl_id.TabIndex = 50;
             this.lbl_id.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::GelirGiderTablo.Properties.Resources.diskette;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(876, 242);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 49);
+            this.button1.TabIndex = 49;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // FormUpdate
             // 

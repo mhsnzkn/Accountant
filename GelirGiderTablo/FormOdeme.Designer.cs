@@ -119,11 +119,11 @@
             // button2
             // 
             this.button2.BackgroundImage = global::GelirGiderTablo.Properties.Resources.house;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Location = new System.Drawing.Point(1042, 508);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(62, 62);
+            this.button2.Size = new System.Drawing.Size(100, 62);
             this.button2.TabIndex = 63;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
@@ -187,11 +187,11 @@
             // button1
             // 
             this.button1.BackgroundImage = global::GelirGiderTablo.Properties.Resources.plus;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(946, 508);
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(919, 508);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 62);
+            this.button1.Size = new System.Drawing.Size(100, 62);
             this.button1.TabIndex = 49;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -362,7 +362,7 @@
             // 
             // button3
             // 
-            this.button3.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find;
+            this.button3.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find_my_friend;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button3.Location = new System.Drawing.Point(350, 58);
@@ -408,12 +408,13 @@
             // 
             // btn_carisearch
             // 
+            this.btn_carisearch.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find;
+            this.btn_carisearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_carisearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_carisearch.Location = new System.Drawing.Point(284, 42);
+            this.btn_carisearch.Location = new System.Drawing.Point(284, 39);
             this.btn_carisearch.Name = "btn_carisearch";
-            this.btn_carisearch.Size = new System.Drawing.Size(81, 23);
+            this.btn_carisearch.Size = new System.Drawing.Size(57, 26);
             this.btn_carisearch.TabIndex = 1;
-            this.btn_carisearch.Text = "Ara";
             this.btn_carisearch.UseVisualStyleBackColor = true;
             this.btn_carisearch.Click += new System.EventHandler(this.Btn_carisearch_Click);
             // 

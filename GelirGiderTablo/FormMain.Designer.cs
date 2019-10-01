@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.satışGirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ödemeAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +53,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_refresh = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.lbl_license = new System.Windows.Forms.Label();
+            this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_borclucariler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_alacaklicariler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_yalacak)).BeginInit();
@@ -61,19 +62,19 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.SeaGreen;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.BackColor = System.Drawing.Color.SeaGreen;
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.tahsilatToolStripMenuItem,
             this.ödemeToolStripMenuItem,
             this.cariİşlemleriToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1200, 24);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(1200, 24);
+            this.menuStrip.TabIndex = 4;
+            this.menuStrip.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
@@ -286,7 +287,7 @@
             // btn_refresh
             // 
             this.btn_refresh.BackgroundImage = global::GelirGiderTablo.Properties.Resources.refresh;
-            this.btn_refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_refresh.Location = new System.Drawing.Point(12, 32);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.Size = new System.Drawing.Size(42, 36);
@@ -294,11 +295,25 @@
             this.btn_refresh.UseVisualStyleBackColor = true;
             this.btn_refresh.Click += new System.EventHandler(this.Btn_refresh_Click);
             // 
+            // lbl_license
+            // 
+            this.lbl_license.AutoSize = true;
+            this.lbl_license.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl_license.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_license.ForeColor = System.Drawing.Color.Red;
+            this.lbl_license.Location = new System.Drawing.Point(12, 619);
+            this.lbl_license.Name = "lbl_license";
+            this.lbl_license.Size = new System.Drawing.Size(0, 20);
+            this.lbl_license.TabIndex = 17;
+            this.lbl_license.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_license.Visible = false;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.lbl_license);
             this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
@@ -309,17 +324,17 @@
             this.Controls.Add(this.dgv_alacaklicariler);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_borclucariler);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gelir-Gider";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_borclucariler)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_alacaklicariler)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_yalacak)).EndInit();
@@ -332,7 +347,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ödemeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tahsilatToolStripMenuItem;
@@ -356,6 +371,7 @@
         private System.Windows.Forms.ToolStripMenuItem ödemeAlToolStripMenuItem;
         private System.Windows.Forms.Button btn_refresh;
         private System.Windows.Forms.ToolStripMenuItem ödemeYapToolStripMenuItem;
+        private System.Windows.Forms.Label lbl_license;
     }
 }
 

@@ -35,6 +35,35 @@ namespace GelirGiderTablo
         private void Form1_Load(object sender, EventArgs e)
         {
             RefreshPage();
+            var user = auth.GetUser();
+            var now = DateTime.Now;
+            if (user != null)
+            {
+                if (user.DateEnd < now)
+                {
+                    menuStrip.Enabled = false;
+                    lbl_license.Text = "Lisans süreniz bitmiştir. Lütfen lisansınızı yenileyin";
+                    lbl_license.Visible = true;
+                }
+                else if ((user.DateEnd - now).TotalDays <= 10)
+                {
+                    lbl_license.Text = "Lisans süreniz " + Math.Floor((user.DateEnd - now).TotalDays) + " gün sonra dolacaktır. Programı kullanmaya devam etmek için Lütfen lisansınızı yenileyin";
+                    lbl_license.Visible = true;
+                }
+                if (user.Cpu != auth.getCPUID())
+                {
+                    menuStrip.Enabled = false;
+                    lbl_license.Text = "Lisansınız geçerli değildir. Lütfen geçerli bir lisans satın alın.";
+                    lbl_license.Visible = true;
+                }
+            }
+            else
+            {
+                menuStrip.Enabled = false;
+                lbl_license.Text = "Programda hata oluştu Lütfen yetkililerle iletişime geçiniz.";
+                lbl_license.Visible = true;
+            }
+            
         }
 
         private void SatışGirToolStripMenuItem_Click(object sender, EventArgs e)
