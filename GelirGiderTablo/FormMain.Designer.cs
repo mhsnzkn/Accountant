@@ -30,14 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.satışGirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ödemeAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tahsilatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ödemeGirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ödemeYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.düzeltToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ödemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cariİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_borclucariler = new System.Windows.Forms.DataGridView();
@@ -52,8 +44,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.btn_refresh = new System.Windows.Forms.Button();
             this.lbl_license = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btn_refresh = new System.Windows.Forms.Button();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.satışGirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ödemeAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tahsilatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ödemeGirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ödemeYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.düzeltToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_borclucariler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_alacaklicariler)).BeginInit();
@@ -69,77 +71,13 @@
             this.toolStripMenuItem1,
             this.tahsilatToolStripMenuItem,
             this.ödemeToolStripMenuItem,
-            this.cariİşlemleriToolStripMenuItem});
+            this.cariİşlemleriToolStripMenuItem,
+            this.stokToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1200, 24);
             this.menuStrip.TabIndex = 4;
             this.menuStrip.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.satışGirToolStripMenuItem,
-            this.ödemeAlToolStripMenuItem,
-            this.düzenleToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
-            this.toolStripMenuItem1.Text = "Satış";
-            // 
-            // satışGirToolStripMenuItem
-            // 
-            this.satışGirToolStripMenuItem.Name = "satışGirToolStripMenuItem";
-            this.satışGirToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.satışGirToolStripMenuItem.Text = "Satış Gir";
-            this.satışGirToolStripMenuItem.Click += new System.EventHandler(this.SatışGirToolStripMenuItem_Click);
-            // 
-            // ödemeAlToolStripMenuItem
-            // 
-            this.ödemeAlToolStripMenuItem.Name = "ödemeAlToolStripMenuItem";
-            this.ödemeAlToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.ödemeAlToolStripMenuItem.Text = "Ödeme Al";
-            this.ödemeAlToolStripMenuItem.Click += new System.EventHandler(this.ÖdemeAlToolStripMenuItem_Click);
-            // 
-            // düzenleToolStripMenuItem
-            // 
-            this.düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
-            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.düzenleToolStripMenuItem.Text = "Düzelt";
-            this.düzenleToolStripMenuItem.Click += new System.EventHandler(this.DüzenleToolStripMenuItem_Click);
-            // 
-            // tahsilatToolStripMenuItem
-            // 
-            this.tahsilatToolStripMenuItem.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tahsilatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ödemeGirToolStripMenuItem,
-            this.ödemeYapToolStripMenuItem,
-            this.düzeltToolStripMenuItem});
-            this.tahsilatToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.tahsilatToolStripMenuItem.Name = "tahsilatToolStripMenuItem";
-            this.tahsilatToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.tahsilatToolStripMenuItem.Text = "Gider";
-            // 
-            // ödemeGirToolStripMenuItem
-            // 
-            this.ödemeGirToolStripMenuItem.Name = "ödemeGirToolStripMenuItem";
-            this.ödemeGirToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.ödemeGirToolStripMenuItem.Text = "Gider Ekle";
-            this.ödemeGirToolStripMenuItem.Click += new System.EventHandler(this.Button4_Click);
-            // 
-            // ödemeYapToolStripMenuItem
-            // 
-            this.ödemeYapToolStripMenuItem.Name = "ödemeYapToolStripMenuItem";
-            this.ödemeYapToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.ödemeYapToolStripMenuItem.Text = "Ödeme Yap";
-            this.ödemeYapToolStripMenuItem.Click += new System.EventHandler(this.ÖdemeYapToolStripMenuItem_Click);
-            // 
-            // düzeltToolStripMenuItem
-            // 
-            this.düzeltToolStripMenuItem.Name = "düzeltToolStripMenuItem";
-            this.düzeltToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.düzeltToolStripMenuItem.Text = "Düzelt";
-            this.düzeltToolStripMenuItem.Click += new System.EventHandler(this.DüzeltToolStripMenuItem_Click);
             // 
             // ödemeToolStripMenuItem
             // 
@@ -284,17 +222,6 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "0546 884 25 01";
             // 
-            // btn_refresh
-            // 
-            this.btn_refresh.BackgroundImage = global::GelirGiderTablo.Properties.Resources.refresh;
-            this.btn_refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_refresh.Location = new System.Drawing.Point(12, 32);
-            this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(42, 36);
-            this.btn_refresh.TabIndex = 16;
-            this.btn_refresh.UseVisualStyleBackColor = true;
-            this.btn_refresh.Click += new System.EventHandler(this.Btn_refresh_Click);
-            // 
             // lbl_license
             // 
             this.lbl_license.AutoSize = true;
@@ -307,6 +234,97 @@
             this.lbl_license.TabIndex = 17;
             this.lbl_license.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_license.Visible = false;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.BackgroundImage = global::GelirGiderTablo.Properties.Resources.refresh;
+            this.btn_refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_refresh.Location = new System.Drawing.Point(12, 32);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(42, 36);
+            this.btn_refresh.TabIndex = 16;
+            this.btn_refresh.UseVisualStyleBackColor = true;
+            this.btn_refresh.Click += new System.EventHandler(this.Btn_refresh_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.satışGirToolStripMenuItem,
+            this.ödemeAlToolStripMenuItem,
+            this.düzenleToolStripMenuItem});
+            this.toolStripMenuItem1.Image = global::GelirGiderTablo.Properties.Resources.caret_down;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(62, 20);
+            this.toolStripMenuItem1.Text = "Satış ";
+            // 
+            // satışGirToolStripMenuItem
+            // 
+            this.satışGirToolStripMenuItem.Name = "satışGirToolStripMenuItem";
+            this.satışGirToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.satışGirToolStripMenuItem.Text = "Satış Gir";
+            this.satışGirToolStripMenuItem.Click += new System.EventHandler(this.SatışGirToolStripMenuItem_Click);
+            // 
+            // ödemeAlToolStripMenuItem
+            // 
+            this.ödemeAlToolStripMenuItem.Name = "ödemeAlToolStripMenuItem";
+            this.ödemeAlToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.ödemeAlToolStripMenuItem.Text = "Ödeme Al";
+            this.ödemeAlToolStripMenuItem.Click += new System.EventHandler(this.ÖdemeAlToolStripMenuItem_Click);
+            // 
+            // düzenleToolStripMenuItem
+            // 
+            this.düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
+            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.düzenleToolStripMenuItem.Text = "Düzelt";
+            this.düzenleToolStripMenuItem.Click += new System.EventHandler(this.DüzenleToolStripMenuItem_Click);
+            // 
+            // tahsilatToolStripMenuItem
+            // 
+            this.tahsilatToolStripMenuItem.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tahsilatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ödemeGirToolStripMenuItem,
+            this.ödemeYapToolStripMenuItem,
+            this.düzeltToolStripMenuItem});
+            this.tahsilatToolStripMenuItem.Image = global::GelirGiderTablo.Properties.Resources.caret_down;
+            this.tahsilatToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.tahsilatToolStripMenuItem.Name = "tahsilatToolStripMenuItem";
+            this.tahsilatToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.tahsilatToolStripMenuItem.Text = "Gider";
+            // 
+            // ödemeGirToolStripMenuItem
+            // 
+            this.ödemeGirToolStripMenuItem.Name = "ödemeGirToolStripMenuItem";
+            this.ödemeGirToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.ödemeGirToolStripMenuItem.Text = "Gider Ekle";
+            this.ödemeGirToolStripMenuItem.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // ödemeYapToolStripMenuItem
+            // 
+            this.ödemeYapToolStripMenuItem.Name = "ödemeYapToolStripMenuItem";
+            this.ödemeYapToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.ödemeYapToolStripMenuItem.Text = "Ödeme Yap";
+            this.ödemeYapToolStripMenuItem.Click += new System.EventHandler(this.ÖdemeYapToolStripMenuItem_Click);
+            // 
+            // düzeltToolStripMenuItem
+            // 
+            this.düzeltToolStripMenuItem.Name = "düzeltToolStripMenuItem";
+            this.düzeltToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.düzeltToolStripMenuItem.Text = "Düzelt";
+            this.düzeltToolStripMenuItem.Click += new System.EventHandler(this.DüzeltToolStripMenuItem_Click);
+            // 
+            // stokToolStripMenuItem
+            // 
+            this.stokToolStripMenuItem.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.stokToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.stokToolStripMenuItem.Name = "stokToolStripMenuItem";
+            this.stokToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.stokToolStripMenuItem.Text = "Stok";
+            this.stokToolStripMenuItem.Click += new System.EventHandler(this.stokToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -332,6 +350,7 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gelir-Gider";
+            this.Activated += new System.EventHandler(this.Btn_refresh_Click);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -372,6 +391,8 @@
         private System.Windows.Forms.Button btn_refresh;
         private System.Windows.Forms.ToolStripMenuItem ödemeYapToolStripMenuItem;
         private System.Windows.Forms.Label lbl_license;
+        private System.Windows.Forms.ToolStripMenuItem stokToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

@@ -68,6 +68,7 @@ namespace GelirGiderTablo.Data
                 {
 
                     var id = 0;
+                    //SQL Query Changable
                     var cmd = new SQLiteCommand("SELECT Id,DateEnd FROM User Limit 1", conn);
 
                     conn.Open();

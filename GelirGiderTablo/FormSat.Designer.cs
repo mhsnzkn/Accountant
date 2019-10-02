@@ -53,12 +53,12 @@
             this.grp_cari = new System.Windows.Forms.GroupBox();
             this.dgv_cariler = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_carisearch = new System.Windows.Forms.Button();
             this.txt_carisearch = new System.Windows.Forms.TextBox();
             this.cbx_para = new System.Windows.Forms.ComboBox();
             this.dtp_vade = new System.Windows.Forms.DateTimePicker();
             this.dtp_date = new System.Windows.Forms.DateTimePicker();
             this.lbl_taksittarihi = new System.Windows.Forms.Label();
-            this.btn_carisearch = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -323,6 +323,18 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Cari Kodu veya Adı";
             // 
+            // btn_carisearch
+            // 
+            this.btn_carisearch.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find;
+            this.btn_carisearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_carisearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_carisearch.Location = new System.Drawing.Point(283, 39);
+            this.btn_carisearch.Name = "btn_carisearch";
+            this.btn_carisearch.Size = new System.Drawing.Size(60, 28);
+            this.btn_carisearch.TabIndex = 1;
+            this.btn_carisearch.UseVisualStyleBackColor = true;
+            this.btn_carisearch.Click += new System.EventHandler(this.Btn_carisearch_Click);
+            // 
             // txt_carisearch
             // 
             this.txt_carisearch.Location = new System.Drawing.Point(165, 39);
@@ -369,18 +381,6 @@
             this.lbl_taksittarihi.Text = "İlk Taksit Tarihi";
             this.lbl_taksittarihi.Visible = false;
             // 
-            // btn_carisearch
-            // 
-            this.btn_carisearch.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find;
-            this.btn_carisearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_carisearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_carisearch.Location = new System.Drawing.Point(283, 39);
-            this.btn_carisearch.Name = "btn_carisearch";
-            this.btn_carisearch.Size = new System.Drawing.Size(60, 28);
-            this.btn_carisearch.TabIndex = 1;
-            this.btn_carisearch.UseVisualStyleBackColor = true;
-            this.btn_carisearch.Click += new System.EventHandler(this.Btn_carisearch_Click);
-            // 
             // button3
             // 
             this.button3.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find_my_friend;
@@ -407,14 +407,15 @@
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::GelirGiderTablo.Properties.Resources.plus;
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button1.BackgroundImage = global::GelirGiderTablo.Properties.Resources.check;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Location = new System.Drawing.Point(882, 499);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 62);
             this.button1.TabIndex = 18;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // FormSat

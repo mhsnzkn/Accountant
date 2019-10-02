@@ -1,4 +1,5 @@
 ﻿using GelirGiderTablo.Dtos;
+using GelirGiderTablo.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -457,6 +458,126 @@ namespace GelirGiderTablo.Data
             }
 
 
+            return result;
+        }
+
+        public static bool AddStok(Stok model)
+        {
+            var result = false;
+            try
+            {
+                using (var conn = new SQLiteConnection(Constr))
+                {
+
+                    var cmd = new SQLiteCommand("INSERT INTO Stok (StokKodu,StokAdi,Crt_tst) values (@StokKodu,@StokAdi,@Crt_tst)", conn);
+                    cmd.Parameters.AddWithValue("@StokKodu", model.StokKodu);
+                    cmd.Parameters.AddWithValue("@StokAdi", model.StokAdi);
+                    cmd.Parameters.AddWithValue("@Crt_tst", DateTime.Now);
+
+                    conn.Open();
+                    if (cmd.ExecuteNonQuery() > 0)
+                        result = true;
+
+                }
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
+            return result;
+        }
+
+        public static bool AddStokHar(StokHar model)
+        {
+            var result = false;
+            try
+            {
+                using (var conn = new SQLiteConnection(Constr))
+                {
+
+                    var cmd = new SQLiteCommand("INSERT INTO Stok (StokKodu,Giren,Cikan,Tarih) values (@StokKodu,@Giren,@Cikan,@Tarih)", conn);
+                    cmd.Parameters.AddWithValue("@StokKodu", model.StokKodu);
+                    cmd.Parameters.AddWithValue("@Giren", model.Giren);
+                    cmd.Parameters.AddWithValue("@Cikan", model.Cikan);
+                    cmd.Parameters.AddWithValue("@Tarih", DateTime.Now);
+
+                    conn.Open();
+                    if (cmd.ExecuteNonQuery() > 0)
+                        result = true;
+
+                }
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
+            return result;
+        }
+
+        public static List<Stok> GetStok(string searchstr)
+        {
+            var result = new List<Stok>();
+            try
+            {
+                using (var conn = new SQLiteConnection(Constr))
+                {
+                    var cmd = new SQLiteCommand(conn);
+                    if (string.IsNullOrEmpty(searchstr))
+                    {
+                        cmd.CommandText = "SELECT StokKodu,StokAdi FROM Stok";
+                    }
+                    else
+                    {
+                        cmd.CommandText = "SELECT StokKodu,StokAdi FROM Stok WHERE StokKodu LIKE @src or StokAdi LIKE @src";
+                        cmd.Parameters.AddWithValue("@src", "%" + searchstr + "%");
+                    }
+
+
+                    conn.Open();
+                    var dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        var stok = new Stok();
+                        stok.StokKodu = dr.GetString(dr.GetOrdinal("StokKodu"));
+                        stok.StokAdi= dr.GetString(dr.GetOrdinal("StokAdi"));
+                        result.Add(stok);
+                    }
+                    dr.Close();
+                }
+            }
+            catch (Exception)
+            {
+                result = null;
+            }
+            return result;
+        }
+        public static Stok GetStok_stokkodu(string stokkodu)
+        {
+            var result = new Stok();
+            try
+            {
+                using (var conn = new SQLiteConnection(Constr))
+                {
+                    var cmd = new SQLiteCommand(conn);
+
+                    cmd.CommandText = "SELECT StokKodu,StokAdi FROM Stok WHERE StokKodu LIKE @src or StokAdi LIKE @src";
+                    cmd.Parameters.AddWithValue("@src", stokkodu);
+
+
+                    conn.Open();
+                    var dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        result.StokKodu = dr.GetString(dr.GetOrdinal("StokKodu"));
+                        result.StokAdi = dr.GetString(dr.GetOrdinal("StokAdi"));
+                    }
+                    dr.Close();
+                }
+            }
+            catch (Exception)
+            {
+                result.StokKodu="";
+            }
             return result;
         }
     }

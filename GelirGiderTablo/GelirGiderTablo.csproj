@@ -102,6 +102,12 @@
     <Compile Include="Data\auth.cs" />
     <Compile Include="Dtos\CariBorcAlacak.cs" />
     <Compile Include="Dtos\IncomigDepth.cs" />
+    <Compile Include="FormStokAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStokAdd.Designer.cs">
+      <DependentUpon>FormStokAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,8 @@
     </Compile>
     <Compile Include="Models\Cahar.cs" />
     <Compile Include="Methods.cs" />
+    <Compile Include="Models\Stok.cs" />
+    <Compile Include="Models\StokHar.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCahar.resx">
       <DependentUpon>FormCahar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStokAdd.resx">
+      <DependentUpon>FormStokAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUpdate.resx">
       <DependentUpon>FormUpdate.cs</DependentUpon>
@@ -204,6 +215,9 @@
     <None Include="Resources\refresh.png" />
     <None Include="Resources\find-my-friend.png" />
     <None Include="Resources\diskette.png" />
+    <None Include="Resources\caret-down.png" />
+    <None Include="Resources\angle-arrow-down.png" />
+    <None Include="Resources\transfer.png" />
     <Content Include="save-money.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

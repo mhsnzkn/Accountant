@@ -164,13 +164,14 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.SeaGreen;
             this.button2.BackgroundImage = global::GelirGiderTablo.Properties.Resources.plus;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Location = new System.Drawing.Point(6, 385);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(247, 54);
             this.button2.TabIndex = 12;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // txt_adres
@@ -335,6 +336,7 @@
             // 
             // btn_update_ok
             // 
+            this.btn_update_ok.BackColor = System.Drawing.Color.SeaGreen;
             this.btn_update_ok.BackgroundImage = global::GelirGiderTablo.Properties.Resources.check;
             this.btn_update_ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_update_ok.Enabled = false;
@@ -342,7 +344,7 @@
             this.btn_update_ok.Name = "btn_update_ok";
             this.btn_update_ok.Size = new System.Drawing.Size(247, 54);
             this.btn_update_ok.TabIndex = 12;
-            this.btn_update_ok.UseVisualStyleBackColor = true;
+            this.btn_update_ok.UseVisualStyleBackColor = false;
             this.btn_update_ok.Click += new System.EventHandler(this.Button3_Click);
             // 
             // txt_adres_up

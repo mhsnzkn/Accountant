@@ -312,13 +312,14 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.BackgroundImage = global::GelirGiderTablo.Properties.Resources.diskette;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Location = new System.Drawing.Point(876, 242);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 49);
             this.button1.TabIndex = 49;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // FormUpdate
