@@ -102,6 +102,7 @@
     <Compile Include="Data\auth.cs" />
     <Compile Include="Dtos\CariBorcAlacak.cs" />
     <Compile Include="Dtos\IncomigDepth.cs" />
+    <Compile Include="Dtos\StokHarRemain.cs" />
     <Compile Include="FormStokAdd.cs">
       <SubType>Form</SubType>
     </Compile>

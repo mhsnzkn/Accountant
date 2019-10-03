@@ -12,6 +12,7 @@ namespace GelirGiderTablo.Models
         public string StokKodu { get; set; }
         public decimal Giren { get; set; }
         public decimal Cikan { get; set; }
+        public string Aciklama { get; set; }
         public DateTime Tarih { get; set; }
     }
 }

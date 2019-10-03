@@ -48,6 +48,7 @@ namespace GelirGiderTablo
         private void button2_Click(object sender, EventArgs e)
         {
             grp_stokara.Visible = !grp_stokara.Visible;
+            lbl_stokara.Text = "0";
         }
 
         private void btn_yeni_Click(object sender, EventArgs e)
@@ -72,7 +73,8 @@ namespace GelirGiderTablo
                             {
                                 StokKodu = txt_stokadi_yeni.Text,
                                 Giren = Convert.ToDecimal(txt_miktar_yeni.Text),
-                                Cikan = 0
+                                Cikan = 0,
+                                Aciklama="Stok Girişi"
                             };
                             stokharbool = repo.AddStokHar(stokhar);
                         }
@@ -80,6 +82,8 @@ namespace GelirGiderTablo
                     if (repo.AddStok(yenistok) && stokharbool)
                     {
                         MessageBox.Show("Başarıyla eklendi");
+                        txt_miktar_yeni.Clear();
+                        txt_stokkodu_yeni.Clear();
                     }
                     else MessageBox.Show("Eklemede hata oluştu!");
                 }
@@ -106,37 +110,56 @@ namespace GelirGiderTablo
                     var stok = repo.GetStok_stokkodu(txt_stokkodu.Text);
                     if (!string.IsNullOrEmpty(stok.StokKodu))
                     {
-                        if (rdo_giris.Checked)
+                        var amount = 0M;
+                        var girildi = false;
+                        try
                         {
-                            //if (txt_miktar.Text)
-                            //{
+                            amount = Convert.ToDecimal(txt_miktar.Text);
+                        
+                        if (amount>0)
+                        {
+                            if (rdo_giris.Checked)
+                            {
 
-                            //}
-                            var stokhar = new StokHar();
-                            stokhar.StokKodu = txt_stokkodu.Text;
-                            stokhar.Giren = txt_miktar.Text.Length>0 ? Convert.ToDecimal(txt_miktar.Text) : 0;
-                            stokhar.Cikan = 0;
-                            stokhar.Tarih = DateTime.Now;
+                                var stokhar = new StokHar();
+                                stokhar.StokKodu = txt_stokkodu.Text;
+                                stokhar.Giren = txt_miktar.Text.Length > 0 ? Convert.ToDecimal(txt_miktar.Text) : 0;
+                                stokhar.Cikan = 0;
+                                stokhar.Aciklama = txt_aciklama.Text;
+                                stokhar.Tarih = DateTime.Now;
+                                girildi = repo.AddStokHar(stokhar);
 
-                            if (repo.AddStokHar(stokhar))
-                                MessageBox.Show("Kayıt girildi");
-                            else MessageBox.Show("Kayıt girilirken hata oldu");
+                                if (girildi)
+                                    MessageBox.Show("Kayıt girildi");
+                                else MessageBox.Show("Kayıt girilirken hata oldu");
+                            }
+                            if (rdo_cikis.Checked)
+                            {
+
+                                var stokhar = new StokHar();
+                                stokhar.StokKodu = txt_stokkodu.Text;
+                                stokhar.Cikan = txt_miktar.Text.Length > 0 ? Convert.ToDecimal(txt_miktar.Text) : 0;
+                                stokhar.Giren = 0;
+                                stokhar.Aciklama = txt_aciklama.Text;
+                                stokhar.Tarih = DateTime.Now;
+                                girildi = repo.AddStokHar(stokhar);
+
+                                if (girildi)
+                                    MessageBox.Show("Kayıt girildi");
+                                else MessageBox.Show("Kayıt girilirken hata oldu");
+                            }
+                                if (girildi)
+                                {
+                                    txt_stokkodu.Clear();
+                                    txt_miktar.Clear();
+                                    rdo_cikis.Checked = false;
+                                    rdo_giris.Checked = false;
+                                }
                         }
-                        if (rdo_cikis.Checked)
+                        }
+                        catch (Exception)
                         {
-                            //if (txt_miktar.Text)
-                            //{
-
-                            //}
-                            var stokhar = new StokHar();
-                            stokhar.StokKodu = txt_stokkodu.Text;
-                            stokhar.Cikan = txt_miktar.Text.Length > 0 ? Convert.ToDecimal(txt_miktar.Text) : 0;
-                            stokhar.Giren = 0;
-                            stokhar.Tarih = DateTime.Now;
-
-                            if (repo.AddStokHar(stokhar))
-                                MessageBox.Show("Kayıt girildi");
-                            else MessageBox.Show("Kayıt girilirken hata oldu");
+                            MessageBox.Show("Bir hata oldu!!");
                         }
                     }
                     else
@@ -165,7 +188,10 @@ namespace GelirGiderTablo
             if (dgv_stokara.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 dgv_stokara.CurrentRow.Selected = true;
-                txt_stokkodu.Text = dgv_stokara.Rows[e.RowIndex].Cells["StokKodu"].FormattedValue.ToString();
+                if(lbl_stokara.Text=="0")
+                    txt_stokkodu.Text = dgv_stokara.Rows[e.RowIndex].Cells["StokKodu"].FormattedValue.ToString();
+                else
+                    txt_stokgetir.Text = dgv_stokara.Rows[e.RowIndex].Cells["StokKodu"].FormattedValue.ToString();
             }
         }
 
@@ -173,6 +199,27 @@ namespace GelirGiderTablo
         {
             lbl_cikan.Visible = rdo_cikis.Checked;
             lbl_giren.Visible = rdo_giris.Checked;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            grp_stokara.Visible = !grp_stokara.Visible;
+            lbl_stokara.Text = "1";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dgv_stokhar.DataSource = repo.GetStokHarKalan(txt_stokgetir.Text).OrderByDescending(s=>s.Kalan).ToList();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            dgv_stokhar.DataSource = repo.GetStokHar(txt_stokgetir.Text).OrderByDescending(a=>a.Tarih).ToList();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

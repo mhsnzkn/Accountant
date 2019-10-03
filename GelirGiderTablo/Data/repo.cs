@@ -495,10 +495,11 @@ namespace GelirGiderTablo.Data
                 using (var conn = new SQLiteConnection(Constr))
                 {
 
-                    var cmd = new SQLiteCommand("INSERT INTO Stok (StokKodu,Giren,Cikan,Tarih) values (@StokKodu,@Giren,@Cikan,@Tarih)", conn);
+                    var cmd = new SQLiteCommand("INSERT INTO Stokhar (StokKodu,Giren,Cikan,Tarih,Aciklama) values (@StokKodu,@Giren,@Cikan,@Tarih,@Aciklama)", conn);
                     cmd.Parameters.AddWithValue("@StokKodu", model.StokKodu);
                     cmd.Parameters.AddWithValue("@Giren", model.Giren);
                     cmd.Parameters.AddWithValue("@Cikan", model.Cikan);
+                    cmd.Parameters.AddWithValue("@Aciklama", model.Aciklama);
                     cmd.Parameters.AddWithValue("@Tarih", DateTime.Now);
 
                     conn.Open();
@@ -579,6 +580,87 @@ namespace GelirGiderTablo.Data
                 result.StokKodu="";
             }
             return result;
+        }
+
+        public static List<StokHar> GetStokHar(string stokkodu)
+        {
+            var list = new List<StokHar>();
+            try
+            {
+                using (var conn = new SQLiteConnection(Constr))
+                {
+                    var cmd = new SQLiteCommand(conn);
+                    if (string.IsNullOrEmpty(stokkodu))
+                    {
+                        cmd.CommandText = "SELECT * FROM Stokhar";
+                    }
+                    else
+                    {
+                        cmd.CommandText = "SELECT * FROM Stokhar WHERE StokKodu LIKE @src";
+                        cmd.Parameters.AddWithValue("@src", stokkodu);
+                    }
+
+
+                    conn.Open();
+                    var dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        var stokhar = new StokHar();
+                        stokhar.Id = dr.GetInt32(dr.GetOrdinal("Id"));
+                        stokhar.StokKodu = dr.GetString(dr.GetOrdinal("StokKodu"));
+                        stokhar.Giren = dr.GetDecimal(dr.GetOrdinal("Giren"));
+                        stokhar.Cikan = dr.GetDecimal(dr.GetOrdinal("Cikan"));
+                        stokhar.Tarih = dr.GetDateTime(dr.GetOrdinal("Tarih"));
+                        stokhar.Aciklama = dr.GetString(dr.GetOrdinal("Aciklama"));
+                        list.Add(stokhar);
+                    }
+                    dr.Close();
+                }
+            }
+            catch (Exception)
+            {
+                list = null;
+            }
+            return list;
+        }
+
+        public static List<StokHarRemain> GetStokHarKalan(string stokkodu)
+        {
+            var list = new List<StokHarRemain>();
+            try
+            {
+                using (var conn = new SQLiteConnection(Constr))
+                {
+                    var cmd = new SQLiteCommand(conn);
+                    if (string.IsNullOrEmpty(stokkodu))
+                    {
+                        cmd.CommandText = "SELECT h.StokKodu,StokAdi,sum(Giren)-sum(Cikan) as Kalan from Stokhar as h join Stok as s on h.StokKodu=s.StokKodu group by h.StokKodu";
+                    }
+                    else
+                    {
+                        cmd.CommandText = "SELECT h.StokKodu,StokAdi,sum(Giren)-sum(Cikan) as Kalan from Stokhar as h join Stok as s on h.StokKodu=s.StokKodu WHERE h.StokKodu=@src group by h.StokKodu";
+                        cmd.Parameters.AddWithValue("@src", stokkodu);
+                    }
+
+
+                    conn.Open();
+                    var dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        var stokhar = new StokHarRemain();
+                        stokhar.StokKodu = dr.GetString(dr.GetOrdinal("StokKodu"));
+                        stokhar.StokAdi = dr.GetString(dr.GetOrdinal("StokAdi"));
+                        stokhar.Kalan = dr.GetDecimal(dr.GetOrdinal("Kalan"));
+                        list.Add(stokhar);
+                    }
+                    dr.Close();
+                }
+            }
+            catch (Exception)
+            {
+                list = null;
+            }
+            return list;
         }
     }
 }

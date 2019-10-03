@@ -92,13 +92,13 @@
             // 
             // btn_src
             // 
-            this.btn_src.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find;
             this.btn_src.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_src.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_src.Location = new System.Drawing.Point(210, 65);
             this.btn_src.Name = "btn_src";
             this.btn_src.Size = new System.Drawing.Size(114, 26);
             this.btn_src.TabIndex = 1;
+            this.btn_src.Text = "Getir";
             this.btn_src.UseVisualStyleBackColor = true;
             this.btn_src.Click += new System.EventHandler(this.Btn_src_Click);
             // 

@@ -36,6 +36,7 @@
             this.txt_miktar_yeni = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.grp_yenistok = new System.Windows.Forms.GroupBox();
+            this.btn_yeni = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_stokkodu = new System.Windows.Forms.TextBox();
             this.lbl_giren = new System.Windows.Forms.Label();
@@ -47,18 +48,27 @@
             this.grp_gircik = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_gircik = new System.Windows.Forms.Button();
-            this.btn_yeni = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_stokara = new System.Windows.Forms.DataGridView();
             this.grp_stokara = new System.Windows.Forms.GroupBox();
-            this.txt_stokara = new System.Windows.Forms.TextBox();
             this.btn_stokara = new System.Windows.Forms.Button();
+            this.txt_stokara = new System.Windows.Forms.TextBox();
+            this.txt_aciklama = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dgv_stokhar = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txt_stokgetir = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.lbl_stokara = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.grp_yenistok.SuspendLayout();
             this.grp_gircik.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_stokara)).BeginInit();
             this.grp_stokara.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_stokhar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -128,6 +138,19 @@
             this.grp_yenistok.Text = "Yeni Kayıt";
             this.grp_yenistok.Visible = false;
             // 
+            // btn_yeni
+            // 
+            this.btn_yeni.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_yeni.BackgroundImage = global::GelirGiderTablo.Properties.Resources.check;
+            this.btn_yeni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_yeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_yeni.Location = new System.Drawing.Point(5, 220);
+            this.btn_yeni.Name = "btn_yeni";
+            this.btn_yeni.Size = new System.Drawing.Size(348, 72);
+            this.btn_yeni.TabIndex = 6;
+            this.btn_yeni.UseVisualStyleBackColor = false;
+            this.btn_yeni.Click += new System.EventHandler(this.btn_yeni_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -147,7 +170,7 @@
             // lbl_giren
             // 
             this.lbl_giren.AutoSize = true;
-            this.lbl_giren.Location = new System.Drawing.Point(20, 110);
+            this.lbl_giren.Location = new System.Drawing.Point(20, 140);
             this.lbl_giren.Name = "lbl_giren";
             this.lbl_giren.Size = new System.Drawing.Size(95, 20);
             this.lbl_giren.TabIndex = 9;
@@ -156,7 +179,7 @@
             // 
             // txt_miktar
             // 
-            this.txt_miktar.Location = new System.Drawing.Point(128, 107);
+            this.txt_miktar.Location = new System.Drawing.Point(128, 137);
             this.txt_miktar.Name = "txt_miktar";
             this.txt_miktar.Size = new System.Drawing.Size(100, 26);
             this.txt_miktar.TabIndex = 10;
@@ -175,7 +198,7 @@
             // lbl_cikan
             // 
             this.lbl_cikan.AutoSize = true;
-            this.lbl_cikan.Location = new System.Drawing.Point(19, 110);
+            this.lbl_cikan.Location = new System.Drawing.Point(19, 140);
             this.lbl_cikan.Name = "lbl_cikan";
             this.lbl_cikan.Size = new System.Drawing.Size(96, 20);
             this.lbl_cikan.TabIndex = 12;
@@ -185,7 +208,7 @@
             // rdo_giris
             // 
             this.rdo_giris.AutoSize = true;
-            this.rdo_giris.Location = new System.Drawing.Point(75, 167);
+            this.rdo_giris.Location = new System.Drawing.Point(75, 92);
             this.rdo_giris.Name = "rdo_giris";
             this.rdo_giris.Size = new System.Drawing.Size(59, 24);
             this.rdo_giris.TabIndex = 14;
@@ -197,7 +220,7 @@
             // rdo_cikis
             // 
             this.rdo_cikis.AutoSize = true;
-            this.rdo_cikis.Location = new System.Drawing.Point(170, 167);
+            this.rdo_cikis.Location = new System.Drawing.Point(170, 92);
             this.rdo_cikis.Name = "rdo_cikis";
             this.rdo_cikis.Size = new System.Drawing.Size(60, 24);
             this.rdo_cikis.TabIndex = 15;
@@ -209,6 +232,8 @@
             // grp_gircik
             // 
             this.grp_gircik.BackColor = System.Drawing.Color.MintCream;
+            this.grp_gircik.Controls.Add(this.txt_aciklama);
+            this.grp_gircik.Controls.Add(this.label7);
             this.grp_gircik.Controls.Add(this.button2);
             this.grp_gircik.Controls.Add(this.txt_miktar);
             this.grp_gircik.Controls.Add(this.rdo_cikis);
@@ -250,19 +275,6 @@
             this.btn_gircik.UseVisualStyleBackColor = false;
             this.btn_gircik.Click += new System.EventHandler(this.btn_gircik_Click);
             // 
-            // btn_yeni
-            // 
-            this.btn_yeni.BackColor = System.Drawing.Color.SeaGreen;
-            this.btn_yeni.BackgroundImage = global::GelirGiderTablo.Properties.Resources.check;
-            this.btn_yeni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_yeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_yeni.Location = new System.Drawing.Point(5, 220);
-            this.btn_yeni.Name = "btn_yeni";
-            this.btn_yeni.Size = new System.Drawing.Size(348, 72);
-            this.btn_yeni.TabIndex = 6;
-            this.btn_yeni.UseVisualStyleBackColor = false;
-            this.btn_yeni.Click += new System.EventHandler(this.btn_yeni_Click);
-            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.Control;
@@ -301,33 +313,27 @@
             // 
             // dgv_stokara
             // 
-            this.dgv_stokara.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgv_stokara.BackgroundColor = System.Drawing.Color.Lavender;
             this.dgv_stokara.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_stokara.Location = new System.Drawing.Point(6, 73);
             this.dgv_stokara.Name = "dgv_stokara";
-            this.dgv_stokara.Size = new System.Drawing.Size(581, 219);
+            this.dgv_stokara.Size = new System.Drawing.Size(302, 219);
             this.dgv_stokara.TabIndex = 19;
             this.dgv_stokara.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_stokara_CellClick);
             // 
             // grp_stokara
             // 
+            this.grp_stokara.Controls.Add(this.lbl_stokara);
             this.grp_stokara.Controls.Add(this.btn_stokara);
             this.grp_stokara.Controls.Add(this.txt_stokara);
             this.grp_stokara.Controls.Add(this.dgv_stokara);
-            this.grp_stokara.Location = new System.Drawing.Point(428, 78);
+            this.grp_stokara.Location = new System.Drawing.Point(427, 74);
             this.grp_stokara.Name = "grp_stokara";
-            this.grp_stokara.Size = new System.Drawing.Size(593, 299);
+            this.grp_stokara.Size = new System.Drawing.Size(317, 299);
             this.grp_stokara.TabIndex = 20;
             this.grp_stokara.TabStop = false;
-            this.grp_stokara.Text = "Stok Ara";
+            this.grp_stokara.Text = "Stok Kodu Ara";
             this.grp_stokara.Visible = false;
-            // 
-            // txt_stokara
-            // 
-            this.txt_stokara.Location = new System.Drawing.Point(6, 36);
-            this.txt_stokara.Name = "txt_stokara";
-            this.txt_stokara.Size = new System.Drawing.Size(100, 26);
-            this.txt_stokara.TabIndex = 20;
             // 
             // btn_stokara
             // 
@@ -339,11 +345,110 @@
             this.btn_stokara.UseVisualStyleBackColor = true;
             this.btn_stokara.Click += new System.EventHandler(this.btn_stokara_Click);
             // 
+            // txt_stokara
+            // 
+            this.txt_stokara.Location = new System.Drawing.Point(6, 36);
+            this.txt_stokara.Name = "txt_stokara";
+            this.txt_stokara.Size = new System.Drawing.Size(100, 26);
+            this.txt_stokara.TabIndex = 20;
+            // 
+            // txt_aciklama
+            // 
+            this.txt_aciklama.Location = new System.Drawing.Point(128, 179);
+            this.txt_aciklama.Name = "txt_aciklama";
+            this.txt_aciklama.Size = new System.Drawing.Size(161, 26);
+            this.txt_aciklama.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(20, 182);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 20);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Açıklama";
+            // 
+            // dgv_stokhar
+            // 
+            this.dgv_stokhar.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgv_stokhar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_stokhar.Location = new System.Drawing.Point(135, 103);
+            this.dgv_stokhar.Name = "dgv_stokhar";
+            this.dgv_stokhar.Size = new System.Drawing.Size(945, 577);
+            this.dgv_stokhar.TabIndex = 21;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button1.Location = new System.Drawing.Point(719, 24);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 48);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Stokları Getir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txt_stokgetir
+            // 
+            this.txt_stokgetir.Location = new System.Drawing.Point(571, 34);
+            this.txt_stokgetir.Name = "txt_stokgetir";
+            this.txt_stokgetir.Size = new System.Drawing.Size(100, 26);
+            this.txt_stokgetir.TabIndex = 23;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::GelirGiderTablo.Properties.Resources.find;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Location = new System.Drawing.Point(498, 34);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(53, 26);
+            this.button4.TabIndex = 24;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // lbl_stokara
+            // 
+            this.lbl_stokara.AutoSize = true;
+            this.lbl_stokara.Location = new System.Drawing.Point(211, 36);
+            this.lbl_stokara.Name = "lbl_stokara";
+            this.lbl_stokara.Size = new System.Drawing.Size(51, 20);
+            this.lbl_stokara.TabIndex = 22;
+            this.lbl_stokara.Text = "label8";
+            this.lbl_stokara.Visible = false;
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button6.Location = new System.Drawing.Point(865, 24);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(134, 48);
+            this.button6.TabIndex = 25;
+            this.button6.Text = "Stok Hareketlerini Getir";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = global::GelirGiderTablo.Properties.Resources.house;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.Location = new System.Drawing.Point(1087, 616);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(100, 62);
+            this.button7.TabIndex = 33;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // FormStokAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.txt_stokgetir);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.grp_gircik);
             this.Controls.Add(this.grp_stokara);
             this.Controls.Add(this.button5);
@@ -351,6 +456,7 @@
             this.Controls.Add(this.grp_yenistok);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.dgv_stokhar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -364,6 +470,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_stokara)).EndInit();
             this.grp_stokara.ResumeLayout(false);
             this.grp_stokara.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_stokhar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,5 +504,14 @@
         private System.Windows.Forms.GroupBox grp_stokara;
         private System.Windows.Forms.Button btn_stokara;
         private System.Windows.Forms.TextBox txt_stokara;
+        private System.Windows.Forms.TextBox txt_aciklama;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dgv_stokhar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_stokgetir;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lbl_stokara;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
