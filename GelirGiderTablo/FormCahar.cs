@@ -45,13 +45,10 @@ namespace GelirGiderTablo
             {
                 cahar = cahar.Where(a => a.Tarih.Date >= dtp_from.Value.Date && a.Tarih.Date <= dtp_to.Value.Date).ToList();
             }
-            else
-            {
-                if (chck_vadeli.Checked)
-                {
-                    cahar = cahar.Where(a => a.VadeTarihi.Date <= DateTime.Today).ToList();
-                }
 
+            if (chck_vadeli.Checked)
+            {
+                cahar = cahar.Where(a => a.VadeTarihi.Date <= DateTime.Today).ToList();
             }
 
 

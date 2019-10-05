@@ -565,8 +565,8 @@ namespace GelirGiderTablo.Data
                 {
                     var cmd = new SQLiteCommand(conn);
 
-                    cmd.CommandText = "SELECT StokKodu,StokAdi FROM Stok WHERE StokKodu LIKE @src or StokAdi LIKE @src";
-                    cmd.Parameters.AddWithValue("@src", stokkodu);
+                    cmd.CommandText = "SELECT StokKodu,StokAdi FROM Stok WHERE StokKodu LIKE @src";
+                    cmd.Parameters.AddWithValue("@src", "%" + stokkodu + "%");
 
 
                     conn.Open();
@@ -643,8 +643,8 @@ namespace GelirGiderTablo.Data
                     }
                     else
                     {
-                        cmd.CommandText = "SELECT h.StokKodu,StokAdi,sum(Giren)-sum(Cikan) as Kalan from Stokhar as h join Stok as s on h.StokKodu=s.StokKodu WHERE h.StokKodu=@src group by h.StokKodu";
-                        cmd.Parameters.AddWithValue("@src", stokkodu);
+                        cmd.CommandText = "SELECT h.StokKodu,StokAdi,sum(Giren)-sum(Cikan) as Kalan from Stokhar as h join Stok as s on h.StokKodu=s.StokKodu WHERE h.StokKodu LIKE @src group by h.StokKodu";
+                        cmd.Parameters.AddWithValue("@src", "%" + stokkodu + "%");
                     }
 
 
