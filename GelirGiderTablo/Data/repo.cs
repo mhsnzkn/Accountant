@@ -11,16 +11,15 @@ namespace GelirGiderTablo.Data
     {
         private static string Constr = ConfigurationManager.ConnectionStrings["GelirGider"].ConnectionString;
 
-        public static bool AddCahar(Cahar model)
+        public static long AddCahar(Cahar model)
         {
-            var result = false;
+            long result = 0;
             try
             {
                 using (var conn = new SQLiteConnection(Constr))
                 {
 
-
-                    var cmd = new SQLiteCommand("INSERT INTO Cahar (CariKod,Aciklama,Borc,Alacak,Tarih,VadeTarihi,ParaCinsi,Tip,BirimFiyat,Adet,OdemeSekli,Crt_tst) values (@CariKod,@Aciklama,@Borc,@Alacak,@Tarih,@VadeTarihi,@ParaCinsi,@Tip,@BirimFiyat,@Adet,@OdemeSekli,@Crt_tst)", conn);
+                    var cmd = new SQLiteCommand("INSERT INTO Cahar (CariKod,Aciklama,Borc,Alacak,Tarih,VadeTarihi,ParaCinsi,Tip,BirimFiyat,Adet,OdemeSekli,Crt_tst) values (@CariKod,@Aciklama,@Borc,@Alacak,@Tarih,@VadeTarihi,@ParaCinsi,@Tip,@BirimFiyat,@Adet,@OdemeSekli,@Crt_tst);SELECT last_insert_rowid();", conn);
                     cmd.Parameters.AddWithValue("@CariKod", model.CariKod);
                     cmd.Parameters.AddWithValue("@Aciklama", model.Aciklama);
                     cmd.Parameters.AddWithValue("@Borc", model.Borc);
@@ -33,16 +32,20 @@ namespace GelirGiderTablo.Data
                     cmd.Parameters.AddWithValue("@Adet", model.Adet);
                     cmd.Parameters.AddWithValue("@OdemeSekli", model.OdemeSekli);
                     cmd.Parameters.AddWithValue("@Crt_tst", DateTime.Now);
-
                     conn.Open();
-                    if (cmd.ExecuteNonQuery() > 0)
-                        result = true;
+                    //SQLiteTransaction transaction = null;
+                    //transaction = conn.BeginTransaction();
+
+                    result = (long)cmd.ExecuteScalar();
+
+                    //result = conn.LastInsertRowId;
+                    //transaction.Commit();
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                result = false;
+                result = 0;
             }
             return result;
         }
@@ -88,7 +91,7 @@ namespace GelirGiderTablo.Data
                 {
 
 
-                    var cmd = new SQLiteCommand("UPDATE Cariler SET Ad=@Ad,Telefon=@Telefon,Adres=@Adres,Ilce=Ilce,Il=@Il,Email=@Email,Upt_tst=@Upt_tst WHERE CariKod=@CariKod", conn);
+                    var cmd = new SQLiteCommand("UPDATE Cariler SET Ad=@Ad,Telefon=@Telefon,Adres=@Adres,Ilce=@Ilce,Il=@Il,Email=@Email,Upt_tst=@Upt_tst WHERE CariKod=@CariKod", conn);
                     cmd.Parameters.AddWithValue("@CariKod", model.CariKod);
                     cmd.Parameters.AddWithValue("@Ad", model.Ad);
                     cmd.Parameters.AddWithValue("@Telefon", model.Telefon);
@@ -495,12 +498,13 @@ namespace GelirGiderTablo.Data
                 using (var conn = new SQLiteConnection(Constr))
                 {
 
-                    var cmd = new SQLiteCommand("INSERT INTO Stokhar (StokKodu,Giren,Cikan,Tarih,Aciklama) values (@StokKodu,@Giren,@Cikan,@Tarih,@Aciklama)", conn);
+                    var cmd = new SQLiteCommand("INSERT INTO Stokhar (StokKodu,Giren,Cikan,Tarih,Aciklama,Caharid) values (@StokKodu,@Giren,@Cikan,@Tarih,@Aciklama,@Caharid)", conn);
                     cmd.Parameters.AddWithValue("@StokKodu", model.StokKodu);
                     cmd.Parameters.AddWithValue("@Giren", model.Giren);
                     cmd.Parameters.AddWithValue("@Cikan", model.Cikan);
                     cmd.Parameters.AddWithValue("@Aciklama", model.Aciklama);
                     cmd.Parameters.AddWithValue("@Tarih", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@Caharid", model.Cahar);
 
                     conn.Open();
                     if (cmd.ExecuteNonQuery() > 0)
@@ -612,12 +616,13 @@ namespace GelirGiderTablo.Data
                         stokhar.Cikan = dr.GetDecimal(dr.GetOrdinal("Cikan"));
                         stokhar.Tarih = dr.GetDateTime(dr.GetOrdinal("Tarih"));
                         stokhar.Aciklama = dr.GetString(dr.GetOrdinal("Aciklama"));
+                        stokhar.Cahar = dr.GetInt32(dr.GetOrdinal("Caharid"));
                         list.Add(stokhar);
                     }
                     dr.Close();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 list = null;
             }

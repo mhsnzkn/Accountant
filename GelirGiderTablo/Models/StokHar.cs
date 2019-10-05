@@ -13,6 +13,7 @@ namespace GelirGiderTablo.Models
         public decimal Giren { get; set; }
         public decimal Cikan { get; set; }
         public string Aciklama { get; set; }
+        public long? Cahar { get; set; }
         public DateTime Tarih { get; set; }
     }
 }

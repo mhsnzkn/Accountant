@@ -62,9 +62,33 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.grp_stok = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txt_stok6 = new System.Windows.Forms.TextBox();
+            this.cbx_stok6 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_stok5 = new System.Windows.Forms.TextBox();
+            this.cbx_stok5 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_stok4 = new System.Windows.Forms.TextBox();
+            this.cbx_stok4 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_stok3 = new System.Windows.Forms.TextBox();
+            this.cbx_stok3 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_stok2 = new System.Windows.Forms.TextBox();
+            this.cbx_stok2 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_stok1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbx_stok1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grp_cari.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cariler)).BeginInit();
+            this.grp_stok.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_desc
@@ -89,7 +113,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(480, 74);
+            this.label4.Location = new System.Drawing.Point(452, 74);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 20);
@@ -173,7 +197,7 @@
             this.groupBox1.Controls.Add(this.rdo_taksit);
             this.groupBox1.Controls.Add(this.rdo_vadeli);
             this.groupBox1.Controls.Add(this.rdo_nakit);
-            this.groupBox1.Location = new System.Drawing.Point(484, 142);
+            this.groupBox1.Location = new System.Drawing.Point(450, 127);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 152);
             this.groupBox1.TabIndex = 42;
@@ -296,7 +320,7 @@
             this.grp_cari.Controls.Add(this.label2);
             this.grp_cari.Controls.Add(this.btn_carisearch);
             this.grp_cari.Controls.Add(this.txt_carisearch);
-            this.grp_cari.Location = new System.Drawing.Point(403, 66);
+            this.grp_cari.Location = new System.Drawing.Point(380, 61);
             this.grp_cari.Name = "grp_cari";
             this.grp_cari.Size = new System.Drawing.Size(715, 360);
             this.grp_cari.TabIndex = 83;
@@ -365,7 +389,7 @@
             // 
             // dtp_date
             // 
-            this.dtp_date.Location = new System.Drawing.Point(547, 71);
+            this.dtp_date.Location = new System.Drawing.Point(509, 71);
             this.dtp_date.Name = "dtp_date";
             this.dtp_date.Size = new System.Drawing.Size(248, 26);
             this.dtp_date.TabIndex = 86;
@@ -418,13 +442,239 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // grp_stok
+            // 
+            this.grp_stok.Controls.Add(this.label15);
+            this.grp_stok.Controls.Add(this.label14);
+            this.grp_stok.Controls.Add(this.txt_stok6);
+            this.grp_stok.Controls.Add(this.cbx_stok6);
+            this.grp_stok.Controls.Add(this.label13);
+            this.grp_stok.Controls.Add(this.txt_stok5);
+            this.grp_stok.Controls.Add(this.cbx_stok5);
+            this.grp_stok.Controls.Add(this.label12);
+            this.grp_stok.Controls.Add(this.txt_stok4);
+            this.grp_stok.Controls.Add(this.cbx_stok4);
+            this.grp_stok.Controls.Add(this.label11);
+            this.grp_stok.Controls.Add(this.txt_stok3);
+            this.grp_stok.Controls.Add(this.cbx_stok3);
+            this.grp_stok.Controls.Add(this.label10);
+            this.grp_stok.Controls.Add(this.txt_stok2);
+            this.grp_stok.Controls.Add(this.cbx_stok2);
+            this.grp_stok.Controls.Add(this.label9);
+            this.grp_stok.Controls.Add(this.label8);
+            this.grp_stok.Controls.Add(this.txt_stok1);
+            this.grp_stok.Controls.Add(this.label7);
+            this.grp_stok.Controls.Add(this.cbx_stok1);
+            this.grp_stok.Controls.Add(this.label6);
+            this.grp_stok.Location = new System.Drawing.Point(771, 110);
+            this.grp_stok.Name = "grp_stok";
+            this.grp_stok.Size = new System.Drawing.Size(368, 319);
+            this.grp_stok.TabIndex = 88;
+            this.grp_stok.TabStop = false;
+            this.grp_stok.Text = "Stok";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(19, 274);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(22, 20);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "6.";
+            // 
+            // txt_stok6
+            // 
+            this.txt_stok6.Location = new System.Drawing.Point(251, 271);
+            this.txt_stok6.Name = "txt_stok6";
+            this.txt_stok6.Size = new System.Drawing.Size(100, 26);
+            this.txt_stok6.TabIndex = 19;
+            this.txt_stok6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_total_KeyPress);
+            // 
+            // cbx_stok6
+            // 
+            this.cbx_stok6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_stok6.FormattingEnabled = true;
+            this.cbx_stok6.Location = new System.Drawing.Point(70, 271);
+            this.cbx_stok6.Name = "cbx_stok6";
+            this.cbx_stok6.Size = new System.Drawing.Size(121, 28);
+            this.cbx_stok6.TabIndex = 18;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(19, 240);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(22, 20);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "5.";
+            // 
+            // txt_stok5
+            // 
+            this.txt_stok5.Location = new System.Drawing.Point(251, 237);
+            this.txt_stok5.Name = "txt_stok5";
+            this.txt_stok5.Size = new System.Drawing.Size(100, 26);
+            this.txt_stok5.TabIndex = 16;
+            this.txt_stok5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_total_KeyPress);
+            // 
+            // cbx_stok5
+            // 
+            this.cbx_stok5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_stok5.FormattingEnabled = true;
+            this.cbx_stok5.Location = new System.Drawing.Point(70, 237);
+            this.cbx_stok5.Name = "cbx_stok5";
+            this.cbx_stok5.Size = new System.Drawing.Size(121, 28);
+            this.cbx_stok5.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(19, 206);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(22, 20);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "4.";
+            // 
+            // txt_stok4
+            // 
+            this.txt_stok4.Location = new System.Drawing.Point(251, 203);
+            this.txt_stok4.Name = "txt_stok4";
+            this.txt_stok4.Size = new System.Drawing.Size(100, 26);
+            this.txt_stok4.TabIndex = 13;
+            this.txt_stok4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_total_KeyPress);
+            // 
+            // cbx_stok4
+            // 
+            this.cbx_stok4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_stok4.FormattingEnabled = true;
+            this.cbx_stok4.Location = new System.Drawing.Point(70, 203);
+            this.cbx_stok4.Name = "cbx_stok4";
+            this.cbx_stok4.Size = new System.Drawing.Size(121, 28);
+            this.cbx_stok4.TabIndex = 12;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(19, 172);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(22, 20);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "3.";
+            // 
+            // txt_stok3
+            // 
+            this.txt_stok3.Location = new System.Drawing.Point(251, 169);
+            this.txt_stok3.Name = "txt_stok3";
+            this.txt_stok3.Size = new System.Drawing.Size(100, 26);
+            this.txt_stok3.TabIndex = 10;
+            this.txt_stok3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_total_KeyPress);
+            // 
+            // cbx_stok3
+            // 
+            this.cbx_stok3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_stok3.FormattingEnabled = true;
+            this.cbx_stok3.Location = new System.Drawing.Point(70, 169);
+            this.cbx_stok3.Name = "cbx_stok3";
+            this.cbx_stok3.Size = new System.Drawing.Size(121, 28);
+            this.cbx_stok3.TabIndex = 9;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(19, 138);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(22, 20);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "2.";
+            // 
+            // txt_stok2
+            // 
+            this.txt_stok2.Location = new System.Drawing.Point(251, 135);
+            this.txt_stok2.Name = "txt_stok2";
+            this.txt_stok2.Size = new System.Drawing.Size(100, 26);
+            this.txt_stok2.TabIndex = 7;
+            this.txt_stok2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_total_KeyPress);
+            // 
+            // cbx_stok2
+            // 
+            this.cbx_stok2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_stok2.FormattingEnabled = true;
+            this.cbx_stok2.Location = new System.Drawing.Point(70, 135);
+            this.cbx_stok2.Name = "cbx_stok2";
+            this.cbx_stok2.Size = new System.Drawing.Size(121, 28);
+            this.cbx_stok2.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(19, 104);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(22, 20);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "1.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(272, 64);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 20);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Miktar";
+            // 
+            // txt_stok1
+            // 
+            this.txt_stok1.Location = new System.Drawing.Point(251, 101);
+            this.txt_stok1.Name = "txt_stok1";
+            this.txt_stok1.Size = new System.Drawing.Size(100, 26);
+            this.txt_stok1.TabIndex = 3;
+            this.txt_stok1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_total_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(95, 67);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 20);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Stok Adı";
+            // 
+            // cbx_stok1
+            // 
+            this.cbx_stok1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_stok1.FormattingEnabled = true;
+            this.cbx_stok1.Location = new System.Drawing.Point(70, 101);
+            this.cbx_stok1.Name = "cbx_stok1";
+            this.cbx_stok1.Size = new System.Drawing.Size(121, 28);
+            this.cbx_stok1.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(67, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(242, 18);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Satışla düşülecek stok varsa giriniz.";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label15.Location = new System.Drawing.Point(67, 34);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(137, 18);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Yoksa boş bırakınız";
+            // 
             // FormSat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
-            this.Controls.Add(this.lbl_taksittarihi);
             this.Controls.Add(this.grp_cari);
+            this.Controls.Add(this.grp_stok);
+            this.Controls.Add(this.lbl_taksittarihi);
             this.Controls.Add(this.dtp_date);
             this.Controls.Add(this.dtp_vade);
             this.Controls.Add(this.cbx_para);
@@ -457,6 +707,8 @@
             this.grp_cari.ResumeLayout(false);
             this.grp_cari.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cariler)).EndInit();
+            this.grp_stok.ResumeLayout(false);
+            this.grp_stok.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,5 +749,28 @@
         private System.Windows.Forms.DateTimePicker dtp_date;
         private System.Windows.Forms.Label lbl_taksittarihi;
         private System.Windows.Forms.RadioButton rdo_odemeal;
+        private System.Windows.Forms.GroupBox grp_stok;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txt_stok6;
+        private System.Windows.Forms.ComboBox cbx_stok6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txt_stok5;
+        private System.Windows.Forms.ComboBox cbx_stok5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txt_stok4;
+        private System.Windows.Forms.ComboBox cbx_stok4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txt_stok3;
+        private System.Windows.Forms.ComboBox cbx_stok3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txt_stok2;
+        private System.Windows.Forms.ComboBox cbx_stok2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt_stok1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbx_stok1;
+        private System.Windows.Forms.Label label15;
     }
 }

@@ -474,7 +474,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormCariler";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormCariler";
+            this.Text = "Cari İşlemler";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grp_ekle.ResumeLayout(false);
             this.grp_ekle.PerformLayout();
