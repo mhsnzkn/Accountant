@@ -586,7 +586,7 @@ namespace GelirGiderTablo.Data
             return result;
         }
 
-        public static List<StokHar> GetStokHar(string stokkodu)
+        public static List<StokHar> GetStokHar_tek(string stokkodu)
         {
             var list = new List<StokHar>();
             try
@@ -610,7 +610,7 @@ namespace GelirGiderTablo.Data
                     while (dr.Read())
                     {
                         var stokhar = new StokHar();
-                        stokhar.Id = dr.GetInt32(dr.GetOrdinal("Id"));
+                        //stokhar.Id = dr.GetInt32(dr.GetOrdinal("Id"));
                         stokhar.StokKodu = dr.GetString(dr.GetOrdinal("StokKodu"));
                         stokhar.Giren = dr.GetDecimal(dr.GetOrdinal("Giren"));
                         stokhar.Cikan = dr.GetDecimal(dr.GetOrdinal("Cikan"));
@@ -629,6 +629,61 @@ namespace GelirGiderTablo.Data
             return list;
         }
 
+        public static List<StokHarGroup> GetStokHar_group(string stokkodu, DateTime? baslangic, DateTime? bitis)
+        {
+            var list = new List<StokHarGroup>();
+            try
+            {
+                using (var conn = new SQLiteConnection(Constr))
+                {
+                    var cmd = new SQLiteCommand(conn);
+                    if (string.IsNullOrEmpty(stokkodu))
+                    {
+                        if(baslangic!=null && bitis != null)
+                        {
+                            cmd.CommandText = "SELECT StokKodu,SUM(Giren) as Giren, Sum(Cikan) as Cikan FROM Stokhar where Tarih>=@baslangic and Tarih<=@bitis Group by StokKodu";
+                            cmd.Parameters.AddWithValue("@baslangic", baslangic);
+                            cmd.Parameters.AddWithValue("@bitis", bitis);
+                        } 
+                        else
+                            cmd.CommandText = "SELECT StokKodu,SUM(Giren) as Giren, Sum(Cikan) as Cikan FROM Stokhar Group by StokKodu";
+                    }
+                    else
+                    {
+                        if (baslangic != null && bitis != null)
+                        {
+                            cmd.CommandText = "SELECT StokKodu,SUM(Giren) as Giren, Sum(Cikan) as Cikan FROM Stokhar WHERE StokKodu LIKE @src and Tarih>=@baslangic and Tarih<=@bitis group by StokKodu";
+                            cmd.Parameters.AddWithValue("@src", stokkodu);
+                            cmd.Parameters.AddWithValue("@baslangic", baslangic);
+                            cmd.Parameters.AddWithValue("@bitis", bitis);
+                        }
+                        else
+                        {
+                            cmd.CommandText = "SELECT StokKodu,SUM(Giren) as Giren, Sum(Cikan) as Cikan FROM Stokhar WHERE StokKodu LIKE @src group by StokKodu";
+                            cmd.Parameters.AddWithValue("@src", stokkodu);
+                        }
+                    }
+
+
+                    conn.Open();
+                    var dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        var stokhar = new StokHarGroup();
+                        stokhar.StokKodu = dr.GetString(dr.GetOrdinal("StokKodu"));
+                        stokhar.Giren = dr.GetDecimal(dr.GetOrdinal("Giren"));
+                        stokhar.Cikan = dr.GetDecimal(dr.GetOrdinal("Cikan"));
+                        list.Add(stokhar);
+                    }
+                    dr.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                list = null;
+            }
+            return list;
+        }
         public static List<StokHarRemain> GetStokHarKalan(string stokkodu)
         {
             var list = new List<StokHarRemain>();

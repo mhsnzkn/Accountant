@@ -214,12 +214,50 @@ namespace GelirGiderTablo
 
         private void button6_Click(object sender, EventArgs e)
         {
-            dgv_stokhar.DataSource = repo.GetStokHar(txt_stokgetir.Text).OrderByDescending(a=>a.Tarih).ToList();
+            if (chck_tarih.Checked)
+            {
+                dgv_stokhar.DataSource = repo.GetStokHar_tek(txt_stokgetir.Text).Where(a=>a.Tarih>=dtp_basl.Value && a.Tarih<=dtp_bitis.Value).OrderByDescending(a => a.Tarih).ToList();
+            }
+            else
+            {
+                dgv_stokhar.DataSource = repo.GetStokHar_tek(txt_stokgetir.Text).OrderByDescending(a => a.Tarih).ToList();
+            }
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void chck_tarih_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chck_tarih.Checked)
+            {
+                lbl_tarbas.Visible = true;
+                lbl_tarbitis.Visible = true;
+                dtp_basl.Visible = true;
+                dtp_bitis.Visible = true;
+            }
+            else
+            {
+                lbl_tarbas.Visible = false;
+                lbl_tarbitis.Visible = false;
+                dtp_basl.Visible = false;
+                dtp_bitis.Visible = false;
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (chck_tarih.Checked)
+            {
+                dgv_stokhar.DataSource = repo.GetStokHar_group(txt_stokgetir.Text,dtp_basl.Value,dtp_bitis.Value).ToList();
+            }
+            else
+            {
+                dgv_stokhar.DataSource = repo.GetStokHar_group(txt_stokgetir.Text,null,null).ToList();
+            }
         }
     }
 }
